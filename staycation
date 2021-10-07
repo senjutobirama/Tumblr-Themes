@@ -1,0 +1,1212 @@
+<!DOCTYPE HTML>
+<!--
+staycation theme by @ps1/@mtfuji
+
+-round border doesn't work with rainbow borders
+-header image can be any size customize in text options
+
+install google fonts
+https://fonts.google.com/
+
+script credits
+masonry
+https://infinite-scroll.com/demo/masonry/
+
+NPF image fix
+https://glenthemes.tumblr.com/post/638038350689976320/npf-mobile-photoset-fix-by-glenthemes-new
+
+photosets
+https://annasthms.github.io/photosets/
+-->
+<html>
+
+
+<title>{Title}</title>
+<link rel="icon" href="{image:FavIcon}" type="image/gif" >
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!--
+       NPF IMAGES READJUSTMENT | @glenthemes
+       v2.0 [last updated: 2021-06-03]
+-->
+<link href="//dl.dropbox.com/s/bnoj86mka0bkplb/npf-override.css" rel="stylesheet">
+<script src="//dl.dropbox.com/s/vwrm94pcg4c9e71/npf-evenize.js"></script>
+
+<style type="text/css">
+:root {
+    --NPF-Image-Spacing:0px;
+    --NPF-Bottom-Gap-From-Captions:0;
+}
+</style>
+
+<!-- insert google fonts here type font-family in font options -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<!-- google fonts end -->
+
+<!-- upload your own fonts on dropbox -->
+<style type="text/css">
+@font-face {font-family:"pokemon"; src: url("https://dl.dropboxusercontent.com/s/d9hz0y1y7o8xgbk/Pokemon%20GB.ttf?dl=0")}
+</style>
+
+<meta name="image:favicon" content=""/>
+<meta name="image:icon" content="https://i.imgur.com/pdFRbxx.png"/>
+<meta name="image:bg" content=""/>
+<meta name="image:cursor" content="https://i.imgur.com/fAJFarU.gif"/>
+
+<meta name="color:bg" content="#eee">
+<meta name="color:posts" content="#fff">
+<meta name="color:post shadow" content="#ccc">
+<meta name="color:font" content="#000">
+<meta name="color:glow outline txt" content="#ff0000">
+<meta name="color:links" content="#ff0000">
+<meta name="color:links glow outline" content="#000">
+<meta name="color:underline of link" content="#000">
+<meta name="color:links hover" content="#000">
+<meta name="color:link hover glow outline" content="#ff0000">
+<meta name="color:title color" content="#000">
+<meta name="color:title glow outline" content="#ff0000">
+<meta name="color:underline of title" content="#ff0000">
+<meta name="color:info bg" content="#fff">
+<meta name="color:info shadow" content="#ccc">
+<meta name="color:desc txt" content="#000">
+<meta name="color:desc glow outline" content="#ff0000">
+<meta name="color:info links" content="#000">
+<meta name="color:underline of info link" content="#ff0000">
+<meta name="color:info link glow outline" content="#ff0000">
+<meta name="color:tooltip txt" content="#fff">
+<meta name="color:tooltip bg" content="#000">
+<meta name="color:tooltip glow outline" content="#000">
+<meta name="color:select bg" content="#000">
+<meta name="color:select txt" content="#ff0000">
+<meta name="color:info border" content="#000">
+<meta name="color:post border" content="#000">
+ 
+<meta name="select:info border" content="solid"/>
+<meta name="select:info border" content="dashed"/>
+<meta name="select:info border" content="dotted"/>
+<meta name="select:info border" content="double"/>
+<meta name="select:info border" content="inset"/>
+<meta name="select:info border" content="outset"/>
+<meta name="select:info border" content="ridge"/>
+<meta name="select:info border" content="groove"/>
+ 
+<meta name="select:info border size" content="0"/>
+<meta name="select:info border size" content="1"/>
+<meta name="select:info border size" content="2"/>
+<meta name="select:info border size" content="3"/>
+<meta name="select:info border size" content="4"/>
+<meta name="select:info border size" content="5"/>
+
+<meta name="select:post border" content="solid"/>
+<meta name="select:post border" content="dashed"/>
+<meta name="select:post border" content="dotted"/>
+<meta name="select:post border" content="double"/>
+<meta name="select:post border" content="inset"/>
+<meta name="select:post border" content="outset"/>
+<meta name="select:post border" content="ridge"/>
+<meta name="select:post border" content="groove"/>
+ 
+<meta name="select:post border size" content="0"/>
+<meta name="select:post border size" content="1"/>
+<meta name="select:post border size" content="2"/>
+<meta name="select:post border size" content="3"/>
+<meta name="select:post border size" content="4"/>
+<meta name="select:post border size" content="5"/>
+
+<meta name="if:cover background" content="0" />
+<meta name="if:2 columns" content="0" />
+<meta name="if:4 columns" content="0" />
+<meta name="if:transparent info" content="0" />
+<meta name="if:circle header" content="0" />
+<meta name="if:shadow" content="0" />
+<meta name="if:round border" content="0" />
+<meta name="if:rainbow border 1" content="0" />
+<meta name="if:rainbow border 2" content="0" />
+<meta name="if:hide title" content="0" />
+<meta name="if:hide desc" content="0" />
+<meta name="if:hide links" content="0" />
+<meta name="if:hide caption" content="0" />
+<meta name="if:hide tags" content="0" />
+<meta name="if:outline txt" content="0" />
+<meta name="if:glow txt" content="0" />
+<meta name="if:custom cursor" content="0" />
+<meta name="if:links underline" content="0"/>
+<meta name="if:links bold" content="0"/>
+<meta name="if:links italic" content="0"/>
+<meta name="if:redirect" content="0" />
+<meta name="if:extra links" content="0" />
+
+<meta name="text:icon size" content="200px"> 
+<meta name="text:font family" content="fira sans">
+<meta name="text:font size" content="16px"> 
+<meta name="text:title" content="hi yall!">
+<meta name="text:title size" content="22px"> 
+<meta name="text:description" content="simply a description.">
+<meta name="text:desc size" content="16px"> 
+<meta name="text:info link size" content="16px"> 
+<meta name="text:link 1" content="1">
+<meta name="text:link 1 URL" content="/">
+<meta name="text:link 2" content="2">
+<meta name="text:link 2 URL" content="/">
+<meta name="text:link 3" content="3">
+<meta name="text:link 3 URL" content="/">
+<meta name="text:link 4" content="4">
+<meta name="text:link 4 URL" content="/">
+<meta name="text:link 5" content="5">
+<meta name="text:link 5 URL" content="/">
+<meta name="text:link 6" content="6">
+<meta name="text:link 6 URL" content="/">
+<meta name="text:redirect link" content="/tagged/0">
+
+<head>
+
+{block:IfRedirect}
+<script>
+if(window.location.pathname == '/') location.replace('{text:Redirect Link}');
+</script> 
+{block:IfRedirect}
+
+<link href="https://static.tumblr.com/0podkko/oDSpg7y88/photosets.css" rel="stylesheet">
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+ 
+<script type="text/javascript" src="https://static.tumblr.com/7qjmkr5/IUmmdsy41/jquery.style-my-tooltips.js"></script>
+ 
+<script>
+   (function($){
+       $(document).ready(function(){
+           $("[title]").style_my_tooltips();
+       });
+   })(jQuery);
+</script> 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-infinitescroll/2.0b2.120519/jquery.infinitescroll.min.js"></script>
+    <script src="//npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+    <script src="//npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+    <script src="https://static.tumblr.com/wgijwsy/jgemkyt9x/jquery.photoset-grid.min.js"></script>
+
+<style type="text/css">
+
+::-moz-selection {
+    background: {color:select bg};
+    color: {color:select txt};
+    {block:IfGlowText}
+    text-shadow: 0 0 1px {color:select txt}, 0 0 3px {color:select txt};
+    {/block:IfGlowText}
+}
+ 
+::selection {
+    background: {color:select bg};
+    color: {color:select txt};
+    {block:IfGlowText}
+    text-shadow: 0 0 2px {color:select txt}, 0 0 3px {color:select txt};
+    {/block:IfGlowText}
+}
+
+
+::-webkit-scrollbar{
+width: 10px;
+height: 10px;
+}
+::-webkit-scrollbar-thumb{
+background: {color:links};
+border: 4px solid {color:bg};
+border-radius: 0px;
+}
+::-webkit-scrollbar-track{
+background:{color:bg};
+}
+
+{block:IfCustomCursor}
+body, *, a, a:hover {cursor:url({image:cursor}), auto;}{/block:IfCustomCursor}
+{block:IfNotCustomCursor}
+a, a:hover {cursor: help;}
+{/block:IfNotCustomCursor}
+
+#s-m-t-tooltip {
+    {block:ifRoundBorder}
+    border-radius: 5px;
+    {/block:ifRoundBorder}
+    z-index: 999999999;
+    background-color: {color:tooltip bg};
+    border: 1px {select:border} {color:border};
+    color: {color:tooltip txt};
+    font-size: {text:Font Size};
+    {block:ifOutlineTxt}
+    text-shadow: -1px 0 {color:tooltip glow outline}, 0 1px {color:tooltip glow outline}, 1px 0 {color:tooltip glow outline}, 0 -1px {color:tooltip glow outline};
+    {block:ifOutlineTxt}
+    {block:ifGlowTxt}
+    text-shadow: 0 0 2px {color:tooltip glow outline}, 0 0 5px {color:tooltip glow outline};
+    {/block:ifGlowTxt}
+    text-align: center;
+    transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    text-transform: normal;
+    max-width: 300px;
+    display: block;
+    word-wrap: break-word;
+    padding: 3px 5px;
+    margin: -30px 0px 10px 20px;}
+    
+p { margin: 0;}    
+h1 {line-height: 120%;}
+h2 {line-height: 120%;}
+
+body {
+    margin: 0;
+    background: {color:bg} url("{image:bg}") fixed;
+    {block:IfCoverBackground}
+    background-image: url("{image:bg}") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    {/block:IfCoverBackground}
+    font-family: '{text:font family}';
+    font-size: {text:font size};
+    color: {color:font};
+    -webkit-font-smoothing: antialiased;
+    {block:ifOutlineTxt}
+    text-shadow: -1px 0 {color:glow outline txt}, 0 1px {color:glow outline txt}, 1px 0 {color:glow outline txt}, 0 -1px {color:glow outline txt};
+    {block:ifOutlineTxt}
+    {block:ifGlowTxt}
+    text-shadow: 0 0 2px {color:glow outline txt}, 0 0 5px {color:glow outline txt};
+    {/block:ifGlowTxt}
+    line-height: 120%;
+    overflow-x: hidden;
+}
+
+a:link, a:active, a:visited {
+    color: {color:links};
+    {block:ifOutlineTxt}
+    text-shadow: -1px 0 {color:links glow outline}, 0 1px {color:links glow outline}, 1px 0 {color:links glow outline}, 0 -1px {color:links glow outline};   {block:ifOutlineTxt}
+    {block:ifGlowTxt}
+    text-shadow:  0 0 2px {color:links glow outline}, 0 0 5px {color:links glow outline};
+    {/block:ifGlowTxt}
+    {block:IfLinksBold}
+    font-weight: 700;{/block:IfLinksBold}
+    {block:IfLinksItalic}
+    font-style: italic;{/block:IfLinksItalic}
+    {block:IfNotLinksUnderline}
+    text-decoration: none;{/block:IfNotLinksUnderline}
+    {block:IfLinksUnderline}
+    text-decoration: none;
+    line-height: 150%;
+    border-bottom: 2px solid {color:underline of link};
+    {/block:IfLinksUnderline}
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;}
+ 
+  .title a:hover, .linkz a:hover, a:hover {
+    color: {color:links hover};
+    {block:IfLinksUnderline}
+    text-decoration: none;
+    border-bottom: 2px solid {color:links};
+    {/block:IfLinksUnderline}
+    {block:ifOutlineTxt}
+    text-shadow: -1px 0 {color:link hover glow outline}, 0 1px {color:link hover glow outline}, 1px 0 {color:link hover glow outline}, 0 -1px {color:link hover glow outline};
+    {block:ifOutlineTxt}
+    {block:ifGlowTxt}
+    text-shadow: 0 0 2px {color:link hover glow outline}, 0 0 5px {color:link hover glow outline};
+    {/block:ifGlowTxt}
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;}
+
+.linkz a:hover, .title a:hover {
+    {block:IfLinksUnderline}
+    color: {color:underline of info link};
+    text-decoration: none;
+    border-bottom: 2px solid {color:info links};
+    {/block:IfLinksUnderline}
+}
+    
+main {
+    margin: auto;
+    margin-bottom: 30px;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.3s;
+    height: auto;
+    overflow: hidden;
+    max-width: 1300px;
+    padding-left: 60px;
+    padding-top: 20px;
+    {block:if2Columns}
+    max-width: 1100px;
+    padding-left: 80px;
+    {/block:if2Columns}
+    {block:if4Columns}
+    max-width: 1300px;
+    padding-left: 40px;
+    {/block:if4Columns}
+}
+
+.waga {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    margin-top: 40px;
+}
+
+.title {
+    margin: auto;
+    font-size: {text:title size};
+    text-align: center;
+    margin-bottom: 10px;
+    line-height: 130%;
+    max-width: 600px;
+}
+
+.title a {
+    color: {color:title color};
+    {block:ifOutlineTxt}
+    text-shadow: -1px 0 {color:title glow outline}, 0 1px {color:title glow outline}, 1px 0 {color:title glow outline}, 0 -1px {color:title glow outline};
+    {block:ifOutlineTxt}
+    {block:ifGlowTxt}
+    text-shadow: 0 0 2px {color:title glow outline}, 0 0 5px {color:title glow outline};
+    {/block:ifGlowTxt}
+    {block:IfLinksUnderline}
+    text-decoration: none;
+    border-bottom: 2px solid {color:underline of title};
+    {/block:IfLinksUnderline}
+}
+
+.sb {
+    {block:ifRoundBorder}
+    border-radius: 5px;
+    {/block:ifRoundBorder}
+    width: calc({text:icon size} + 40px);
+    background: {color:info bg};
+    {block:IfTransparentInfo}
+    background: transparent;
+    filter: drop-shadow(0px)
+    {/block:IfTransparentInfo}
+    {block:ifShadow}
+    filter: drop-shadow(5px 5px 2px {color:info shadow});
+    {/block:ifShadow}
+    {block:IfNotTransparentInfo}
+    border: {select:info border size}px {select:info border} {color:info border};
+    {block:ifRainbowBorder1}
+    border: {select:post border size}px solid transparent;
+  border-image: linear-gradient(to bottom right, red, orange, yellow, green, cyan, blue, violet 100%);
+  border-image-slice: 1;
+  {/block:ifRainbowBorder1}
+   {block:ifRainbowBorder2}
+    border: {select:post border size}px solid transparent;
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+  border-image-slice: 1;
+  {/block:ifRainbowBorder2}
+    {/block:IfNotTransparentInfo}
+    position: relative;
+    margin: auto;
+    text-align: center;
+    color: {color:desc txt};
+    font-size: {text:desc size};
+    {block:ifOutlineTxt}
+    text-shadow: -1px 0 {color:desc glow outline}, 0 1px {color:desc glow outline}, 1px 0 {color:desc glow outline}, 0 -1px {color:desc glow outline};
+    {block:ifOutlineTxt}
+    {block:ifGlowTxt}
+    text-shadow: 0 0 2px {color:desc glow outline}, 0 0 5px {color:desc glow outline};
+    {/block:ifGlowTxt}
+
+{block:ifCircleHeader} 
+{block:ifShadow}
+    filter: drop-shadow(0px 0px 5px {color:info shadow})
+    drop-shadow(0px 0px 10px {color:info shadow});
+    {/block:ifShadow}
+border-radius: 50%;
+     position: relative;
+    top: 0;
+    -webkit-transition: top ease 0.5s;
+    -moz-transition: top ease 0.5s;
+    -o-transition: top ease 0.5s;
+    -ms-transition: top ease 0.5s;
+    transition: top ease 0.5s;
+    {/block:ifCircleHeader}
+    }
+{block:ifCircleHeader}    
+.sb:hover{
+    
+    top: -10px;
+}
+{/block:ifCircleHeader}
+
+
+.sb img {
+    {block:ifCircleHeader}
+    border-radius: 50%;
+    {/block:ifCircleHeader}
+    {block:IfTransparentInfo}
+    padding: 0px;
+    {block:ifShadow}
+    filter: drop-shadow(0px 0px 5px {color:info shadow})
+    drop-shadow(0px 0px 10px {color:info shadow});
+    {/block:ifShadow}
+    {/block:IfTransparentInfo}
+    width: {text:icon size};
+    padding: 20px;
+    display: block;
+    {block:ifNotCircleHeader}
+    position: relative;
+    top: 0;
+    -webkit-transition: top ease 0.5s;
+    -moz-transition: top ease 0.5s;
+    -o-transition: top ease 0.5s;
+    -ms-transition: top ease 0.5s;
+    transition: top ease 0.5s;
+    {/block:ifNotCircleHeader}
+    }
+    
+{block:ifNotCircleHeader}    
+.sb img:hover{
+    top: -10px;
+}
+{block:ifNotCircleHeader}
+  
+.desc {
+    padding: 0px 20px 5px 20px;
+    text-align: center;
+    line-height: 120%;
+    font-size: {text:desc size};
+    {block:ifNotCircleHeader}
+   margin-top: -15px;
+   {/block:ifNotCircleHeader}
+   {block:IfHideLinks}
+   padding-bottom: 10px;
+   {block:IfHideLinks}
+   
+}
+
+.linkz {
+    line-height: 120%;
+    padding-bottom: 5px;
+    font-size: {text:info link size};
+    {block:IfHideDesc}
+    padding: 3px 0 10px 0;
+    margin-top: -15px;
+    {/block:IfHideDesc}
+}
+
+.linkz a{
+    margin-right: 5px;
+    color: {color:info links};
+    {block:IfLinksUnderline}
+    text-decoration: none;
+    border-bottom: 2px solid {color:underline of info link};
+    {/block:IfLinksUnderline}
+    font-size: {text:info link size};
+    {block:ifOutlineTxt}
+    text-shadow: -1px 0 {color:info link glow outline}, 0 1px {color:info link glow outline}, 1px 0 {color:info link glow outline}, 0 -1px {color:info link glow outline};
+    {block:ifOutlineTxt}
+    {block:ifGlowTxt}
+    text-shadow: 0 0 2px {color:info link glow outline}, 0 0 5px {color:info link glow outline};
+    {/block:ifGlowTxt}
+}
+
+.circle {
+    margin: auto;
+    max-width: 600px;
+    text-align: center;
+   margin-top: 20px;
+   {block:IfTransparentInfo}
+   margin-top: 0;
+   {/block:IfTransparentInfo}
+   color: {color:desc txt};
+    {block:ifOutlineTxt}
+    text-shadow: -1px 0 {color:desc glow outline}, 0 1px {color:desc glow outline}, 1px 0 {color:desc glow outline}, 0 -1px {color:desc glow outline};
+    {block:ifOutlineTxt}
+    {block:ifGlowTxt}
+    text-shadow: 0 0 2px {color:desc glow outline}, 0 0 5px {color:desc glow outline};
+    {/block:ifGlowTxt}
+   
+}
+
+.posts {
+    
+    {block:ifRoundBorder}
+    border-radius: 5px;
+    {/block:ifRoundBorder}
+    {block:ifShadow}
+    filter: drop-shadow(5px 5px 2px {color:post shadow});
+    margin: 0px 25px 25px 0;
+    {/block:ifShadow}
+    background: {color:posts};
+    width: 400px;
+    {block:if2Columns}
+    width: 500px;
+    {/block:if2Columns}
+    {block:if4Columns}
+    width: 290px;
+    {/block:if4Columns}
+    margin: 20px 20px 0 0;
+    display:inline-block;
+    border: {select:post border size}px {select:post border} {color:post border};
+    {block:ifRainbowBorder1}
+    border: {select:post border size}px solid transparent;
+  border-image: linear-gradient(to bottom right, red, orange, yellow, green, cyan, blue, violet 100%);
+  border-image-slice: 1;
+  {/block:ifRainbowBorder1}
+   {block:ifRainbowBorder2}
+   
+    border: {select:post border size}px solid transparent;
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+  border-image-slice: 1;
+    {/block:ifRainbowBorder2}
+    position: relative;
+    {block:PermalinkPage}
+    {block:if2Columns}
+    margin-left: 210px;
+    {/block:if2Columns}
+    {block:ifNot2Columns}
+    margin-left: 330px;
+    {/block:ifNot2Columns}
+    width: 600px;
+    {/block:PermalinkPage}
+    
+        }
+        
+.pic img{
+    {block:ifRoundBorder}
+    border-radius: 5px;
+    {/block:ifRoundBorder}
+    width: 100%;
+    display: block;
+    {block:PermalinkPage}
+    border-bottom: {select:post border size}px {select:post border} {color:post border};
+    {/block:PermalinkPage}
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.pic img:hover {
+    filter: contrast(1.2) brightness(1.1);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+[photoset-layout] img {
+    {block:PermalinkPage}
+    border-bottom: {select:post border size}px {select:post border} {color:post border};
+    {/block:PermalinkPage}
+    {block:ifRoundBorder}
+    border-radius: 5px;
+    {/block:ifRoundBorder}
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;}
+ 
+ 
+[photoset-layout] img:hover {
+    filter: contrast(1.2) brightness(1.1);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;}
+    
+.footer {
+    line-height: 120%;
+}
+
+.cap {
+    border-bottom: {select:post border size}px {select:post border} {color:post border};
+    {block:ifRainbowBorder1}
+    border-bottom: {select:post border size}px solid transparent;
+  border-image: linear-gradient(to bottom right, red, orange, yellow, green, cyan, blue, violet 100%);
+  border-image-slice: 1;
+  {/block:ifRainbowBorder1}
+   {block:ifRainbowBorder2}
+    border-bottom: {select:post border size}px solid transparent;
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+  border-image-slice: 1;
+  {/block:ifRainbowBorder2}
+    overflow: auto;
+    overflow-x: hidden;
+    top: 0;
+    width: 380px;
+    {block:if2Columns}
+    width: 480px;
+    {/block:if2Columns}
+    {block:if4Columns}
+    width: 270px;
+    {/block:if4Columns}
+    padding: 10px;
+    position: absolute;
+    background: {color:posts};
+    max-height: 100%;
+  line-height:120%;
+  opacity:0;
+   -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  -o-transition: all 0.7s ease;
+    
+} 
+
+.posts:hover .cap {
+    top: 0;
+   opacity:1;
+   max-height: 100%;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  -o-transition: all 0.7s ease;}
+ 
+ [photoset-layout] {
+ grid-gap: 0;
+ }
+
+
+.pagination{
+            display:none;
+        }
+        
+#infscr-loading {
+    display: none !important;
+}
+
+
+.bubble {
+  {block:ifShadow}
+    filter: drop-shadow(0px 3px 2px {color:links});
+    {/block:ifShadow}
+  background: {color:links};
+  color: {color:posts};
+  {block:ifOutlineTxt}
+  color: {color:posts};
+    text-shadow: -1px 0 {color:links}, 0 1px {color:links}, 1px 0 {color:links}, 0 -1px {color:links};
+    {block:ifOutlineTxt}
+    {block:ifGlowTxt}
+    color: {color:posts};
+    text-shadow: 0 0 2px {color:posts}, 0 0 5px {color:posts};
+    {/block:ifGlowTxt}
+  position: relative;
+  padding: 10px;
+}
+
+.bubble img {
+    width: 100%;
+}
+
+.triangle {
+  width: 0;
+  {block:ifShadow}
+    filter: drop-shadow(0px 3px 2px {color:links});
+    {/block:ifShadow}
+  margin-left: 15px;
+  border-top: 10px solid {color:links};
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.asky {
+    width: 100%;
+}
+
+#askimg {
+    margin-left: 7px;
+}
+ 
+#askimg img {
+    display: block;
+    margin-top: 5px;
+    {block:ifRoundBorder}
+    border-radius: 50%;
+    {/block:ifRoundBorder}
+    {block:ifShadow}
+    filter: drop-shadow(0px 3px 3px {color:font});
+    {/block:ifShadow}
+}
+ 
+#asker {
+    
+    height: 40px;
+    margin-top: -30px;
+    padding-left: 60px;
+    line-height: {text:font size}px;
+    position: absolute;
+}
+ 
+ 
+#a {
+    margin-top: 5px;
+    padding: 10px;
+}
+
+#permacontainer {
+    width: 590px;
+    padding: 10px;
+}
+
+#permanotes {
+    margin-top: 10px;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 300px;
+}
+ 
+#permanotes ol.notes {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;}
+ 
+#permanotes img.avatar {
+    margin-right: 10px;
+    display: inline;
+    width: 16px;
+    height: 16px;}
+    
+.quote {
+    padding: 10px;
+    font-size: 130%;
+    line-height: 120%;
+}
+
+.linky {
+    padding: 10px;
+}
+
+.linky a {
+    {block:ifRoundBorder}border-radius: 5px;{/block:ifRoundBorder}
+    background: {color:font};
+    color: {color:posts};
+    font-size: 120%;
+    line-height: 200%;
+    padding: 5px;
+    {block:ifOutlineTxt}
+  color: {color:font};
+    text-shadow: -1px 0 {color:posts}, 0 1px {color:posts}, 1px 0 {color:posts}, 0 -1px {color:posts};
+    {block:ifOutlineTxt}
+    {block:ifGlowTxt}
+    color: {color:posts};
+    text-shadow: 0 0 2px {color:posts}, 0 0 5px {color:posts};
+    {/block:ifGlowTxt}
+}
+    
+.txt {
+    padding: 10px;
+}
+
+blockquote {
+    margin: 0 0 0 10px;
+    border-left: 1px solid {color:links};
+    padding-left: 5px;
+}
+
+ul {
+  list-style: none;
+  margin: 5px 0 5px 0;
+}
+
+ul li::before {
+  content: "\25AA";
+  color: {color:links};
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+}
+
+#c {
+    position: fixed;
+    bottom: 0; left: 0;
+    padding-left: 5px;
+}
+
+.art {
+     height: 150px;
+     {block:if4Columns}
+     height: 100px;
+     {/block:if4Columns}
+}
+ 
+.art img {
+    {block:ifRoundBorder}
+    border-radius: 5px;
+    {/block:ifRoundBorder}
+    width: 150px;
+    height: 150px;
+    {block:if4Columns}
+    width: 100px;
+    height: 100px;
+    {/block:if4Columns}
+}
+ 
+.radio {
+    left: 55px;
+    top: 55px;
+    {block:if4Columns}
+    top: 30px;
+    left: 30px;
+    {/block:if4Columns}
+    {block:ifRoundBorder}
+    border-radius: 5px;
+    {/block:ifRoundBorder}
+    width: 19px;
+    height: 19px;
+    background-color: #fff;
+    padding: 10px;
+    opacity: 1;
+    position: absolute;
+}
+ 
+.playa {
+    margin-left: 0px;
+    width: 25px;
+    height: 25px;
+    overflow: hidden;
+    margin-top: -4px;
+    margin-left: -7px;
+    filter: contrast(2);
+    overflow: hidden;
+}
+ 
+.track {
+    position: absolute;
+    padding: 10px 0 5px 0px;
+    width: 195px;
+    margin-left: 160px;
+    {block:if4Columns}
+    margin-left: 110px;
+    {/block:if4Columns}
+    line-height: 120%;
+}
+
+.spotify_audio_player {
+    height:80px!important;
+    width:100%!important;
+    display: block;
+    z-index: 1;
+}
+ 
+.soundcloud_audio_player {
+    height:150px!important;
+    width:100%!important;
+    display: block;
+    z-index: 1;
+}
+
+.video {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden; 
+  }
+ 
+.video iframe, .video object, .video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  }
+  
+.odd, .even {padding:5px;}
+
+.odd {
+    background-color:{color:font};
+    color: {color:posts};
+}
+
+
+.tmblr-iframe--loaded{
+    position: fixed !important;
+    top: 0px !important;
+    width: 420px !important;
+    left: calc(100% - 420px) !important;
+    -moz-transform: scale(0.6) !important;
+    -webkit-transform: scale(0.6) !important;
+    transform: scale(0.6) !important;
+    -moz-transform-origin: top right !important;
+    -webkit-transform-origin: top right !important;
+    transform-origin: top right !important;
+    opacity: 0.6;
+}
+    .tmblr-iframe--loaded:hover{
+        opacity: 1 !important;
+    }
+.tmblr-iframe-pushdown,
+.tmblr-iframe-themed{
+    padding-top: 0px !important;
+    padding: 0px !important;
+    animation: none !important;
+    -webkit-animation: none !important;
+}
+
+
+</style>
+
+
+<script type="text/javascript">
+function open(askbox) {
+    var askcontainer = document.getElementById(askbox);
+    if (askcontainer) {askcontainer.className=(askcontainer.className=='closed')?'open':'closed';}
+}
+</script>
+
+
+<script>
+function gatherData(images, arr) {
+  for (let i = 0; i < images.length; i++) {
+    let currentData = {
+      "width": images[i].getAttribute('data-width'),
+      "height": images[i].getAttribute('data-height'),
+      "low_res": images[i].getAttribute('data-lowres'),
+      "high_res": images[i].getAttribute('data-highres')
+    };
+    arr.push(currentData);
+  }
+}
+function getIndex(elem) {
+  let i = 0;
+  while( (elem = elem.previousElementSibling) != null ) i++;
+  return i;
+}
+function lightbox(elem) {
+  let currentPhotoset = elem.parentNode;
+  let photosetPhotos = currentPhotoset.getElementsByTagName('div');
+  let data = [];
+  gatherData(photosetPhotos, data);
+  Tumblr.Lightbox.init(data, getIndex(elem) + 1);
+}
+</script>
+
+
+
+
+
+</head>
+
+
+
+
+<body>
+<div class="waga">
+{block:ifNotHideTitle}
+<div class="title"><a href="/">{text:title}</a></div>
+{/block:ifNotHideTitle}
+<div class="sb">
+<center><a href="/"><img src="{image:icon}"></a></center>
+{block:ifNotCircleHeader}{block:ifNotHideDesc}<div class="desc">{text:description}</div>{/block:ifNotHideDesc}
+{block:ifNotHideLinks}<div class="linkz">
+<a href="{text:link 1 URL}">{text:link 1}</a> 
+<a href="{text:link 2 URL}">{text:link 2}</a> 
+<a href="{text:link 3 URL}">{text:link 3}</a>
+{block:ifExtraLinks}
+<a href="{text:link 4 URL}">{text:link 4}</a>
+<a href="{text:link 5 URL}">{text:link 5}</a>
+<a href="{text:link 6 URL}">{text:link 6}</a>
+{/block:ifExtraLinks}
+</div>{/block:ifNotHideLinks}
+</div></div>{block:ifNotCircleHeader}
+</div>
+{block:ifCircleHeader}
+<div class="circle">
+{block:ifNotHideDesc}<div class="desc">{text:description}</div>{/block:ifNotHideDesc}
+{block:ifNotHideLinks}<div class="linkz">
+<a href="{text:link 1 URL}">{text:link 1}</a> 
+<a href="{text:link 2 URL}">{text:link 2}</a> 
+<a href="{text:link 3 URL}">{text:link 3}</a>
+{block:ifExtraLinks}
+<a href="{text:link 4 URL}">{text:link 4}</a>
+<a href="{text:link 5 URL}">{text:link 5}</a>
+<a href="{text:link 6 URL}">{text:link 6}</a>
+{/block:ifExtraLinks}
+</div>{/block:ifNotHideLinks} 
+</div>
+{/block:ifCircleHeader}
+
+</div>
+
+<main id="content">
+
+
+{block:Posts}
+<div class="posts">
+
+{block:Text}
+{block:Title}<p style="padding: 10px 5px 0 10px; line-height: 120%; font-size: 150%;"><a href="{Permalink}">{Title}</a></p>{/block:Title}
+<div class="txt">{Body}</div>
+{/block:Text}
+ 
+{block:Quote}
+<div class="quote">"{Quote}"</div>
+{block:Source}<p style="padding: 0px 10px 10px 10px;">&mdash; {Source}</p>{/block:Source}
+{/block:Quote}
+ 
+{block:Link}
+<div class="linky"><a href="{URL}">{Name} &raquo;</a></div>
+{block:Description}{Description}{/block:Description}
+</div>
+{/block:Link}
+ 
+{block:Chat}
+{block:Title}{Title}{/block:Title}
+{block:Lines}
+<div class="{Alt} user_{UserNumber}">
+{block:Label}{Label}{/block:Label} {Line}
+</div>
+{/block:Lines}
+{/block:Chat}
+ 
+ 
+{block:Answer}
+<div class="asky">
+<div class="bubble">{Question}
+</div>
+<div class="triangle"></div>
+ 
+<div id="askimg"><img src="{AskerPortraitURL-40}"></div>
+<div id="asker">{Asker}</div>
+<div id="a">{Answer}</div>
+</div>
+{/block:Answer}
+
+
+{block:Photo}
+<div class="pic">
+{block:IndexPage}
+{block:ifNot2Columns}<img src="{PhotoURL-400}">{/block:ifNot2Columns}
+{block:if2Columns}<img src="{PhotoURL-500}">{/block:if2Columns}{/block:IndexPage}
+{block:PermalinkPage}<a href="{LinkURL}"><img src="{PhotoURL-HighRes}"></a>{/block:PermalinkPage}
+</div>
+{/block:Photo}
+    
+    
+{block:Photoset}
+<div class="photoset-grid" photoset-layout="{PhotosetLayout}" style="width: 400px; {block:if2Columns}width: 500px;{/block:if2Columns}{block:if4Columns}width: 290px;{/block:if4Columns} {block:PermalinkPage}width: 600px;{/block:PermalinkPage}">{block:Photos}<div data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" data-lowres="{PhotoURL-HighRes}" data-highres="{PhotoURL-HighRes}" onclick="lightbox(this)"><img src="{PhotoURL-HighRes}" /></div>{/block:Photos}</div>
+{/block:Photoset}
+
+{block:Video}
+<div class="video">{Video-400}</div>
+{/block:Video}
+ 
+{block:Audio}
+{block:AudioPlayer}<div class="radio"><div class="playa">{AudioPlayer}</div></div>
+<div class="track">
+{block:TrackName}{TrackName}<Br>{/block:TrackName}
+{block:Artist}by {Artist}<br>{/block:Artist}
+{block:Album}{Album}{/block:Album}
+</div>
+{block:AlbumArt}<div class="art"><img src="{AlbumArtURL}"></div>{/block:AlbumArt}{/block:AudioPlayer}
+{block:AudioEmbed}{AudioEmbed-400}{/block:AudioEmbed}
+{/block:Audio}
+
+{block:IndexPage}
+<div class="cap">
+{block:ifNotHideCaption}
+{block:Caption}{Caption}
+<div style="margin-bottom: 10px"></div>
+{/block:Caption}
+{/block:ifNotHideCaption}
+
+
+<div class="footer">
+<a href="{Permalink}">{TimeAgo}</a> with <a href="{ReblogURL}" data-toggle="tooltip" title="Reblog?">{NoteCountWithLabel}</a>{block:RebloggedFrom} <a href="{ReblogParentURL}" data-toggle="tooltip" title="{ReblogParentName}">via</a>{/block:RebloggedFrom}{block:ContentSource} / <a href="{SourceURL}" data-toggle="tooltip" title="{SourceTitle}">source</a>{/block:ContentSource}
+
+{block:ifNotHideTags}
+{block:HasTags}<br>Tagged: 
+{block:Tags}
+<a href="{TagURL}">#{Tag}</a>
+{/block:Tags}{/block:HasTags}
+{/block:ifNotHideTags}
+</div></div>
+{/block:IndexPage}
+
+
+{block:PermalinkPage}
+<div id="permacontainer">
+{block:Caption}{Caption}{/block:Caption}
+<p>
+{block:NoteCount}<a href="{Permalink}">{NoteCount} notes</a><br>{/block:NoteCount}
+{block:HasTags}{block:Tags}<a href="{TagURL}">#{Tag}</a> {/block:Tags}<br>{/block:HasTags}
+{block:RebloggedFrom}
+Via <a href="{ReblogParentURL}">{ReblogParentName}</a> {/block:RebloggedFrom}{block:ContentSource}
+Source <a href="{SourceURL}">{SourceTitle}</a>
+{/block:ContentSource}</p>
+ 
+{block:NoteCount}<div id="permanotes">
+{block:PostNotes}{PostNotes}{/block:PostNotes}
+</div>{/block:NoteCount}</div>
+{/block:PermalinkPage}
+
+
+
+</div>
+{/block:Posts}
+
+
+{block:Pagination}
+    <nav class="pagination">
+        {block:NextPage}<a href="{NextPage}">Next Page</a>{/block:NextPage}
+    </nav>
+{/block:Pagination}
+</main>
+
+<div id="c"><a href="https://mtfuji.tumblr.com/" data-toggle="tooltip" title="mtfuji" style="font-size: 22px; text-decoration: none; font-style: normal; font-weight: normal; border: 0">&#8251;</a></div>
+
+<script>
+//These functions control Masonry, Infinite Scroll and Photoset Grid
+var msnry;
+var imgLoad;
+var $tumblelog = $('main');
+var content = document.getElementById("content");
+msnry = new Masonry("main",{itemSelector:".posts"});   //Initialise Masonry
+imgLoad = imagesLoaded("main");
+imgLoad.on('always', function(){
+    content.style.opacity = "1";    //appears the content block once initial images are loaded
+});
+imgLoad.on('progress', function(instance, image){
+    $(image.img).closest('.photoset').photosetGrid({gutter:'10px', onComplete:function(){msnry.layout();}});    //Grids up photosets nicely
+    msnry.layout();
+});
+
+$(window).load(function(){      //Waits a sec before running infinite scroll
+    $tumblelog.infinitescroll({ //Initialises the infinite scroll
+    navSelector: ".pagination",
+    nextSelector: ".pagination a:last-child",
+    itemSelector: ".posts",
+    bufferPx: 1500, //Since photosets can get quite long, and this is a 3 column theme, the buffer is extra long to stop people from having to scroll up too much
+    prefill:true,
+    },
+    function(newElements){
+        var $newElems = $(newElements).css({opacity:0});
+        $newElems.imagesLoaded(function(){
+            msnry.appended($newElems);
+            $('.photoset').photosetGrid({gutter:'0px', onComplete:function(){msnry.layout();}});
+            msnry.layout();
+            $newElems.animate({opacity:1});
+        });
+    });
+});
+
+
+</script>
+
+</body>
+</html>
