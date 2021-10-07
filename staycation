@@ -816,6 +816,16 @@ border-radius: 50%;
 blockquote {
     margin: 0 0 0 10px;
     border-left: 1px solid {color:links};
+    {block:ifRainbowBorder1}
+    border-left: {select:post border size}px solid transparent;
+  border-image: linear-gradient(to bottom right, red, orange, yellow, green, cyan, blue, violet 100%);
+  border-image-slice: 1;
+  {/block:ifRainbowBorder1}
+   {block:ifRainbowBorder2}
+      border-left: {select:post border size}px solid transparent;
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+  border-image-slice: 1;
+    {/block:ifRainbowBorder2}
     padding-left: 5px;
 }
 
