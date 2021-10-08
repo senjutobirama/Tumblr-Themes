@@ -636,6 +636,9 @@ border-radius: 50%;
 }
 
 .cap {
+   {block:ifRoundBorder}
+    border-radius: 5px 5px 0 0;
+    {/block:ifRoundBorder}
     border-bottom: {select:post border size}px {select:post border} {color:post border};
     {block:ifRainbowBorder1}
     border-bottom: {select:post border size}px solid transparent;
