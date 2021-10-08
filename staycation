@@ -2,6 +2,7 @@
 <!--
 staycation theme by @ps1/@mtfuji
 
+-theme looks wonky in customization screen. its bc masonry is trying to fit in the window! looks fine live.
 -round border doesn't work with rainbow borders
 -header image can be any size customize in text options
 
