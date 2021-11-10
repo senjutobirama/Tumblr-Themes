@@ -265,6 +265,7 @@ a, a:hover {cursor: help;}
 p { margin: 0;}    
 h1 {line-height: 120%;}
 h2 {line-height: 120%;}
+img {max-width: 100%;}
 
 body {
     margin: 0;
