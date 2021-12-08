@@ -31,10 +31,6 @@ https://github.com/davatron5000/FitVids.js
 
 -->
 <head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
-
 
 <!--annasthms photosets -->
 <link href="https://static.tumblr.com/0podkko/oDSpg7y88/photosets.css" rel="stylesheet">
@@ -581,7 +577,7 @@ select {
     overflow-y: hidden;
     margin-bottom: 10px;
     border: {select:border size}px {select:Border} {color:border};
-    border-left: calc({select:border size}px + 1px) {select:Border} {color:left border};
+    border-left: calc({select:border size}px + 2px) {select:Border} {color:left border};
 }
 
 
@@ -881,7 +877,6 @@ animation: shake 75ms infinite;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
 }
-
 
 </style>
 
@@ -1201,9 +1196,6 @@ function lightbox(elem) {
 </div> <!-- content -->
 
 <div class="c"><a href="https://uchihaitachi.tumblr.com/" title="uchihaitachi">#</a></div>
-
-
-
 
 <!-- short note count @shythemes-->
 <script>
