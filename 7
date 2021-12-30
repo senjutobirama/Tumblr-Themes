@@ -1,0 +1,747 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8">
+<HTML>
+
+<!-- 
+
+7 by @ps1
+a windows 7 theme with the help of:
+https://khang-nd.github.io/7.css/
+i do not own this and i do not claim ownership. cool codes but took forever to format for tumblr :o
+
+____________________________________________
+
+specs
+- img can be any size, max width is 300px!
+- all divs are draggable wow!
+- buttons are default color thru coding
+- upload any google font after head
+
+____________________________________________
+
+windows 7
+https://khang-nd.github.io/7.css/
+
+annasthms photosets
+https://annasthms.github.io/photosets/
+
+NPF image fix @glenthemes
+git.io/JRBt7
+
+unnest captions @neothm
+https://codepen.io/neothm/pen/PzVjRy
+
+
+-->
+
+<HEAD>
+
+<link rel="stylesheet" href="https://unpkg.com/7.css" />
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+
+<!--
+        NPF images fix v3.0 by @glenthemes [2021]
+        💌 git.io/JRBt7
+--->
+<script src="//npf-images-v3.github.io/script.js"></script>
+<link rel="stylesheet" href="//npf-images-v3.github.io/recon.css">
+<style tmblr-npf>
+:root {
+    --NPF-Caption-Spacing:1em;
+    --NPF-Image-Spacing:4px;
+}
+</style>
+
+<link href="https://static.tumblr.com/0podkko/oDSpg7y88/photosets.css" rel="stylesheet">
+<script>
+function gatherData(images, arr) {
+  for (let i = 0; i < images.length; i++) {
+    let currentData = {
+      "width": images[i].getAttribute('data-width'),
+      "height": images[i].getAttribute('data-height'),
+      "low_res": images[i].getAttribute('data-lowres'),
+      "high_res": images[i].getAttribute('data-highres')
+    };
+    arr.push(currentData);
+  }
+}
+function getIndex(elem) {
+  let i = 0;
+  while( (elem = elem.previousElementSibling) != null ) i++;
+  return i;
+}
+function lightbox(elem) {
+  let currentPhotoset = elem.parentNode;
+  let photosetPhotos = currentPhotoset.getElementsByTagName('div');
+  let data = [];
+  gatherData(photosetPhotos, data);
+  Tumblr.Lightbox.init(data, getIndex(elem) + 1);
+}
+</script>
+
+
+<link rel="icon" href="{image:favicon}" type="image/gif" >
+
+<TITLE>{Title}</TITLE>
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+
+<meta name="image:favicon" content="" />
+<meta name="image:sb" content="https://i.imgur.com/G88u9hD.png" />
+<meta name="image:bg" content="" />
+
+<meta name="color:bg" content="#FFFFFF" />
+<meta name="color:window" content="#3B6AA0" />
+<meta name="color:window body" content="#F0F0F0" />
+<meta name="color:txt" content="#000" />
+<meta name="color:txt glow" content="#3B6AA0" />
+<meta name="color:link" content="#000" />
+<meta name="color:link glow" content="#3B6AA0" />
+<meta name="color:link hover" content="#3399FF" />
+<meta name="color:link hover glow" content="#3399FF" />
+<meta name="color:border" content="#000" />
+
+<meta name="select:photoset gap" content="0" />
+<meta name="select:photoset gap" content="1" />
+<meta name="select:photoset gap" content="2" />
+<meta name="select:photoset gap" content="3" />
+<meta name="select:photoset gap" content="4" />
+<meta name="select:photoset gap" content="5" />
+<meta name="select:photoset gap" content="10" />
+
+<meta name="select:desc align" content="left" />
+<meta name="select:desc align" content="center" />
+<meta name="select:desc align" content="right" />
+<meta name="select:desc align" content="justify" />
+
+<meta name="select:font size" content="11" />
+<meta name="select:font size" content="12" />
+<meta name="select:font size" content="13" />
+<meta name="select:font size" content="14" />
+<meta name="select:font size" content="15" />
+<meta name="select:font size" content="16" />
+<meta name="select:font size" content="17" />
+<meta name="select:font size" content="18" />
+
+<meta name="text:font family" content="arial" />
+
+
+<meta name="text:desc title" content="LOG" />
+<meta name="text:link title" content="LINKS" />
+<meta name="text:icon title" content="USER" />
+<meta name="text:post title" content="POSTS" />
+
+<meta name="text:icon tooltip" content="wahoo" />
+<meta name="text:description" content="this is a description" />
+<meta name="text:link 1 title" content="1" />
+<meta name="text:link 1" content="01">
+<meta name="text:link 1 URL" content="/">
+<meta name="text:link 2" content="02">
+<meta name="text:link 2 URL" content="/">
+<meta name="text:link 3" content="03">
+<meta name="text:link 3 URL" content="/">
+<meta name="text:link 4" content="04">
+<meta name="text:link 4 URL" content="/">
+
+<meta name="if:glow txt" content="0" />
+<meta name="if:icon tooltip" content="0" />
+<meta name="if:glass window" content="0" />
+<meta name="if:tile bg" content="0" />
+<meta name="if:bold link" content="0" />
+<meta name="if:italic link" content="0" />
+<meta name="if:underline link" content="0" />
+<meta name="if:hide links" content="0" />
+<meta name="if:hide desc" content="0" />
+
+<style type="text/css">
+
+ #s-m-t-tooltip {
+    border: 1px solid #888888;
+  padding: 3px 15px 3px 15px;
+  background: #f2f2f2;
+  background: -moz-linear-gradient(top, #f2f2f2 0%, #ebebeb 42%, #dddddd 47%, #cfcfcf 100%);
+  background: -webkit-linear-gradient(top, #f2f2f2 0%, #ebebeb 42%, #dddddd 47%, #cfcfcf 100%);
+  background: linear-gradient(to bottom, #f2f2f2 0%, #ebebeb 42%, #dddddd 47%, #cfcfcf 100%);
+  border-radius: 3px;
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:window body};
+    {/block:ifGlowTxt}
+    z-index: 999999999;
+    Text-transform: none;
+    text-align: center;
+     transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    color: #000;
+    max-width: 300px;
+    word-wrap: break-word;
+    padding: 5px 7px;
+    display: block;
+    margin:-30px 0px -10px 10px;
+    z-index: 999999999999;}
+
+pre {
+    white-space: pre-line;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+body {
+    margin: 0;
+    font-size: {select:font size}px;
+    color: {color:txt};
+    {block:ifGlowTxt}
+    text-shadow: 0 0 3px {color:txt glow};
+    {/block:ifGlowTxt}
+    line-height: 100%;
+    background: {color:bg} url("{image:bg}") fixed;
+    {block:IfCoverBg}
+    background-image: url("{image:bg}") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    {/block:IfCoverBg}
+     -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.window-body, .title-bar-text, button {
+    font-size: {select:font size}px;
+    font-family: {text:font family};
+}
+
+.window-body {
+    background-color: {color:window body};
+}
+
+.title-bar {
+    cursor: move;
+}
+
+button {
+   vertical-align: middle;
+}
+
+select {
+    padding: 3px 5px;
+    vertical-align: middle;
+    min-width: 80px;
+    max-width: 150px;
+    line-height: 100%;
+    font-size: {select:font size}px;
+    font-family: {text:font family};
+}
+
+p {margin: 0;}
+img {max-width: 100%;}
+ul {list-style-type: square;}
+h1,h2,h3 {margin: 0; line-height: 100%;}
+blockquote {
+    margin: 0 0 0 10px;
+    border-left: 1px solid {color:text};
+    padding-left: 10px;
+}
+
+a:link, a:active, a:visited {
+    color: {color:link};
+    {block:ifGlowTxt}
+    text-shadow: 0 0 3px {color:link glow};
+    {/block:ifGlowTxt}
+    {block:IfNotBoldLink}
+    font-weight: none;
+    {/block:IfNotBoldLink}
+    {block:IfBoldLink}
+    font-weight: bold;{/block:IfBoldLink}
+    {block:IfItalicLink}
+    font-style: italic;{/block:IfItalicLink}
+    {block:IfNotUnderlineLink}
+    text-decoration: none;{/block:IfNotUnderlineLink}
+    {block:IfUnderlineLink}
+    text-decoration: underline;{/block:IfUnderlineLink}
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+a:hover {
+    cursor: help;
+    {block:IfBoldLink}
+    font-weight: bold;{/block:IfBoldLink}
+    color: {color:link hover};
+    {block:ifGlowTxt}
+    text-shadow: 0 0 3px {color:link hover glow};
+    {/block:ifGlowTxt}
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+
+.content {
+    width: 800px;
+    height: 400px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.sb {
+    
+     max-width: 300px;
+     position: fixed;
+     margin-left: 0px;
+     margin-top: 0px;
+}
+
+.linky {
+     
+     min-width: 100px;
+     max-width: 300px;
+   
+ }
+
+.link {
+    
+    min-width: 100px;
+    margin-top: -75px;
+    margin-left: -60px;
+    position: fixed;
+    z-index: 9999;
+}
+
+.link a {
+    margin: 0 5px 0 5px;
+}
+
+.de {
+    
+    position: fixed;
+   margin-top: 10px; 
+   margin-left: 230px;
+
+}
+
+.desc { 
+     max-width: 200px;
+     z-index: 9999;
+ }
+
+ #draggable {
+
+     min-width: 150px;
+     max-width: 300px;
+     z-index: 1;
+ }
+ 
+ .violet::before,
+  .violet > .title-bar {
+    background-color: {color:window};
+  }
+
+.icon img {
+    max-width: 100%;
+    display: block;
+}
+
+#draggy {
+    
+   width: 470px;
+   margin-left: 330px;
+   margin-top: -50px;
+   z-index: -1;
+}
+
+.contain {
+   
+    padding: 10px;
+    max-height: 340px; 
+    overflow: auto;
+    overflow-x: hidden;
+    
+    
+}
+
+.posts {
+    width: 400px;
+    margin-bottom: 20px;
+    text-align: left; 
+}
+
+[photoset-layout] {
+ grid-gap: {select:photoset gap}px;
+}
+
+.cap {
+    margin-top: 10px;
+}
+
+.tumblr_parent {
+  margin:10px 10px 20px;
+  padding: 0px 10px;
+  border-left: 1px solid {color:txt};
+}
+
+.footer {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.footer a, .pagination a {
+    text-decoration: none;
+    {block:ifGlowTxt}
+    text-shadow: 0 0 3px transparent;
+    {/block:ifGlowTxt}
+}
+
+.permapage {
+    margin-top: 10px;
+}
+
+ol.notes {
+    padding: 0px;
+    margin: 25px 0px;
+    list-style-type: none;
+    border: 0;
+}
+
+ol.notes li.note {
+    
+    padding: 5px;
+}
+
+ol.notes li.note img.avatar {
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    image-rendering: pixelated;
+}
+
+.c {
+    bottom: 0; left: 0; padding: 10px; font-size: 16px; position: fixed;
+}
+.c a {text-decoration: none;
+    {block:ifGlowTxt}
+    text-shadow: 0 0 3px transparent;
+    {/block:ifGlowTxt}}
+
+.pagination {
+    text-align: right;
+    font-size: 36px;
+}
+
+.asker {
+    display: inline;
+    vertical-align: middle;
+}
+
+.asker img {
+    display: inline-block;
+}
+
+.ans {
+    margin-top: 10px;
+}
+
+
+.tmblr-iframe-compact .tmblr-iframe--unified-controls {
+-webkit-filter: opacity(0);
+        filter: opacity(0);
+        transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+ 
+.tmblr-iframe-compact .tmblr-iframe--unified-controls:hover {
+-webkit-filter: opacity(1);
+        filter: opacity(1);
+        transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+
+</style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.tumblr.com/7qjmkr5/IUmmdsy41/jquery.style-my-tooltips.js"></script>
+<script>
+   (function($){
+       $(document).ready(function(){
+           $("[title]").style_my_tooltips();
+       });
+   })(jQuery);
+</script>
+
+
+
+ <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+  
+  
+  <script>
+  $( function() {
+    $( "#draggable" ).draggable();
+    $( "#draggy" ).draggable();
+    $( ".linky" ).draggable();
+    $( ".desc" ).draggable();
+  } );
+  </script>
+  
+
+
+  
+
+<script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
+<script> $(function(){  $('.posts').unnest({
+    yourCaption: ".cap", 
+    wrapName: ".tumblr_parent",
+    newCaptionUsername: false, 
+    originalPostCaptionUsername: false, 
+    tumblrAvatars: false, 
+    tumblrAvatarClass: ".tumblr_avatar", 
+    usernameColon: false 
+  }); }); </script>
+
+
+
+
+</HEAD>
+
+<body onload="document.body.style.opacity='1'">
+
+<div class="c">
+<button><a href="https://ps1.tumblr.com/" style="color: #000; font-style: normal;" data-toggle="tooltip" title="ps1">theme</a></button>
+</div>
+
+<div class="content">
+{block:ifNotHideLinks}
+<div class="linky">
+<div class="link">
+<div class="window violet {block:ifGlassWindow}glass{/block:ifGlassWindow}">
+  <div class="title-bar">
+    <div class="title-bar-text">{text:link title}</div>
+    <div class="title-bar-controls">
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+<center>
+<a href="{text:link 1 URL}">{text:link 1}</a> 
+<a href="{text:link 2 URL}">{text:link 2}</a> 
+<a href="{text:link 3 URL}">{text:link 3}</a>
+<a href="{text:link 4 URL}">{text:link 4}</a>
+</center>
+   
+  </div>
+</div>
+</div> <!-- link --></div> <!-- linky -->
+{/block:ifNotHideLinks}
+
+
+<div class="sb">
+<div id="draggable" class="ui-widget-content">
+
+<div class="window violet {block:ifGlassWindow}glass{/block:ifGlassWindow}">
+  <div class="title-bar">
+    <div class="title-bar-text">{text:icon title}</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+   <center><div class="icon"><a href="/" {block:ifIconTooltip}title="{text:icon tooltip}"{/block:ifIconTooltip}><img src="{image:sb}"></a></div></center>
+  </div>
+</div>
+
+</div>
+
+
+
+{block:ifNotHideDesc}
+<div class="desc">
+<div class="de">
+<div class="window violet {block:ifGlassWindow}glass{/block:ifGlassWindow}">
+  <div class="title-bar">
+    <div class="title-bar-text">{text:desc title}</div>
+    <div class="title-bar-controls">
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body" style="max-width: 200px; max-height: 70px; overflow: auto; overflow-x: hidden">
+<p style="text-align: {select:desc align}">
+{text:description}
+</p>
+   
+  </div>
+</div>
+</div> <!-- de --></div> <!-- desc -->
+{/block:ifNotHideDesc}
+
+</div> <!-- sb -->
+
+
+
+<div id="draggy">
+
+
+
+<div class="window violet {block:ifGlassWindow}glass{/block:ifGlassWindow}">
+
+<div class="title-bar">
+  <div class="title-bar-text">{text:post title}</div>
+  <div class="title-bar-controls">
+    <button aria-label="Minimize"></button>
+    <button aria-label="Maximize"></button>
+    <button aria-label="Close"></button>
+  </div>
+</div>
+
+
+
+
+  <div class="window-body">
+  <div class="contain">
+{block:posts inlineMediaWidth="1280" inlineNestedMediaWidth="1280"}
+<div class="posts">
+
+{block:Text}
+{block:Title}{Title}{/block:Title}
+{Body}
+{/block:Text}
+
+{block:Photo}
+{block:IndexPage}
+<a href="{Permalink}"><img src="{PhotoURL-400}" style="display: block"></a>
+{/block:IndexPage}
+{block:PermalinkPage}
+{LinkOpenTag}<img src="{PhotoURL-400}" style="display: block">{LinkCloseTag}	{/block:PermalinkPage}
+{/block:Photo}
+
+{block:Photoset}
+<div class="photoset-grid" photoset-layout="{PhotosetLayout}">{block:Photos}<div data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" data-lowres="{PhotoURL-500}" data-highres="{PhotoURL-HighRes}" onclick="lightbox(this)"><img src="{PhotoURL-HighRes}" /></div>{/block:Photos}</div>
+{/block:Photoset}
+
+{block:Audio}
+{block:AudioEmbed}
+<div style="height: 85px">{AudioEmbed-400}</div>
+{/block:AudioEmbed}
+{/block:Audio}
+
+{block:Video}
+{VideoEmbed-400}
+{/block:Video}
+
+{block:Answer}
+<div class="asker"><img src="{AskerPortraitURL-30}"></div> {Asker}
+<div role="tooltip" style="text-align: center; margin-top: 10px">{Question}</div>
+<div class="ans"><fieldset>{Answer}</fieldset></div>
+{/block:Answer}
+
+{block:Quote}
+<p>&#8220;{Quote}&#8221;</p>
+{block:Source}<p>&mdash; {Source}</p>{/block:Source}
+{/block:Quote}
+
+{block:Link}
+<a href="{URL}" target="blank">{Name}</a>
+{block:Description}{Description}{/block:Description}	
+{/block:Link}
+
+{block:Chat}
+{block:Title}{Title}{/block:Title}
+{block:Lines}
+<div class="{Alt} user_{UserNumber}">
+{block:Label}{Label}{/block:Label} {Line}
+</div>
+{/block:Lines}
+{/block:Chat}
+
+
+{block:Caption}<div class="cap">{Caption}</div>{/block:Caption}
+
+{block:IndexPage}
+<div class="footer">
+
+<button><a href="{Permalink}" title="view post" style="color: #000; font-style: normal;">{TimeAgo}</a></button>
+<button style="float:right;"><a href="{ReblogURL}" style="color: #000; font-style: normal;">reblog</a></button>
+
+{block:HasTags}
+<select onChange="window.location.href=this.value">
+<option value="/">filed</option>
+    {block:Tags}<option value="{TagURL}">{Tag}</option>{/block:Tags}
+</select>
+{/block:HasTags}
+
+</div>
+{/block:IndexPage}
+
+{block:IndexPage}
+<hr style="margin-top: 20px">
+{/block:IndexPage}
+
+
+{block:PermalinkPage}
+
+<div class="permapage">
+
+
+{block:PostNotes}
+<div role="tooltip" style="text-align: center;">
+{block:Date}{MonthNumber}/{DayOfMonth}/{Year}{/block:Date}
+&mdash; {block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}  <a href="{ReblogURL}">reblog</a> / <a href="{ReblogParentURL}" title="{ReblogParentName}">via</a> / <a href="{ReblogRootURL}" title="{ReblogRootName}">source</a>
+</div></div>
+
+{PostNotes-64}{/block:PostNotes}
+{/block:PermalinkPage}
+
+{block:ContentSource}
+<!-- {SourceURL}{block:SourceLogo}<img src="{BlackLogoURL}"
+width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+{/block:SourceLogo}
+{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
+{/block:ContentSource}
+
+<!--{block:NoRebloggedFrom}{block:RebloggedFrom}{ReblogParentName}{/block:RebloggedFrom}{/block:NoRebloggedFrom} --> 
+
+</div> <!-- posts -->
+{/block:Posts}
+
+{block:IndexPage}
+<div class="pagination">
+
+{block:PreviousPage}<button><a href="{PreviousPage}" style="color: #000; font-style: normal;">previous</a></button>{/block:PreviousPage} {block:NextPage}<button><a href="{NextPage}" style="color: #000; font-style: normal;">next</a></button></p>{/block:NextPage}{/block:IndexPage}</div>
+
+</div> <!-- psot window -->
+</div> <!-- contain -->
+</div><!-- drag -->
+</div> <!-- content -->
+
+</BODY>
+</HTML>
+
