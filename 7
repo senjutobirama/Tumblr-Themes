@@ -36,11 +36,20 @@ https://codepen.io/neothm/pen/PzVjRy
 
 <HEAD>
 
-<link rel="stylesheet" href="https://unpkg.com/7.css" />
-
-
-
-<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//code.jquery.com/jquery-2.2.4.min.js"></script>  
+<script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
+<script> $(function(){  $('.posts').unnest({
+    yourCaption: ".cap", 
+    wrapName: ".tumblr_parent",
+    newCaptionUsername: false, 
+    originalPostCaptionUsername: false, 
+    tumblrAvatars: false, 
+    tumblrAvatarClass: ".tumblr_avatar", 
+    usernameColon: false 
+  }); }); </script>
+  
+  
+  <script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
 
 <!--
         NPF images fix v3.0 by @glenthemes [2021]
@@ -54,6 +63,8 @@ https://codepen.io/neothm/pen/PzVjRy
     --NPF-Image-Spacing:4px;
 }
 </style>
+
+<link rel="stylesheet" href="https://unpkg.com/7.css" />
 
 <link href="https://static.tumblr.com/0podkko/oDSpg7y88/photosets.css" rel="stylesheet">
 <script>
@@ -513,23 +524,6 @@ ol.notes li.note img.avatar {
   } );
   </script>
   
-
-
-  
-<script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
-<script> $(function(){  $('.posts').unnest({
-    yourCaption: ".cap", 
-    wrapName: ".tumblr_parent",
-    newCaptionUsername: false, 
-    originalPostCaptionUsername: false, 
-    tumblrAvatars: false, 
-    tumblrAvatarClass: ".tumblr_avatar", 
-    usernameColon: false 
-  }); }); </script>
-
-
-
 
 </HEAD>
 
