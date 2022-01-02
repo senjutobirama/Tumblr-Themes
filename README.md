@@ -13,3 +13,6 @@ LET ME KNOW about broken links on my theme page/original posts.
 Like and reblog my themes! The like to reblog ratio hinders coders from creating
 more awesome themes for you. A reblog is like a shoutout from everybody.
 It keeps us going!
+
+<a href="https://ps1.tumblr.com/">THEME MAKER</A> - 
+<a href="https://ps1.tumblr.com/themez">THEMES</A>
