@@ -81,6 +81,12 @@ function lightbox(elem) {
 }
 </script>
 
+{block:IfRedirect}
+<script>
+if(window.location.pathname == '/') location.replace('{text:redirect}');
+</script> 
+{block:IfRedirect}
+
 
 <link rel="icon" href="{image:favicon}" type="image/gif" >
 
@@ -145,6 +151,7 @@ function lightbox(elem) {
 <meta name="text:link 3 URL" content="/">
 <meta name="text:link 4" content="04">
 <meta name="text:link 4 URL" content="/">
+<meta name="text:redirect" content="/tagged/0">
 
 <meta name="if:glow txt" content="0" />
 <meta name="if:icon tooltip" content="0" />
@@ -155,6 +162,7 @@ function lightbox(elem) {
 <meta name="if:underline link" content="0" />
 <meta name="if:hide links" content="0" />
 <meta name="if:hide desc" content="0" />
+<meta name="if:redirect" content="0" />
 
 <style type="text/css">
 
