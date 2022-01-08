@@ -1,0 +1,1220 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8">
+<HTML>
+
+
+<!--
+
+DPS @ps1
+
+specs
+____________________________________________
+header img
+250 posts - width: 510px height: 200px
+400 posts - width: 760px height: 300px
+500 posts - width: 860px same ^
+
+tile header img
+250 posts - width: 510px height: 150px
+400 posts - width: 760px height: 200px
+500 posts - width: 860px same ^
+
+sidebar img
+250 posts - width: 200px 
+400 posts - width: 270px 
+500 posts - width: 270px 
+____________________________________________
+
+annasthms photosets
+https://annasthms.github.io/photosets/
+
+NPF image fix @glenthemes
+git.io/JRBt7
+
+unnest captions @neothm
+https://codepen.io/neothm/pen/PzVjRy
+
+short note count
+https://shythemes.tumblr.com/post/156021137818/hello-i-was-wondering-if-you-knew-how-to-shorten
+
+-->
+
+
+
+<HEAD>
+
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>  
+  <!--
+        NPF images fix v3.0 by @glenthemes [2021]
+        💌 git.io/JRBt7
+--->
+<script src="//npf-images-v3.github.io/script.js"></script>
+<link rel="stylesheet" href="//npf-images-v3.github.io/recon.css">
+<style tmblr-npf>
+:root {
+    --NPF-Caption-Spacing:1em;
+    --NPF-Image-Spacing:4px;
+}
+</style>
+  
+<link href="https://static.tumblr.com/0podkko/oDSpg7y88/photosets.css" rel="stylesheet">
+<script>
+function gatherData(images, arr) {
+  for (let i = 0; i < images.length; i++) {
+    let currentData = {
+      "width": images[i].getAttribute('data-width'),
+      "height": images[i].getAttribute('data-height'),
+      "low_res": images[i].getAttribute('data-lowres'),
+      "high_res": images[i].getAttribute('data-highres')
+    };
+    arr.push(currentData);
+  }
+}
+function getIndex(elem) {
+  let i = 0;
+  while( (elem = elem.previousElementSibling) != null ) i++;
+  return i;
+}
+function lightbox(elem) {
+  let currentPhotoset = elem.parentNode;
+  let photosetPhotos = currentPhotoset.getElementsByTagName('div');
+  let data = [];
+  gatherData(photosetPhotos, data);
+  Tumblr.Lightbox.init(data, getIndex(elem) + 1);
+}
+</script>
+
+{block:IfRedirect}
+<script>
+if(window.location.pathname == '/') location.replace('{text:redirect}');
+</script> 
+{block:IfRedirect}
+
+
+<link rel="icon" href="{image:favicon}" type="image/gif" >
+
+<TITLE>{Title}</TITLE>
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+
+<meta name="image:favicon" content="" />
+<meta name="image:bg" content="" />
+<meta name="image:header" content="https://i.imgur.com/yzcHtcM.png" />
+<meta name="image:sb" content="https://i.imgur.com/KdevJMF.png" />
+<meta name="image:sb bg" content="" />
+<meta name="image:footer bg" content="" />
+<meta name="image:cursor" content="https://i.imgur.com/I8lupLx.png" />
+
+<meta name="color:bg" content="#fff" />
+<meta name="color:container" content="#fff" />
+<meta name="color:title" content="#000" />
+<meta name="color:title glow" content="#000" />
+<meta name="color:title bg" content="#ddd" />
+<meta name="color:title border" content="#000" />
+<meta name="color:sb link" content="#000" />
+<meta name="color:sb link glow" content="#000" />
+<meta name="color:sb link bg" content="#ddd" />
+<meta name="color:sb link hover bg" content="#000" />
+<meta name="color:sb link border" content="#000" />
+<meta name="color:text" content="#000" />
+<meta name="color:text glow" content="#000" />
+<meta name="color:link" content="#000" />
+<meta name="color:link glow" content="#000" />
+<meta name="color:link hover" content="#ccc" />
+<meta name="color:link hover glow" content="#ccc" />
+<meta name="color:caption border" content="#000" />
+<meta name="color:tags" content="#fff" />
+<meta name="color:tags glow" content="#000" />
+<meta name="color:tag bg" content="#000" />
+<meta name="color:footer" content="#000" />
+<meta name="color:footer glow" content="#000" />
+<meta name="color:footer bg" content="#ddd" />
+<meta name="color:footer border" content="#000" />
+<meta name="color:pagination" content="#000" />
+<meta name="color:pagination glow" content="#000" />
+<meta name="color:tooltip bg" content="#fff" />
+<meta name="color:tooltip txt" content="#000" />
+<meta name="color:tooltip glow" content="#000" />
+<meta name="color:tooltip border" content="#000" />
+<meta name="color:select txt" content="#fff" />
+<meta name="color:select bg" content="#000" />
+<meta name="color:scroll" content="#fff" />
+<meta name="color:scroll thumb" content="#ccc" />
+<meta name="color:sb border" content="#000" />
+<meta name="color:container border" content="#000" />
+
+<meta name="select:container border" content="solid" />
+<meta name="select:container border" content="dashed" />
+<meta name="select:container border" content="dotted" />
+<meta name="select:container border" content="double" />
+<meta name="select:container border" content="inset" />
+<meta name="select:container border" content="outset" />
+<meta name="select:container border" content="groove" />
+<meta name="select:container border" content="ridge" />
+
+<meta name="select:container border size" content="0" />
+<meta name="select:container border size" content="1" />
+<meta name="select:container border size" content="2" />
+<meta name="select:container border size" content="3" />
+<meta name="select:container border size" content="4" />
+<meta name="select:container border size" content="5" />
+
+<meta name="select:sb border" content="solid" />
+<meta name="select:sb border" content="dashed" />
+<meta name="select:sb border" content="dotted" />
+<meta name="select:sb border" content="double" />
+<meta name="select:sb border" content="inset" />
+<meta name="select:sb border" content="outset" />
+<meta name="select:sb border" content="groove" />
+<meta name="select:sb border" content="ridge" />
+
+<meta name="select:sb border size" content="0" />
+<meta name="select:sb border size" content="1" />
+<meta name="select:sb border size" content="2" />
+<meta name="select:sb border size" content="3" />
+<meta name="select:sb border size" content="4" />
+<meta name="select:sb border size" content="5" />
+
+<meta name="select:sb link border" content="solid" />
+<meta name="select:sb link border" content="dashed" />
+<meta name="select:sb link border" content="dotted" />
+<meta name="select:sb link border" content="double" />
+<meta name="select:sb link border" content="inset" />
+<meta name="select:sb link border" content="outset" />
+<meta name="select:sb link border" content="groove" />
+<meta name="select:sb link border" content="ridge" />
+
+<meta name="select:sb link border size" content="0" />
+<meta name="select:sb link border size" content="1" />
+<meta name="select:sb link border size" content="2" />
+<meta name="select:sb link border size" content="3" />
+<meta name="select:sb link border size" content="4" />
+<meta name="select:sb link border size" content="5" />
+
+<meta name="select:footer border" content="solid" />
+<meta name="select:footer border" content="dashed" />
+<meta name="select:footer border" content="dotted" />
+<meta name="select:footer border" content="double" />
+<meta name="select:footer border" content="inset" />
+<meta name="select:footer border" content="outset" />
+<meta name="select:footer border" content="groove" />
+<meta name="select:footer border" content="ridge" />
+
+<meta name="select:footer border size" content="0" />
+<meta name="select:footer border size" content="1" />
+<meta name="select:footer border size" content="2" />
+<meta name="select:footer border size" content="3" />
+<meta name="select:footer border size" content="4" />
+<meta name="select:footer border size" content="5" />
+
+<meta name="select:header position" content="center"/>
+<meta name="select:header position" content="top"/>
+<meta name="select:header position" content="left"/>
+<meta name="select:header position" content="right"/>
+<meta name="select:header position" content="bottom"/>
+
+<meta name="select:photoset gap" content="0" />
+<meta name="select:photoset gap" content="1" />
+<meta name="select:photoset gap" content="2" />
+<meta name="select:photoset gap" content="3" />
+<meta name="select:photoset gap" content="4" />
+<meta name="select:photoset gap" content="5" />
+<meta name="select:photoset gap" content="10" />
+
+<meta name="text:round border" content="0" />
+<meta name="text:font family" content="arial" />
+<meta name="text:font size" content="12" />
+<meta name="text:description" content="description" />
+<meta name="text:title" content="a title" />
+<meta name="text:title font" content="arial" />
+<meta name="text:title size" content="20" />
+<meta name="text:footer size" content="13" />
+<meta name="text:link 1" content="01">
+<meta name="text:link 1 URL" content="/">
+<meta name="text:link 2" content="02">
+<meta name="text:link 2 URL" content="/">
+<meta name="text:link 3" content="03">
+<meta name="text:link 3 URL" content="/">
+<meta name="text:link 4" content="04">
+<meta name="text:link 4 URL" content="/">
+<meta name="text:link 5" content="04">
+<meta name="text:link 5 URL" content="/">
+<meta name="text:link 6" content="04">
+<meta name="text:link 6 URL" content="/">
+<meta name="text:redirect" content="/tagged/0">
+
+<meta name="if:250" content="0" />
+<meta name="if:500" content="0" />
+<meta name="if:tile header" content="0" />
+<meta name="if:cover bg" content="0" />
+<meta name="if:custom cursor" content="0"/>
+<meta name="if:glow txt" content="0" />
+<meta name="if:rainbow border" content="0"/>
+<meta name="if:rainbow links" content="0"/>
+<meta name="if:bold link" content="0" />
+<meta name="if:italic link" content="0" />
+<meta name="if:underline link" content="0" />
+<meta name="if:hide title" content="0" />
+<meta name="if:hide desc" content="0" />
+<meta name="if:hide links" content="0" />
+<meta name="if:hide captions" content="0" />
+<meta name="if:hide footer" content="0" />
+<meta name="if:hide tags" content="0" />
+<meta name="if:redirect" content="0" />
+
+<style type="text/css">
+
+pre {
+    white-space: pre-line;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+::-moz-selection {
+    background: {color:select bg};
+    color: {color:select txt};}
+ 
+::selection {
+    background: {color:select bg};
+    color: {color:select txt};}
+    
+::-webkit-scrollbar {
+    width: 15px;
+  }
+ 
+::-webkit-scrollbar-track {
+    background: {color:scroll};
+  }
+ 
+::-webkit-scrollbar-thumb {
+    background-color: {color:scroll thumb};
+  }
+  
+{block:IfCustomCursor}
+body, *, a, a:hover {cursor:url({image:cursor}), auto;}{/block:IfCustomCursor}
+{block:IfNotCustomCursor}
+a, a:hover {cursor: help;}
+{/block:IfNotCustomCursor}
+
+
+body {
+    margin: 0;
+    color: {color:text};
+    font-family: {text:font family};
+    font-size: {text:font size}px;
+    line-height: 120%;
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:text glow};
+    {/block:ifGlowTxt}
+    background: {color:bg} url("{image:bg}") fixed;
+    {block:IfCoverBg}
+    background-image: url("{image:bg}") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    {/block:IfCoverBg}
+     -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+img {
+    max-width: 100%;
+    border-radius: {text:round border}px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+img:hover {
+    filter: blur(2px);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+p { margin: 0;}
+h1,h2,h3 {margin: 0;}
+blockquote {
+    margin: 0;
+}
+
+a:link, a:active, a:visited {
+    {block:IfRainbowLinks}
+    background-image: linear-gradient(to left, red, yellow, lime, aqua, blue, magenta, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    color: transparent;
+    {/block:IfRainbowLinks}
+    color: {color:link};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:link glow};
+    {/block:ifGlowTxt}
+    {block:IfBoldLink}
+    font-weight: bold;{/block:IfBoldLink}
+    {block:IfItalicLink}
+    font-style: italic;{/block:IfItalicLink}
+    {block:IfNotUnderlineLink}
+    text-decoration: none;{/block:IfNotUnderlineLink}
+    {block:IfUnderlineLink}
+    text-decoration: underline;{/block:IfUnderlineLink}
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.title a:hover, .link a:hover, .pagination a:hover, .footer a:hover, .tags a:hover, a:hover {
+    {block:IfBoldLink}
+    font-weight: bold;{/block:IfBoldLink}
+    color: {color:link hover};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:link hover glow};
+    {/block:ifGlowTxt}
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.content {
+    {block:ifNot500}{block:ifNot250}
+    width: 760px;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}width: 510px;{/block:if250}
+    {block:if500}width: 860px;{/block:if500}
+    margin: auto;
+    padding-bottom: 30px;
+    border: {select:container border size}px {select:container border} {color:container border};
+    border-top: 0; border-bottom: 0;
+    {block:PermalinkPage}
+    padding-bottom: 200px;
+    border: {select:container border size}px {select:container border} {color:container border};
+    border-top: 0;
+    {/block:PermalinkPage}
+    background: {color:container};
+  {block:IfRainbowBorder}
+ --angle: 0deg;
+  border: {select:border size}px {select:border};
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 7s rotate linear infinite;
+  {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
+
+.header {
+    {block:ifTileHeader}
+    background-image: url("{image:header}");
+    border-bottom: {select:container border size}px {select:container border} {color:container border};
+    {block:ifNot500}{block:ifNot250}
+    width: 760px; height: 200px;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}width: 510px; height: 150px;{/block:if250}
+    {block:if500}width: 860px; height: 200px;{/block:if500}
+    {/block:ifTileHeader}
+    
+    {block:ifNot500}{block:ifNot250}
+    width: 760px;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}width: 510px;{/block:if250}
+    {block:if500}width: 860px;{/block:if500}
+    margin: auto;
+    position: fixed;
+    z-index: 9999999;
+  {block:IfRainbowBorder}
+ --angle: 0deg;
+  border: {select:border size}px {select:border};
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 7s rotate linear infinite;
+  {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
+
+
+.header img {
+    {block:ifTileHeader}
+    display: none !important;
+    {/block:ifTileHeader}
+    border-radius: 0;
+    {block:ifNotTileHeader}
+    {block:ifNot500}{block:ifNot250}
+    width: 760px; height: 300px;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}width: 510px; height: 200px;{/block:if250}
+    {block:if500}width: 860px; height: 300px;{/block:if500}
+    {/block:ifNotTileHeader}
+    display: block;
+    object-position: {select:header position};
+    object-fit: cover;
+    border-bottom: {select:container border size}px {select:container border} {color:container border};
+  {block:IfRainbowBorder}
+ --angle: 0deg;
+  border: {select:border size}px {select:border};
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 7s rotate linear infinite;
+  {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
+
+
+.sidebar {
+    {block:ifTileHeader}
+    {block:ifNot500}{block:ifNot250}
+    margin-left: 30px; margin-top: 230px;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}margin-left: 20px; margin-top: 170px;{/block:if250}
+    {block:if500}margin-left: 30px; margin-top: 230px;{/block:if500}
+    position: fixed;
+    {block:ifNot500}{block:ifNot250}
+    width: 270px;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}width: 200px;{/block:if250}
+    {block:if500}width: 270px;{/block:if500}
+    {/block:ifTileHeader}
+    
+    {block:ifNotTileHeader}
+    {block:ifNot500}{block:ifNot250}
+    margin-left: 30px; margin-top: 330px;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}margin-left: 20px; margin-top: 220px;{/block:if250}
+    {block:if500}margin-left: 30px; margin-top: 330px;{/block:if500}
+    position: fixed;
+    {block:ifNot500}{block:ifNot250}
+    width: 270px;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}width: 200px;{/block:if250}
+    {block:if500}width: 270px;{/block:if500}
+    {/block:ifNotTileHeader}
+}
+
+.title a {
+    color:{color:title};
+}
+
+.title {
+    padding: 10px 5px;
+    text-align: center;
+    font-family: {text:title font};
+    font-size: {text:title size}px;
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:title glow};
+    {/block:ifGlowTxt}
+    background: {color:title bg};
+    background-image: url("{image:sb bg}");
+    margin-bottom: 10px;
+    border-radius: {text:round border}px;
+    border: {select:sb border size}px {select:sb Border} {color:title border};
+  {block:IfRainbowBorder}
+ --angle: 0deg;
+  border: {select:border size}px {select:border};
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 7s rotate linear infinite;
+  {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
+
+.icon img {
+    max-width: 100%;
+    display: block;
+}
+
+.desc {
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: {text:round border}px;
+    border: {select:sb border size}px {select:sb border} {color:sb border};
+    border-bottom: 0; border-right: 0;
+  {block:IfRainbowBorder}
+ --angle: 0deg;
+  border: {select:border size}px {select:border};
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 7s rotate linear infinite;
+  {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
+
+.link {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 5px;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.link > div {
+    padding: 3px;
+    background: {color:sb link bg};
+    background-image: url("{image:sb bg}");
+    border-radius: {text:round border}px;
+    border: {select:sb link border size}px {select:sb link Border} {color:sb link border};
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  {block:IfRainbowBorder}
+ --angle: 0deg;
+  border: {select:border size}px {select:border};
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 7s rotate linear infinite;
+  {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
+
+.link > div:hover {
+    background: {color:sb link hover bg};
+}
+.link a {
+    color: {color:sb link};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:sb link glow};
+    {/block:ifGlowTxt}
+}
+
+.contain {
+    {block:ifTileHeader}
+    {block:ifNot500}{block:ifNot250}
+    margin-left: 330px; padding-top: 230px; 
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}margin-left: 240px; padding-top: 170px; {/block:if250}
+    {block:if500}margin-left: 330px; padding-top: 230px; {/block:if500}
+    {/block:ifTileHeader}
+    
+    {block:ifNotTileHeader}
+    {block:ifNot500}{block:ifNot250}
+    margin-left: 330px; padding-top: 330px; 
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}margin-left: 240px; padding-top: 220px; {/block:if250}
+    {block:if500}margin-left: 330px; padding-top: 330px; {/block:if500}
+    {/block:ifNotTileHeader}
+}
+
+.posts {
+    {block:ifNot500}{block:ifNot250}
+    width: 400px;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}width: 250px;{/block:if250}
+    {block:if500}width: 500px;{/block:if500}
+    margin-bottom: 30px;
+}
+
+.pic img {
+    display: block;
+}
+
+[photoset-layout] {
+ grid-gap: {select:photoset gap}px;
+}
+
+.cap {
+    border-radius: {text:round border}px;
+    margin-top: 10px;
+    padding: 5px;
+    border: {select:footer border size}px {select:footer Border} {color:caption border};
+    border-bottom: 0; border-right: 0;
+  {block:IfRainbowBorder}
+ --angle: 0deg;
+  border: {select:border size}px {select:border};
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 7s rotate linear infinite;
+  {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
+
+.txt {
+    border: {select:footer border size}px {select:footer Border} {color:caption border};
+    border-bottom: 0; border-right: 0;
+    padding: 5px;
+    border-radius: {text:round border}px;
+  {block:IfRainbowBorder}
+ --angle: 0deg;
+  border: {select:border size}px {select:border};
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 7s rotate linear infinite;
+  {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
+
+.tumblr_parent {
+  margin: 0;
+  border: 0;
+  padding: 0px;
+}
+
+.footer {
+    border-radius: {text:round border}px;
+    padding: 5px;
+    margin-top: 10px;
+    color: {color:footer};
+    font-size: {text:footer size}px;
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:footer glow};
+    {/block:ifGlowTxt}
+    background: {color:footer bg};
+    background-image: url("{image:footer bg}");
+    border: {select:footer border size}px {select:footer border} {color:footer border};
+  {block:IfRainbowBorder}
+ --angle: 0deg;
+  border: {select:border size}px {select:border};
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 7s rotate linear infinite;
+  {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
+
+.footer a, #bubble a {
+    color: {color:footer};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:footer glow};
+    {/block:ifGlowTxt}
+}
+
+.rb {
+    {block:ifNot500}{block:ifNot250}
+    float: right;
+    display: inline;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}margin-top: 0px;{/block:if250}
+    {block:if500}
+    float: right;
+    display: inline;{/block:if500}
+}
+.tags {
+    margin-top: 10px;
+    font-size: {text:footer size}px;
+}
+
+.tags a {
+    border-radius: {text:round border}px;
+    color: {color:tags};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:tags glow};
+    {/block:ifGlowTxt}
+    background: {color:tag bg};
+    padding: 2px 5px;
+    margin-right: 5px;
+}
+
+ol.notes {
+    padding: 0px;
+    margin: 25px 0px;
+    list-style-type: none;
+    border: 0;
+}
+
+ol.notes li.note {
+    border-top: 1px {select:footer Border} {color:footer border};
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+ol.notes li.note img.avatar {
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    image-rendering: pixelated;
+}
+
+.pagination {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: {color:pagination};
+    {block:ifGlowTxt}
+    text-shadow: 0 0 3px {color:pagination glow};
+    {/block:ifGlowTxt}
+}
+
+.c {
+    bottom: 0; left: 0; padding: 10px; font-size: 16px; position: fixed;
+}
+.c a {text-decoration: none;
+    {block:ifGlowTxt}
+    text-shadow: 0 0 3px transparent;
+    {/block:ifGlowTxt}}
+
+
+.spotify_audio_player {
+    height:80px!important;
+    width:100%!important;}
+ 
+.soundcloud_audio_player {
+    height:150px!important;
+    width:100%!important;}
+
+
+.tmblr-iframe-compact .tmblr-iframe--unified-controls {
+-webkit-filter: opacity(0);
+        filter: opacity(0);
+        transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+ 
+.tmblr-iframe-compact .tmblr-iframe--unified-controls:hover {
+-webkit-filter: opacity(1);
+        filter: opacity(1);
+        transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+
+
+
+#s-m-t-tooltip {
+    border: 1px solid #888888;
+    padding: 5px 7px;
+    background: {color:tooltip bg};
+    border-radius: {text:round border}px;
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:tooltip glow};
+    {/block:ifGlowTxt}
+    border: 1px solid {color:tooltip border};
+    text-transform: none;
+    text-align: center;
+    transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    color: {color:tooltip txt};
+    font-family: {text:font family};
+    font-size: {select:font size}px;
+    max-width: 200px;
+    word-wrap: break-word;
+    display: block;
+    margin: -35px 0px -10px 15px;
+    z-index: 999999999999;}
+    
+
+.bubble {
+  background: {color:footer bg};
+  background-image: url("{image:footer bg}");
+    color: {color:footer};
+  position: relative;
+  padding: 10px;
+ border-radius: {text:round border}px;
+}
+.triangle {
+  width: 0;
+  margin-left: 15px;
+  border-top: 10px solid {color:footer bg};
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+#askimg {
+    margin-left: 5px;
+}
+ 
+#askimg img {
+    display: block;
+    margin-top: 5px;
+}
+ 
+#asker {
+    height: 40px;
+    margin-top: -30px;
+    padding-left: 60px;
+    position: absolute;
+}
+ 
+ 
+#a {
+    margin-top: 10px;
+    padding-left: 5px;
+}
+
+.notecount {
+    display: inline;
+}
+
+</style>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.tumblr.com/7qjmkr5/IUmmdsy41/jquery.style-my-tooltips.js"></script>
+<script>
+   (function($){
+       $(document).ready(function(){
+           $("[title]").style_my_tooltips();
+       });
+   })(jQuery);
+</script>
+
+
+<script src="//code.jquery.com/jquery-2.2.4.min.js"></script>  
+<script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
+<script> $(function(){  $('.posts').unnest({
+    yourCaption: ".cap", 
+    wrapName: ".tumblr_parent",
+    newCaptionUsername: false, 
+    originalPostCaptionUsername: false, 
+    tumblrAvatars: false, 
+    tumblrAvatarClass: ".tumblr_avatar", 
+    usernameColon: false 
+  }); }); </script>
+  
+
+
+
+</HEAD>
+
+<body onload="document.body.style.opacity='1'">
+
+<div class="c">
+<a href="https://ps1.tumblr.com/" style="color: #000; font-style: normal;" data-toggle="tooltip" title="ps1">#</a>
+</div>
+
+
+<div class="content">
+
+<div class="header"><a href="/"><img src="{image:header}"></a></div>
+
+<div class="sidebar">
+
+{block:ifNotHideTitle}
+<div class="title"><a href="/">{text:title}</a></div>
+{/block:ifNotHideTitle}
+<center><div class="icon"><a href="/"><img src="{image:sb}"></a></div></center>
+
+{block:ifNotHideDesc}
+<div class="desc">
+{text:description}
+</div>
+{/block:ifNotHideDesc}
+
+{block:ifNotHideLinks}
+<div class="link">
+<div><a href="{text:link 1 URL}">{text:link 1}</a></div> 
+<div><a href="{text:link 2 URL}">{text:link 2}</a></div> 
+<div><a href="{text:link 3 URL}">{text:link 3}</a></div>
+<div><a href="{text:link 4 URL}">{text:link 4}</a></div>
+<div><a href="{text:link 5 URL}">{text:link 5}</a></div>
+<div><a href="{text:link 6 URL}">{text:link 6}</a></div>
+</div>
+{/block:ifNotHideLinks}
+
+
+{block:Pagination}
+<div class="pagination">
+      {block:PreviousPage}
+            <a href="{PreviousPage}">Backward</a> &mdash;
+      {/block:PreviousPage}
+
+      {block:JumpPagination length="1"}
+            {block:CurrentPage}
+                  <span class="current_page">{PageNumber}</span>
+            {/block:CurrentPage}
+
+      {/block:JumpPagination}
+
+      {block:NextPage}
+            &mdash; <a href="{NextPage}">Forward</a>
+      {/block:NextPage}
+</div>
+{/block:Pagination}
+
+
+</div>
+
+<div class="contain">
+{block:posts inlineMediaWidth="1280" inlineNestedMediaWidth="1280"}
+<div class="posts">
+
+{block:Text}
+<div class="txt">
+{block:Title}{Title}{/block:Title}
+{Body}
+</div>
+{/block:Text}
+
+{block:Photo}
+{block:IndexPage}
+<div class="pic">
+<a href="{Permalink}">
+{block:ifNot500}{block:ifNot250}
+<img src="{PhotoURL-400}">
+{/block:ifNot250}{/block:ifNot500}
+{block:if250}<img src="{PhotoURL-250}">{/block:if250}
+{block:if500}<img src="{PhotoURL-500}">{/block:if500} 
+</a></div>
+{/block:IndexPage}
+{block:PermalinkPage}
+<div class="pic">
+{LinkOpenTag}{block:ifNot500}{block:ifNot250}<img src="{PhotoURL-400}">{/block:ifNot250}{block:ifNot500}{LinkCloseTag}
+</div>
+{/block:PermalinkPage}
+{/block:Photo}
+
+{block:Photoset}
+<div class="photoset-grid" photoset-layout="{PhotosetLayout}">{block:Photos}<div data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" data-lowres="{PhotoURL-500}" data-highres="{PhotoURL-HighRes}" onclick="lightbox(this)"><img src="{PhotoURL-HighRes}" /></div>{/block:Photos}</div>
+{/block:Photoset}
+
+{block:Audio}
+{block:AudioEmbed}
+<div style="height: 85px">
+{block:ifNot500}{block:ifNot250}
+{AudioEmbed-400}
+{/block:ifNot250}{/block:ifNot500}
+{block:if250}{AudioEmbed-250}{/block:if250}
+{block:if500}{AudioEmbed-500}{/block:if500}    
+</div>
+{/block:AudioEmbed}
+{/block:Audio}
+
+{block:Video}
+{block:ifNot500}{block:ifNot250}
+{VideoEmbed-400}
+{/block:ifNot250}{/block:ifNot500}
+{block:if250}{VideoEmbed-250}{/block:if250}
+{block:if500}{VideoEmbed-500}{/block:if500} 
+{/block:Video}
+
+{block:Answer}
+<div class="bubble">{Question}
+</div>
+<div class="triangle"></div>
+ 
+<div id="askimg"><img src="{AskerPortraitURL-40}"></div>
+<div id="asker">{Asker}</div>
+<div id="a">{Answer}</div>
+{/block:Answer}
+
+{block:Quote}
+<p>&#8220;{Quote}&#8221;</p>
+{block:Source}<p>&mdash; {Source}</p>{/block:Source}
+{/block:Quote}
+
+{block:Link}
+<a href="{URL}" target="blank">{Name}</a>
+{block:Description}{Description}{/block:Description}	
+{/block:Link}
+
+{block:Chat}
+{block:Title}{Title}{/block:Title}
+{block:Lines}
+<div class="{Alt} user_{UserNumber}">
+{block:Label}{Label}{/block:Label} {Line}
+</div>
+{/block:Lines}
+{/block:Chat}
+
+{block:ifNotHideCaptions}
+{block:Caption}<div class="cap">{Caption}</div>{/block:Caption}
+{/block:ifNotHideCaptions}
+
+{block:IndexPage}
+{block:ifNotHideFooter}
+<div class="footer">
+Posted at <a href="{Permalink}" title="Permalink">{12Hour}:{Minutes}{AmPm}</a> {block:NoteCount}with <div class="notecount">{NoteCountWithLabel}</div>{/block:NoteCount}
+
+
+
+<div class="rb">
+{block:RebloggedFrom}
+<a href="{ReblogParentURL}" title="{ReblogParentName}">via</a>/<a href="{ReblogRootURL}" title="{ReblogRootName}">src</a> -
+{/block:RebloggedFrom}  
+<a href="{ReblogURL}">rb</a>
+</div>
+</div>
+{/block:ifNotHideFooter}
+
+{block:ifNotHideTags}
+{block:HasTags}
+<div class="tags">
+Tagged:
+{block:Tags}
+<a href="{TagURL}">{Tag}</a> 
+{/block:Tags}
+</div>
+{/block:HasTags}
+{/block:ifNotHideTags}
+{/block:IndexPage}
+
+
+{block:PermalinkPage}
+
+{block:ifHideCaptions}
+{block:Caption}<div class="cap">{Caption}</div>{/block:Caption}
+{/block:ifHideCaptions}
+
+{block:PostNotes}{PostNotes-64}{/block:PostNotes}
+{/block:PermalinkPage}
+
+{block:ContentSource}
+<!-- {SourceURL}{block:SourceLogo}<img src="{BlackLogoURL}"
+width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+{/block:SourceLogo}
+{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
+{/block:ContentSource}
+
+<!--{block:NoRebloggedFrom}{block:RebloggedFrom}{ReblogParentName}{/block:RebloggedFrom}{/block:NoRebloggedFrom} --> 
+
+</div> <!-- posts -->
+{/block:Posts}
+
+
+</div> <!-- container 4 post -->
+</div> <!-- content -->
+
+<script>
+      var $container = $('.posts');
+   $container.find('.notecount').each(function(){
+       var n = $(this).html().split(' ')[0].replace(/,/g, '');
+       if (n > 999) {
+           n = Math.floor(n / 100) / 10;
+           $(this).text(n + 'k notes');
+       }
+   });
+</script>
+
+
+</BODY>
+
+</HTML>
+
+
