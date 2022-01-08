@@ -20,9 +20,9 @@ tile header img
 500 posts - width: 860px same ^
 
 sidebar img
-250 posts - width: 200px 
-400 posts - width: 270px 
-500 posts - width: 270px 
+250 posts - max width: 200px 
+400 posts - max width: 270px 
+500 posts - max width: 270px 
 
 audio player and asks will be the color of your tags.
 ____________________________________________
