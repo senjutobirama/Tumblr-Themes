@@ -829,7 +829,7 @@ animation:rainbow 1s infinite;
 .footer a {
     color: {color:footer};
     {block:ifGlowTxt}
-    text-shadow:  0 0 3px {color:tags glow};
+    text-shadow:  0 0 3px {color:footer glow};
     {/block:ifGlowTxt}
 }
 
