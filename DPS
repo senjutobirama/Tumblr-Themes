@@ -23,6 +23,8 @@ sidebar img
 250 posts - width: 200px 
 400 posts - width: 270px 
 500 posts - width: 270px 
+
+audio player and asks will be the color of your tags.
 ____________________________________________
 
 annasthms photosets
@@ -36,6 +38,9 @@ https://codepen.io/neothm/pen/PzVjRy
 
 short note count
 https://shythemes.tumblr.com/post/156021137818/hello-i-was-wondering-if-you-knew-how-to-shorten
+
+audio color change
+https://shudesigns.tumblr.com/post/158812662057/tutorial-change-the-color-of-tumblrs-new-audio
 
 -->
 
@@ -1018,6 +1023,22 @@ ol.notes li.note img.avatar {
 </script>
 
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+  // audio player
+  var $audio = $('iframe.tumblr_audio_player');
+  $audio.load(function() {
+    $(this).contents().find('head').append('<style type="text/css">' +
+      '.audio-player { background: {color:tag bg}; color: {color:tags} !important; }' +
+      '.audio-player .audio-info .track-artist { color: {color:tags} !important; }' +
+    '</style>');
+  });
+});
+</script>
+
+
+
 <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>  
 <script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
 <script> $(function(){  $('.posts').unnest({
@@ -1030,8 +1051,6 @@ ol.notes li.note img.avatar {
     usernameColon: false 
   }); }); </script>
   
-
-
 
 </HEAD>
 
