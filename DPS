@@ -891,6 +891,10 @@ ol.notes li.note img.avatar {
 .pagination {
     margin-top: 10px;
     text-align: center;
+    color: {color:text};
+     {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:text glow}, 0 0 4px {color:text glow};
+    {/block:ifGlowTxt}
 }
 
 .pagination a {
