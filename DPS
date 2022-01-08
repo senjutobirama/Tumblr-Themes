@@ -25,6 +25,7 @@ sidebar img
 500 posts - max width: 270px 
 
 audio player and asks will be the color of your tags.
+add google fonts link href after head or @import in <style>
 ____________________________________________
 
 annasthms photosets
@@ -48,9 +49,6 @@ https://shudesigns.tumblr.com/post/158812662057/tutorial-change-the-color-of-tum
 
 <HEAD>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
 <script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>  
   <!--
@@ -200,6 +198,22 @@ if(window.location.pathname == '/') location.replace('{text:redirect}');
 <meta name="select:sb link border size" content="3" />
 <meta name="select:sb link border size" content="4" />
 <meta name="select:sb link border size" content="5" />
+
+<meta name="select:caption border" content="solid" />
+<meta name="select:caption border" content="dashed" />
+<meta name="select:caption border" content="dotted" />
+<meta name="select:caption border" content="double" />
+<meta name="select:caption border" content="inset" />
+<meta name="select:caption border" content="outset" />
+<meta name="select:caption border" content="groove" />
+<meta name="select:caption border" content="ridge" />
+
+<meta name="select:caption border size" content="0" />
+<meta name="select:caption border size" content="1" />
+<meta name="select:caption border size" content="2" />
+<meta name="select:caption border size" content="3" />
+<meta name="select:caption border size" content="4" />
+<meta name="select:caption border size" content="5" />
 
 <meta name="select:footer border" content="solid" />
 <meta name="select:footer border" content="dashed" />
@@ -735,7 +749,7 @@ animation:rainbow 1s infinite;
     border-radius: {text:round border}px;
     margin-top: 10px;
     padding: 5px;
-    border: {select:footer border size}px {select:footer Border} {color:caption border};
+    border: {select:caption border size}px {select:caption Border} {color:caption border};
     border-bottom: 0; border-right: 0;
   {block:IfRainbowBorder}
  --angle: 0deg;
@@ -760,7 +774,7 @@ animation:rainbow 1s infinite;
 {/block:IfRainbowBorder}
 
 .txt {
-    border: {select:footer border size}px {select:footer Border} {color:caption border};
+     border: {select:caption border size}px {select:caption Border} {color:caption border};
     border-bottom: 0; border-right: 0;
     padding: 5px;
     border-radius: {text:round border}px;
@@ -798,6 +812,7 @@ animation:rainbow 1s infinite;
     margin-top: 10px;
     color: {color:footer};
     font-size: {text:footer size}px;
+    line-height: 120%;
     {block:ifGlowTxt}
     text-shadow: 0 0 3px {color:footer glow}, 0 0 4px {color:footer glow};
     {/block:ifGlowTxt}
@@ -857,6 +872,7 @@ animation:rainbow 1s infinite;
     background: {color:tag bg};
     padding: 2px 5px;
     margin-right: 5px;
+    line-height: 160%;
 }
 
 .bubble a {
