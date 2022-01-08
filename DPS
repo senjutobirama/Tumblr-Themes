@@ -25,7 +25,6 @@ sidebar img
 500 posts - max width: 270px 
 
 audio player and asks will be the color of your tags.
-add google fonts link href after head or @import in <style>
 ____________________________________________
 
 annasthms photosets
@@ -114,6 +113,7 @@ if(window.location.pathname == '/') location.replace('{text:redirect}');
 <meta name="image:cursor" content="https://i.imgur.com/I8lupLx.png" />
 
 <meta name="color:bg" content="#fff" />
+<meta name="color:header" content="#000" />
 <meta name="color:container" content="#fff" />
 <meta name="color:title" content="#000" />
 <meta name="color:title glow" content="#000" />
@@ -470,6 +470,7 @@ animation:rainbow 1s infinite;
 {/block:IfRainbowBorder}
 
 .header {
+    background: {color:header};
     {block:ifTileHeader}
     background-image: url("{image:header}");
     border-bottom: {select:container border size}px {select:container border} {color:container border};
