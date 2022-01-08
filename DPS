@@ -43,6 +43,10 @@ https://shythemes.tumblr.com/post/156021137818/hello-i-was-wondering-if-you-knew
 
 <HEAD>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
 <script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>  
   <!--
         NPF images fix v3.0 by @glenthemes [2021]
@@ -238,9 +242,9 @@ if(window.location.pathname == '/') location.replace('{text:redirect}');
 <meta name="text:link 3 URL" content="/">
 <meta name="text:link 4" content="04">
 <meta name="text:link 4 URL" content="/">
-<meta name="text:link 5" content="04">
+<meta name="text:link 5" content="05">
 <meta name="text:link 5 URL" content="/">
-<meta name="text:link 6" content="04">
+<meta name="text:link 6" content="06">
 <meta name="text:link 6 URL" content="/">
 <meta name="text:redirect" content="/tagged/0">
 
@@ -255,6 +259,7 @@ if(window.location.pathname == '/') location.replace('{text:redirect}');
 <meta name="if:bold link" content="0" />
 <meta name="if:italic link" content="0" />
 <meta name="if:underline link" content="0" />
+<meta name="if:6 links" content="0" />
 <meta name="if:hide title" content="0" />
 <meta name="if:hide desc" content="0" />
 <meta name="if:hide links" content="0" />
@@ -370,7 +375,7 @@ a:link, a:active, a:visited {
     transition: all 0.4s ease-in-out;
 }
 
-.title a:hover, .link a:hover, .pagination a:hover, .footer a:hover, .tags a:hover, a:hover {
+.title a:hover, .link a:hover, .pagination a:hover, .footer a:hover, .tags a:hover, .bubble a:hover, a:hover {
     {block:IfBoldLink}
     font-weight: bold;{/block:IfBoldLink}
     color: {color:link hover};
@@ -816,10 +821,10 @@ animation:rainbow 1s infinite;
 }
 {/block:IfRainbowBorder}
 
-.footer a, #bubble a {
+.footer a {
     color: {color:footer};
     {block:ifGlowTxt}
-    text-shadow:  0 0 3px {color:footer glow};
+    text-shadow:  0 0 3px {color:tags glow};
     {/block:ifGlowTxt}
 }
 
@@ -847,6 +852,13 @@ animation:rainbow 1s infinite;
     background: {color:tag bg};
     padding: 2px 5px;
     margin-right: 5px;
+}
+
+.bubble a {
+    color: {color:tags};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:tags glow};
+    {/block:ifGlowTxt}
 }
 
 ol.notes {
@@ -948,11 +960,10 @@ ol.notes li.note img.avatar {
     
 
 .bubble {
-  background: {color:footer bg};
-  background-image: url("{image:footer bg}");
-    color: {color:footer};
+  background: {color:tag bg};
+    color: {color:tags};
     {block:ifGlowTxt}
-    text-shadow:  0 0 3px {color:footer glow};
+    text-shadow:  0 0 3px {color:tags glow};
     {/block:ifGlowTxt}
   position: relative;
   padding: 10px;
@@ -961,7 +972,7 @@ ol.notes li.note img.avatar {
 .triangle {
   width: 0;
   margin-left: 15px;
-  border-top: 10px solid {color:footer bg};
+  border-top: 10px solid {color:tag bg};
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
 }
@@ -1053,9 +1064,11 @@ ol.notes li.note img.avatar {
 <div><a href="{text:link 1 URL}">{text:link 1}</a></div> 
 <div><a href="{text:link 2 URL}">{text:link 2}</a></div> 
 <div><a href="{text:link 3 URL}">{text:link 3}</a></div>
+{block:if6Links}
 <div><a href="{text:link 4 URL}">{text:link 4}</a></div>
 <div><a href="{text:link 5 URL}">{text:link 5}</a></div>
 <div><a href="{text:link 6 URL}">{text:link 6}</a></div>
+{/block:if6Links}
 </div>
 {/block:ifNotHideLinks}
 
