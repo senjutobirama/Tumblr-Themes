@@ -319,7 +319,7 @@ body {
     font-size: {text:font size}px;
     line-height: 120%;
     {block:ifGlowTxt}
-    text-shadow:  0 0 3px {color:text glow};
+    text-shadow:  0 0 2px {color:text glow}, 0 0 3px {color:text glow};
     {/block:ifGlowTxt}
     background: {color:bg} url("{image:bg}") fixed;
     {block:IfCoverBg}
@@ -363,7 +363,7 @@ a:link, a:active, a:visited {
     
     color: {color:link};
     {block:ifGlowTxt}
-    text-shadow:  0 0 3px {color:link glow};
+    text-shadow:  0 0 3px {color:link glow}, 0 0 4px {color:link glow};
     {/block:ifGlowTxt}
     {block:IfBoldLink}
     font-weight: bold;{/block:IfBoldLink}
@@ -385,7 +385,7 @@ a:link, a:active, a:visited {
     font-weight: bold;{/block:IfBoldLink}
     color: {color:link hover};
     {block:ifGlowTxt}
-    text-shadow:  0 0 3px {color:link hover glow};
+    text-shadow:  0 0 3px {color:link hover glow}, 0 0 4px {color:link hover glow};
     {/block:ifGlowTxt}
     -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
@@ -569,7 +569,7 @@ animation:rainbow 1s infinite;
 .title a {
     color:{color:title};
     {block:ifGlowTxt}
-    text-shadow:  0 0 3px {color:title glow};
+    text-shadow:  0 0 3px {color:title glow}, 0 0 4px {color:title glow};
     {/block:ifGlowTxt}
 }
 
@@ -692,7 +692,7 @@ animation:rainbow 1s infinite;
 .link a {
     color: {color:sb link};
     {block:ifGlowTxt}
-    text-shadow:  0 0 3px {color:sb link glow};
+    text-shadow:  0 0 3px {color:sb link glow}, 0 0 4px {color:sb link glow};
     {/block:ifGlowTxt}
 }
 
@@ -799,7 +799,7 @@ animation:rainbow 1s infinite;
     color: {color:footer};
     font-size: {text:footer size}px;
     {block:ifGlowTxt}
-    text-shadow:  0 0 3px {color:footer glow};
+    text-shadow: 0 0 3px {color:footer glow}, 0 0 4px {color:footer glow};
     {/block:ifGlowTxt}
     background: {color:footer bg};
     background-image: url("{image:footer bg}");
@@ -829,7 +829,7 @@ animation:rainbow 1s infinite;
 .footer a {
     color: {color:footer};
     {block:ifGlowTxt}
-    text-shadow:  0 0 3px {color:footer glow};
+    text-shadow: 0 0 3px {color:footer glow}, 0 0 4px {color:footer glow};
     {/block:ifGlowTxt}
 }
 
@@ -852,7 +852,7 @@ animation:rainbow 1s infinite;
     border-radius: {text:round border}px;
     color: {color:tags};
     {block:ifGlowTxt}
-    text-shadow:  0 0 3px {color:tags glow};
+     text-shadow: 0 0 3px {color:tags glow}, 0 0 4px {color:tags glow};
     {/block:ifGlowTxt}
     background: {color:tag bg};
     padding: 2px 5px;
@@ -862,7 +862,7 @@ animation:rainbow 1s infinite;
 .bubble a {
     color: {color:tags};
     {block:ifGlowTxt}
-    text-shadow:  0 0 3px {color:tags glow};
+    text-shadow: 0 0 3px {color:tags glow}, 0 0 4px {color:tags glow};
     {/block:ifGlowTxt}
 }
 
@@ -897,14 +897,15 @@ ol.notes li.note img.avatar {
     text-decoration: none;
     color: {color:pagination};
     {block:ifGlowTxt}
-    text-shadow: 0 0 3px {color:pagination glow};
+    text-shadow: 0 0 3px {color:pagination glow}, 0 0 4px {color:pagination glow};
     {/block:ifGlowTxt}
 }
 
 .c {
     bottom: 0; left: 0; padding: 10px; font-size: 16px; position: fixed;
 }
-.c a {text-decoration: none;
+.c a {
+    text-decoration: none;
     {block:ifGlowTxt}
     text-shadow: 0 0 3px transparent;
     {/block:ifGlowTxt}}
@@ -1057,7 +1058,7 @@ $(document).ready(function() {
 <body onload="document.body.style.opacity='1'">
 
 <div class="c">
-<a href="https://ps1.tumblr.com/" style="color: #000; font-style: normal;" data-toggle="tooltip" title="ps1">#</a>
+<a href="https://ps1.tumblr.com/" style="font-style: normal;" data-toggle="tooltip" title="ps1">#</a>
 </div>
 
 
