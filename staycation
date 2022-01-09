@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!--
-staycation theme by @ps1/@mtfuji
+staycation theme by @sadthemes
 
 -theme looks wonky in customization screen. its bc masonry is trying to fit in the window! looks fine live.
 -round border doesn't work with rainbow borders
@@ -1186,7 +1186,7 @@ Source <a href="{SourceURL}">{SourceTitle}</a>
 {/block:Pagination}
 </main>
 
-<div id="c"><a href="https://mtfuji.tumblr.com/" data-toggle="tooltip" title="mtfuji" style="font-size: 22px; text-decoration: none; font-style: normal; font-weight: normal; border: 0">&#8251;</a></div>
+<div id="c"><a href="https://sadthemes.tumblr.com/" data-toggle="tooltip" title="sadthemes" style="font-size: 22px; text-decoration: none; font-style: normal; font-weight: normal; border: 0">&#8251;</a></div>
 
 <script>
 //These functions control Masonry, Infinite Scroll and Photoset Grid
