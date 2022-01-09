@@ -15,4 +15,4 @@ more awesome themes for you. A reblog is like a shoutout from everybody.
 It keeps us going!
 
 <a href="https://ps1.tumblr.com/">THEME MAKER</A> - 
-<a href="https://ps1.tumblr.com/themez">THEMES</A>
+<a href="https://sadthemes.tumblr.com/">THEMES</A>
