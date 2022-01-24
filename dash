@@ -1700,7 +1700,7 @@ width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
 
 {block:IndexPage}
 
-<div class="pagination" style="clear: both;">
+<div class="pagination">
 <p class="alignleft">{block:PreviousPage}<a href="{PreviousPage}"><span class="material-icons">
 navigate_before
 </span> Previous</a> {/block:PreviousPage}</p>
