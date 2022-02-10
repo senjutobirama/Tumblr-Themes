@@ -12,7 +12,7 @@ i do not own this and i do not claim ownership. cool codes but took forever to f
 ____________________________________________
 
 specs
-- img can be any size, max width is 300px!
+- icon can be any size, max width is 300px!
 - all divs are draggable wow!
 - buttons are default color thru coding
 - upload any google font after head
@@ -96,7 +96,7 @@ if(window.location.pathname == '/') location.replace('{text:redirect}');
 {/block:Description}
 
 <meta name="image:favicon" content="" />
-<meta name="image:sb" content="https://i.imgur.com/G88u9hD.png" />
+<meta name="image:icon" content="https://i.imgur.com/grwH0gE.png" />
 <meta name="image:bg" content="" />
 
 <meta name="color:bg" content="#FFFFFF" />
@@ -109,6 +109,14 @@ if(window.location.pathname == '/') location.replace('{text:redirect}');
 <meta name="color:link hover" content="#3399FF" />
 <meta name="color:link hover glow" content="#3399FF" />
 <meta name="color:border" content="#000" />
+
+
+
+<meta name="select:post size" content="300" />
+<meta name="select:post size" content="400" />
+<meta name="select:post size" content="500" />
+<meta name="select:post size" content="540" />
+<meta name="select:post size" content="600" />
 
 <meta name="select:photoset gap" content="0" />
 <meta name="select:photoset gap" content="1" />
@@ -148,8 +156,6 @@ if(window.location.pathname == '/') location.replace('{text:redirect}');
 <meta name="text:link 2 URL" content="/">
 <meta name="text:link 3" content="03">
 <meta name="text:link 3 URL" content="/">
-<meta name="text:link 4" content="04">
-<meta name="text:link 4 URL" content="/">
 <meta name="text:redirect" content="/tagged/0">
 
 <meta name="if:cover bg" content="0" />
@@ -256,7 +262,7 @@ select {
 p {margin: 0;}
 img {max-width: 100%;}
 ul {list-style-type: square;}
-h1,h2,h3 {margin: 0; line-height: 100%;}
+h1,h2,h3 {margin: 5px 0 5px 0; padding: 5px 0; line-height: 100%; font-size: 24px;}
 blockquote {
     margin: 0 0 0 10px;
     border-left: 1px solid {color:text};
@@ -329,17 +335,22 @@ a:hover {
  }
 
 .link {
-    
+   
     min-width: 100px;
     margin-top: -75px;
     margin-left: -60px;
     position: fixed;
     z-index: 9999;
 }
-
-.link a {
-    margin: 0 5px 0 5px;
+.lonk {
+     display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 5px;
+  justify-content: center;
+  align-content: center;
+  
 }
+
 
 .de {
     
@@ -372,8 +383,7 @@ a:hover {
 }
 
 #draggy {
-    
-   width: 470px;
+   width: calc({select:post size}px + 70px);
    margin-left: 330px;
    margin-top: -50px;
    z-index: -1;
@@ -390,7 +400,7 @@ a:hover {
 }
 
 .posts {
-    width: 400px;
+    width: {select:post size}px;
     margin-bottom: 20px;
     text-align: left; 
 }
@@ -498,6 +508,52 @@ ol.notes li.note img.avatar {
     -moz-transition: all 0.3s ease-out;
 }
 
+.posts iframe {
+    max-width:100%;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.trackback {
+    position: absolute;
+    left: 30px;
+    top: 28px;
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    padding: 10px;
+    }
+ 
+.pressplay{
+    filter: invert(1);
+    position: relative;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    left: -6px;
+    top: -3px;}
+ 
+.albumpic {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100px;
+    height: 100px;}
+ 
+.albumpic img {
+    width: 100%;
+    height: auto;}
+ 
+.trackinfo {
+    width: auto;
+    display:inline-block;
+    margin-left: 110px;
+    min-height: 100px;}
+ 
+.audiowrapper {
+position: relative; display:inline-block;}
+
 </style>
 
 
@@ -563,12 +619,13 @@ ol.notes li.note img.avatar {
     </div>
   </div>
   <div class="window-body">
-<center>
-<a href="{text:link 1 URL}">{text:link 1}</a> 
-<a href="{text:link 2 URL}">{text:link 2}</a> 
-<a href="{text:link 3 URL}">{text:link 3}</a>
-<a href="{text:link 4 URL}">{text:link 4}</a>
-</center>
+
+<div class="lonk">
+<div><a href="{text:link 1 URL}">{text:link 1}</a></div> 
+<div><a href="{text:link 2 URL}">{text:link 2}</a></div> 
+<div><a href="{text:link 3 URL}">{text:link 3}</a></div>
+</div>
+
    
   </div>
 </div>
@@ -589,7 +646,7 @@ ol.notes li.note img.avatar {
     </div>
   </div>
   <div class="window-body">
-   <center><div class="icon"><a href="/" {block:ifIconTooltip}title="{text:icon tooltip}"{/block:ifIconTooltip}><img src="{image:sb}"></a></div></center>
+   <center><div class="icon"><a href="/" {block:ifIconTooltip}title="{text:icon tooltip}"{/block:ifIconTooltip}><img src="{image:icon}"></a></div></center>
   </div>
 </div>
 
@@ -645,31 +702,38 @@ ol.notes li.note img.avatar {
 <div class="posts">
 
 {block:Text}
-{block:Title}{Title}{/block:Title}
+{block:Title}<h1>{Title}</h1>{/block:Title}
 {Body}
 {/block:Text}
 
 {block:Photo}
 {block:IndexPage}
-<a href="{Permalink}"><img src="{PhotoURL-400}" style="display: block"></a>
+<a href="{Permalink}"><img src="{PhotoURL-HighRes}" style="display: block"></a>
 {/block:IndexPage}
 {block:PermalinkPage}
-{LinkOpenTag}<img src="{PhotoURL-400}" style="display: block">{LinkCloseTag}	{/block:PermalinkPage}
+{LinkOpenTag}<img src="{PhotoURL-HighRes}" style="display: block">{LinkCloseTag}	{/block:PermalinkPage}
 {/block:Photo}
 
 {block:Photoset}
 <div class="photoset-grid" photoset-layout="{PhotosetLayout}">{block:Photos}<div data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" data-lowres="{PhotoURL-500}" data-highres="{PhotoURL-HighRes}" onclick="lightbox(this)"><img src="{PhotoURL-HighRes}" /></div>{/block:Photos}</div>
 {/block:Photoset}
 
-{block:Audio}
-{block:AudioEmbed}
-<div style="height: 85px">{AudioEmbed-400}</div>
-{/block:AudioEmbed}
-{/block:Audio}
+{block:AudioPlayer}
+<div class="audiowrapper">
+{block:AlbumArt}
+<div class="albumpic"><img src="{AlbumArtURL}"></div>
+{/block:AlbumArt}
+<div class="trackback">
+<div class="pressplay">
+{AudioPlayer}
+</div></div>
+<div class="trackinfo">
+{block:TrackName}{TrackName}{/block:TrackName}<br>
+{block:Artist}<b>{Artist}</b>{/block:Artist}<br>
+{block:Album}<i>{Album}</i>{/block:Album}<br>
+</div></div>
 
-{block:Video}
-{VideoEmbed-400}
-{/block:Video}
+{/block:AudioPlayer}
 
 {block:Answer}
 <div class="asker"><img src="{AskerPortraitURL-30}"></div> {Asker}
@@ -764,4 +828,3 @@ width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
   
 </BODY>
 </HTML>
-
