@@ -925,6 +925,13 @@ ol.notes li.note img.avatar {
 .soundcloud_audio_player {
     height:150px!important;
     width:100%!important;}
+    
+iframe {
+   display: block;
+   margin: 0 auto;
+   width:100%!important;
+   height:281px!important;
+}
 
 
 #s-m-t-tooltip {
@@ -1749,5 +1756,4 @@ expand_less
 </BODY>
 
 </HTML>
-
 
