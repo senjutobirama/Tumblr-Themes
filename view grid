@@ -12,6 +12,7 @@ message for bugs/info/help.
 ____________________________________________
 
 info
+- you icon isn't a fit square so your image can be any size. square like images work best :D
 - img header will auto-fit, make sure that it's not to long. width is 440px.
 - tiled header background height is 100px.
 - change sb images div width to accomodate your images with your links in text options. default is 50px.
@@ -205,7 +206,7 @@ https://feathericons.com/
 <meta name="text:search txt" content="Search">
 
 <meta name="text:link title" content="LINKS">
-<meta name="text:sb link size" content="18" />
+<meta name="text:sb txt size" content="18" />
 <meta name="text:sb img width" content="50" />
 <meta name="text:link symbol" content="&#x2605;">
 <meta name="text:link 1" content="01">
@@ -352,7 +353,30 @@ if(window.location.pathname == '/') location.replace('tagged/{text:redirect}');
   }); }); </script>
   
   
+<div id="toTop" title="back to top">
+{block:ifNotScrollUpTxt}
+<img src="{image:scrollup}" style="display: block;" title="back to top">
+{/block:ifNotScrollUpTxt}
+{block:ifScrollUpTxt}
+{text:scroll up txt}
+{/block:ifScrollUpTxt}
+</div>
+    
+<script>
+    $(window).scroll(function() {
+  if ($(this).scrollTop()) {
+    $('#toTop').fadeIn();
+  } else {
+    $('#toTop').fadeOut();
+  }
+});
 
+$("#toTop").click(function() {
+  $("html, body").animate({
+    scrollTop: 0
+  }, 1000);
+});
+</script>
 
 
     <script src="//npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
@@ -509,13 +533,21 @@ a:link, a:active, a:visited {
     -o-background-size: cover;
     background-size: cover;
     {/block:IfCoverContainerBg}
+    {block:ifGlow}
+    filter:
+    drop-shadow(0 0 3px {color:container glow})
+    drop-shadow(0 0 3px {color:container glow});
+    {/block:ifGlow}
     outline: {select:container border size}px {select:container border} {color:container border};
     border-radius: {text:round border}px;
-    width: 976px;
+    width: 968px;
+    
 }
 
 .sidebar {
-    margin-left: 632px; width: 300px;
+    font-size: {text:sb txt size}px;
+    line-height: 110%;
+    margin-left: 626px; width: 300px;
     margin-top: 0px;
     position: fixed;
     padding: 20px;
@@ -544,12 +576,17 @@ a:link, a:active, a:visited {
 }
 
 .xtra {
+    {block:ifNotHideSearch}
     margin-bottom: 10px;
+    {/block:ifNotHideSearch}
+    {block:ifHideSearch}
+    margin-bottom: 0px;
+    {/block:ifHideSearch}
 }
 
 .link {
     margin-top: 5px;
-    font-size: {text:sb link size}px;
+    font-size: {text:sb txt size}px;
     color: {color:sb txt};
     {block:ifGlowTxt}
     text-shadow:  0 0 3px {color:sb txt glow outline};
@@ -575,7 +612,7 @@ a:link, a:active, a:visited {
 
 .link2 p {
     line-height: 100%;
-    padding: 0 0 10px 0;
+    padding: 5px 0 5px 0;
 }
 
 .link a, .link2 a, .xtra a {
@@ -676,7 +713,12 @@ a:link, a:active, a:visited {
 }
 
 .stuff {
+    {block:ifNotHideInfo}
     padding: 20px;
+    {/block:ifNotHideInfo}
+    {block:ifHideInfo}
+    padding: 5px;
+    {/block:ifHideInfo}
 }
 
 .title {
@@ -988,6 +1030,11 @@ figure.tmblr-embed.tmblr-full iframe {
     border-radius: {text:round border}px;
     padding: 5px 7px;
     background: {color:tooltip bg};
+    {block:ifGlow}
+    filter:
+    drop-shadow(0 0 3px {color:tooltip bg});
+    margin-right: 5px;
+    {/block:ifGlow}
     {block:ifGlowTxt}
     text-shadow:  0 0 3px {color:tooltip glow outline};
     {/block:ifGlowTxt}
@@ -1199,6 +1246,12 @@ figure.tmblr-embed.tmblr-full iframe {
     {block:ifScrollUpTxt}
     background: {color:button};
     color: {color:button txt};
+    {block:ifGlow}
+    filter:
+    drop-shadow(0 0 3px {color:button});
+    margin-right: 5px;
+    {/block:ifGlow}
+    border-radius: {text:round border}px;
     {/block:ifScrollUpTxt}
     {block:IfBoldLink}
     font-weight: bold;{/block:IfBoldLink}
@@ -1245,6 +1298,10 @@ figure.tmblr-embed.tmblr-full iframe {
 
 
 <body>
+
+<div class="c">
+<a href="https://sadthemes.tumblr.com/" title="sadthm"><i data-feather="save"></i></a>
+</div>
 
 <div class="okay">
 
@@ -1519,9 +1576,9 @@ width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
 
 <div class="stick"><img src="{image:sticker}"></div>
 
-<div class="c">
-<a href="https://sadthemes.tumblr.com/" title="sadthm"><i data-feather="save"></i></a>
-</div>
+
+
+
 
 
   <script>
@@ -1541,30 +1598,7 @@ width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
     </script>
 
 
-<div id="toTop" title="back to top">
-{block:ifNotScrollUpTxt}
-<img src="{image:scrollup}" style="display: block;" title="back to top">
-{/block:ifNotScrollUpTxt}
-{block:ifScrollUpTxt}
-{text:scroll up txt}
-{/block:ifScrollUpTxt}
-</div>
-    
-<script>
-    $(window).scroll(function() {
-  if ($(this).scrollTop()) {
-    $('#toTop').fadeIn();
-  } else {
-    $('#toTop').fadeOut();
-  }
-});
 
-$("#toTop").click(function() {
-  $("html, body").animate({
-    scrollTop: 0
-  }, 1000);
-});
-</script>
 
 <script>
     $("body").animate({"opacity": "1"}, 1700);
