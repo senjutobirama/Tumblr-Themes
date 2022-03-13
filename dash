@@ -929,7 +929,7 @@ ol.notes li.note img.avatar {
 iframe {
    display: block;
    margin: 0 auto;
-   width:100%!important;
+   max-width:100%!important;
    height:281px!important;
 }
 
