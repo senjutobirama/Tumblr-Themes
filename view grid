@@ -293,13 +293,13 @@ function lightbox(elem) {
 <script>
 
 function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById("drop").classList.toggle("show");
 }
 
 
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var dropdowns = document.getElementsByClassName("droplist");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
@@ -1140,7 +1140,7 @@ figure.tmblr-embed.tmblr-full iframe {
   display: inline-block;
 }
 
-.dropdown-content {
+.droplist {
   display: none;
   position: absolute;
   background-color: {color:posts};
@@ -1153,7 +1153,7 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
   z-index: 1;
 }
 
-.dropdown-content a {
+.droplist a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
