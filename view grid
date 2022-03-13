@@ -4,7 +4,9 @@
 
 <!--
 
-view by @sadthemes
+view grid by @sadthemes
+THIS IS NOT THE SINGLE COLUMN THEME TO USE THAT CODE GO TO:
+https://github.com/senjutobirama/Tumblr-Themes/blob/master/view
 
 message for bugs/info/help.
 ____________________________________________
@@ -291,11 +293,9 @@ function lightbox(elem) {
 </script>
 
 <script>
-
 function myFunction() {
   document.getElementById("drop").classList.toggle("show");
 }
-
 
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
@@ -412,9 +412,8 @@ body {
     background-size: cover;
     {/block:IfCoverBg}
      -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-
+    text-rendering: optimizeLegibility;
+   -moz-osx-font-smoothing: grayscale;
 }
 
 img {
@@ -425,15 +424,15 @@ img {
 p { margin: 0;}
 h1,h2,h3 {margin: 0; padding: 0; line-height: 100%;}
 blockquote {
-    
     margin: 0 0 0 10px;
     border-left: 1px solid {color:txt};
     padding-left: 10px;
 }
+
 ul {
-  margin: 10px;
-  padding-left: 15px;
-  list-style-type: square;
+    margin: 10px;
+    padding-left: 15px;
+    list-style-type: square;
 }
 
 a:link, a:active, a:visited {
@@ -485,8 +484,8 @@ a:link, a:active, a:visited {
 ::-webkit-scrollbar-track {
     border-radius: {text:round border}px;
     background-color: {color:scroll bg};
-    
 }
+
 ::-webkit-scrollbar {
     width: 15px;
     background-color: {color:scroll bg};
@@ -515,11 +514,7 @@ a:link, a:active, a:visited {
     width: 976px;
 }
 
-
-
-
 .sidebar {
-    
     margin-left: 632px; width: 300px;
     margin-top: 0px;
     position: fixed;
@@ -551,7 +546,6 @@ a:link, a:active, a:visited {
 .xtra {
     margin-bottom: 10px;
 }
-
 
 .link {
     margin-top: 5px;
@@ -601,6 +595,7 @@ a:link, a:active, a:visited {
     align-self: center;
     width: {text:sb img width}px;
 }
+
 .huh img {
     display: block;
     max-width: 100%;
@@ -614,12 +609,9 @@ a:link, a:active, a:visited {
     flex-grow: 2;
 }
 
-
-
-
 .hah {
     width: 604px;
-   background: {color:post container} url("{image:post container}") fixed;
+    background: {color:post container} url("{image:post container}") fixed;
     {block:IfCoverPostContainerBg}
     background-image: url("{image:post container}") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -643,14 +635,12 @@ a:link, a:active, a:visited {
     {/block:ifHeaderBg}
 }
 
-
 .icon {
     width: 100px;
     margin-top: -65px;
 }
 
 .icon img {
-    
     display: block;
     border-radius: {text:round img}px;
     outline: {text:icon border size}px solid {color:icon border};
@@ -671,8 +661,6 @@ a:link, a:active, a:visited {
 
 .header {
     padding: 20px 20px 0 20px;
-    
-    
     {block:ifHeaderBg}
     width: 524px;
     height: 125px;
@@ -682,21 +670,16 @@ a:link, a:active, a:visited {
 }
 
 .header img {
-   
     display: block;
     max-width: 100%;
     border-radius: {text:round img}px;
-    
 }
 
 .stuff {
     padding: 20px;
-    
-    
 }
 
 .title {
-    
     text-align: center;
     line-height: 100%;
     font-size: {text:title size}px;
@@ -724,9 +707,8 @@ a:link, a:active, a:visited {
 }
 
 .info {
-   
-   color: {color:desc};
-   {block:ifGlowTxt}
+    color: {color:desc};
+    {block:ifGlowTxt}
     text-shadow:  0 0 3px {color:desc glow outline};
     {/block:ifGlowTxt}
     {block:ifOutlineTxt}
@@ -740,7 +722,6 @@ a:link, a:active, a:visited {
 }
 
 .desc {
-    
     text-align: center;
     color: {color:desc};
     {block:ifGlowTxt}
@@ -797,15 +778,11 @@ button {
     {/block:ifNotGlow}
 }
 
-
-    
 main {
     margin: auto;
     position: relative;
     overflow: hidden;
     padding: 10px 0 10px 20px;
-    
-  
 }
 
 .posts {
@@ -824,7 +801,6 @@ main {
 .pic img {
     display: block;
     border-radius: {text:round img}px;
-    
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
@@ -840,6 +816,7 @@ main {
     -ms-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
+
 [photoset-layout] img {
 -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -857,26 +834,25 @@ main {
 }
 
 .tumblr_parent {
-  margin: 10px 10px 0px 0px;
-  padding: 0px;
-  border-left: 0;
+    margin: 10px 10px 0px 0px;
+    padding: 0px;
+    border-left: 0;
 }
 
 .tumblr_parent blockquote{
-  margin: 0 0 0 10px;
-  padding-left:10px;
-  border-left: 1px solid {color:txt};
+    margin: 0 0 0 10px;
+    padding-left:10px;
+    border-left: 1px solid {color:txt};
 }
 
 .tumblr_avatar {
-  margin-right: 5px;
-  margin-bottom: 5px;
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  border-radius: {text:round img}px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    border-radius: {text:round img}px;
 }
-
 
 .tags {
     margin-top: 10px;
@@ -915,12 +891,12 @@ main {
 }
 
 .pin .feather {
-   position: relative;
-   top: 2px;
+    position: relative;
+    top: 2px;
 }
 
 .pin {
-   font-weight: bold;
+    font-weight: bold;
 }
 
 .notecount {
@@ -928,7 +904,7 @@ main {
 }
 
 .perma {
-   margin-top: 10px; 
+    margin-top: 10px; 
 }
 
 ol.notes {
@@ -958,19 +934,19 @@ ol.notes li.note img.avatar {
 }
 .c .feather {
     width: 20px;
-  height: 20px;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
+    height: 20px;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
     color: {color:scroll thumb};
-    }
-
+}
 
 .spotify_audio_player {
     height:85px!important;
     width:100%!important;
 }
+
 .bandcamp_audio_player {
     height:850px!important;
     width:100%!important;
@@ -986,26 +962,23 @@ figure.tmblr-embed.tmblr-full iframe {
     height: auto;
 }
 
-
 .tmblr-iframe-compact .tmblr-iframe--unified-controls {
--webkit-filter: opacity(0);
-        filter: opacity(0);
-        transition: all 0.3s ease-out;
+    -webkit-filter: opacity(0);
+    filter: opacity(0);
+    transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
 }
  
 .tmblr-iframe-compact .tmblr-iframe--unified-controls:hover {
--webkit-filter: opacity(1);
-        filter: opacity(1);
-        transition: all 0.3s ease-out;
+    -webkit-filter: opacity(1);
+    filter: opacity(1);
+    transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
 }
-
-
 
 #s-m-t-tooltip {
     border-radius: {text:round border}px;
@@ -1033,46 +1006,46 @@ figure.tmblr-embed.tmblr-full iframe {
     word-wrap: break-word;
     display: block;
     margin: -40px 0px -10px 10px;
-    z-index: 999999999999;}
+    z-index: 999999999999;
+}
     
-
 .ask {
-    
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-}    
+}   
+
 .bubble {
     position: relative;
     background: {color:ask};
     color: {color:ask txt};
     {block:ifGlowTxt}
-  text-shadow: 0 0 3px {color:ask txt glow outline};
-  {/block:ifGlowTxt}
-  {block:ifOutlineTxt}
+    text-shadow: 0 0 3px {color:ask txt glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
     text-shadow: -1px -1px 0 {color:ask txt glow outline},
     1px -1px 0 {color:ask txt glow outline},
 	 -1px 1px 0 {color:ask txt glow outline},
 	 1px 1px 0 {color:ask txt glow outline};
     {/block:ifOutlineTxt}
     width: 62%;{/block:if250}
-   border-radius: {text:round border}px;
+    border-radius: {text:round border}px;
     padding: 20px;
-    
 }
 
 .bubble a {
     color: {color:ask link};
     {block:ifGlowTxt}
-  text-shadow: 0 0 3px {color:ask link glow outline};
-  {/block:ifGlowTxt}
-  {block:ifOutlineTxt}
+    text-shadow: 0 0 3px {color:ask link glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
     text-shadow: -1px -1px 0 {color:ask link glow outline},
     1px -1px 0 {color:ask link glow outline},
 	 -1px 1px 0 {color:ask link glow outline},
 	 1px 1px 0 {color:ask link glow outline};
     {/block:ifOutlineTxt}
 }
+
 .bubble:after {
     content: '';
     position: absolute;
@@ -1087,8 +1060,6 @@ figure.tmblr-embed.tmblr-full iframe {
     margin-top: -11px;
 }
 
-
-
 .q { 
     margin-top: 10px;}
     
@@ -1097,7 +1068,6 @@ figure.tmblr-embed.tmblr-full iframe {
     display: block;
 }
 
- 
 .ans {
      margin-top: 20px;
 }
@@ -1110,16 +1080,16 @@ figure.tmblr-embed.tmblr-full iframe {
 
 .odd, .even {
     padding: 7px;
-   border-radius: {text:round border}px;
+    border-radius: {text:round border}px;
 }
 
 .odd {
     background: {color:ask};
     color: {color:ask txt};
     {block:ifGlowTxt}
-  text-shadow: 0 0 3px {color:ask txt glow outline};
-  {/block:ifGlowTxt}
-  {block:ifOutlineTxt}
+    text-shadow: 0 0 3px {color:ask txt glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
     text-shadow: -1px -1px 0 {color:ask txt glow outline},
     1px -1px 0 {color:ask txt glow outline},
 	 -1px 1px 0 {color:ask txt glow outline},
@@ -1128,36 +1098,35 @@ figure.tmblr-embed.tmblr-full iframe {
 }
 
 .dropbtn {
-  background-color: {color:button};
-  color: {color:button txt};
-  padding: 5px 7px;
-  border: 0;
+    background-color: {color:button};
+    color: {color:button txt};
+    padding: 5px 7px;
+    border: 0;
 }
 
-
 .dropdown {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .droplist {
-  display: none;
-  position: absolute;
-  background-color: {color:posts};
-  border-radius: {text:round border}px;
-  min-width: 100px;
-  overflow: auto;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
--moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
-  z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: {color:posts};
+    border-radius: {text:round border}px;
+    min-width: 100px;
+    overflow: auto;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+    z-index: 1;
 }
 
 .droplist a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
 .dropdown a:hover {background-color: rgba(0,0,0,0.1);}
@@ -1165,61 +1134,57 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
 .show {display: block;}
 
 .feather {
-  width: {text:font size}px;
-  height: {text:font size}px;
-  color: {color:footer};
-  
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-  -webkit-transition: all 0.4s ease-in-out;
+    width: {text:font size}px;
+    height: {text:font size}px;
+    color: {color:footer};
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
     -ms-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
 }
 
-
-
 .controls a {
-   position:relative;
-   display:inline-block;
+    position:relative;
+    display:inline-block;
 }
 
 .controls .like .liked + .feather {
-   opacity:1;
+    opacity:1;
 }
+
 .controls .like .liked + .feather {
-   fill: {color:liked post};
-   color: {color:liked post};
+    fill: {color:liked post};
+    color: {color:liked post};
 }
+
 .controls .like .like_button {
-   position:relative;
+    position:relative;
 }
+
 .controls .like .like_button iframe {
-   position:absolute;
-   top:0;
-   left:0;
-   bottom:0;
-   right:0;
-   z-index:2;
-   opacity:0;
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:2;
+    opacity:0;
 }
-
-
-
 
 .searchy {
-   
     width: 290px;
-     border: 0;
-   padding: 5px;
-   font-family: inherit;
-   font-size: inherit;
-   color: {color:search txt};
-   background-color: {color:search};
-   border-radius: {text:round border}px;
+    border: 0;
+    padding: 5px;
+    font-family: inherit;
+    font-size: inherit;
+    color: {color:search txt};
+    background-color: {color:search};
+    border-radius: {text:round border}px;
 }
 
 #toTop {
@@ -1263,24 +1228,21 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
 .stick img {
     max-width: 340px;
     position: absolute;
-  right:0;
-  bottom: 0;
-  display: block;
-  border-radius: 0px;
+    right:0;
+    bottom: 0;
+    display: block;
+    border-radius: 0px;
 }
 
 </style>
 
+
 </head>
-
-
 
 
 <body>
 
 <div class="okay">
-
-
 
 <div class="sidebar">
 
@@ -1307,9 +1269,7 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
 <div class="huh"><img src="{image:link 4}"></div>
 <div class="ln"><a href="{text:link 4 URL}">{text:link 4}</a></div>
 </div>
-
-
-{block:ifLinkImg}
+{/block:ifLinkImg}
 
 
 {block:ifNotLinkImg}
@@ -1321,9 +1281,11 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
 </div>
 {/block:ifNotLinkImg} 
 
+
 {block:ifNotHideExtraTxt}
 <div class="xtra">{text:extra txt}</div>
 {/block:ifNotHideExtraTxt}
+
 
 {block:ifNotHideSearch}
 <form action="/search" method="get">
@@ -1331,10 +1293,7 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
 </form>
 {/block:ifNotHideSearch}
 
-</div>
-
-
-
+</div> <!-- sb -->
 
 
 <div class="hah">
@@ -1343,9 +1302,7 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
 <center>
 <div class="header">
 {block:ifNotHeaderBg}
-
 <img src="{image:header}">
-
 {/block:ifNotHeaderBg}
 </div>
 <div class="icon">
@@ -1355,13 +1312,11 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
 {/block:ifNotHideHeader}
 
 
-
 {block:ifHideHeader}
 <center><div class="icon2">
 <a href="/"><img src="{image:icon}"></a>
 </div></center>
 {/block:ifHideHeader}
-
 
 
 <div class="stuff">
@@ -1370,15 +1325,18 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
 <div class="title">{text:title}</div>
 {/block:ifNotHideTitle}
 
+
 {block:ifNotHideInfo}
 <div class="info">
 <a href="https://www.tumblr.com/blog/view/{Name}">@{Name}</a> {text:info symbol} <a href="/">{Name}.tumblr.com</a>
 </div>
 {/block:ifNotHideInfo}
 
+
 {block:ifNotHideDesc}
 <div class="desc">{text:description}</div>
 {/block:ifNotHideDesc}
+
 
 {block:ifNotHideButtons}
 <div class="butt">
@@ -1386,7 +1344,7 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
 <a href="https://www.tumblr.com/follow/{Name}"><button>Follow</button></a>
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">{text:dropdown txt}</button>
-  <div id="myDropdown" class="dropdown-content">
+  <div id="drop" class="droplist">
     <a href="/archive">{text:archive txt}</a>
     <a href="https://www.tumblr.com/settings/account">Block</a>
     <a href="https://www.tumblr.com/dashboard">Home</a>
@@ -1395,11 +1353,10 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
 </div>
 {/block:ifNotHideButtons}
 
-</div> <!-- huh --> 
+</div> <!-- hah --> 
+
 
 <main id="content">
-
-
 
 {block:Posts inlineMediaWidth="1280" inlineNestedMediaWidth="1280"}
 <div class="posts" id="{PostID}">
@@ -1496,7 +1453,6 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
 </div>
 
 </div>
-
 {/block:IndexPage}
 
 
@@ -1543,9 +1499,6 @@ width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
 {block:NextPage} <a href="{NextPage}">&plus;</a></p>{/block:NextPage}
 </div>{/block:IndexPage}
 
-
-
-
 </div> <!-- okay aka the whole theme -->
 
 <div class="stick"><img src="{image:sticker}"></div>
@@ -1553,10 +1506,6 @@ width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
 <div class="c">
 <a href="https://sadthemes.tumblr.com/" title="sadthm"><i data-feather="save"></i></a>
 </div>
-
-
-
-
 
 
   <script>
@@ -1571,11 +1520,9 @@ width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
 </script>
 
 
-  
-    <script>
+ <script>
       feather.replace()
     </script>
-
 
 
 <div id="toTop" title="back to top">
@@ -1623,10 +1570,6 @@ imgLoad.on('progress', function(instance, image){
     $(image.img).closest('.photoset').photosetGrid({gutter:'10px', onComplete:function(){msnry.layout();}});    //Grids up photosets nicely
     msnry.layout();
 });
-
-
-
-
 </script>
 
 
