@@ -1,0 +1,1618 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8">
+<HTML>
+
+
+<!--
+
+view by @sadthemes
+THIS IS NOT THE GRID THEME TO USE THAT CODE GO TO:
+https://github.com/senjutobirama/Tumblr-Themes/blob/master/view%20grid
+
+message for bugs/info/help.
+____________________________________________
+
+info
+- img header will auto-fit, make sure that it's not to long. width is 440px.
+- tiled header background height is 100px.
+- change sb images div width to accomodate your images with your links in text options. default is 50px.
+
+____________________________________________
+
+google fonts
+https://fonts.google.com/
+select fonts you want and paste them in the correct field.
+
+annasthms photosets
+https://annasthms.github.io/photosets/
+
+NPF image fix @glenthemes
+git.io/JRBt7
+
+unnest captions @neothm
+https://codepen.io/neothm/pen/PzVjRy
+
+short note count @shythemes
+https://shythemes.tumblr.com/post/156021137818/hello-i-was-wondering-if-you-knew-how-to-shorten
+
+icons
+https://feathericons.com/
+
+-->
+
+<HEAD>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+
+{block:IfRedirect}
+<script>
+if(window.location.pathname == '/') location.replace('tagged/{text:redirect}');
+</script> 
+{block:IfRedirect}
+
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+  <!--
+        NPF images fix v3.0 by @glenthemes [2021]
+        💌 git.io/JRBt7
+--->
+<script src="//npf-images-v3.github.io/script.js"></script>
+<link rel="stylesheet" href="//npf-images-v3.github.io/recon.css">
+<style tmblr-npf>
+:root {
+    --NPF-Caption-Spacing: 10px;
+    --NPF-Image-Spacing:1px;
+}
+</style>
+  
+<link href="https://static.tumblr.com/0podkko/oDSpg7y88/photosets.css" rel="stylesheet">
+<script>
+function gatherData(images, arr) {
+  for (let i = 0; i < images.length; i++) {
+    let currentData = {
+      "width": images[i].getAttribute('data-width'),
+      "height": images[i].getAttribute('data-height'),
+      "low_res": images[i].getAttribute('data-lowres'),
+      "high_res": images[i].getAttribute('data-highres')
+    };
+    arr.push(currentData);
+  }
+}
+function getIndex(elem) {
+  let i = 0;
+  while( (elem = elem.previousElementSibling) != null ) i++;
+  return i;
+}
+function lightbox(elem) {
+  let currentPhotoset = elem.parentNode;
+  let photosetPhotos = currentPhotoset.getElementsByTagName('div');
+  let data = [];
+  gatherData(photosetPhotos, data);
+  Tumblr.Lightbox.init(data, getIndex(elem) + 1);
+}
+</script>
+
+
+<link rel="icon" href="{image:favicon}" type="image/gif" >
+
+<TITLE>{Title}</TITLE>
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+
+<meta name="image:favicon" content="" />
+<meta name="image:bg" content="" />
+<meta name="image:container" content="" />
+<meta name="image:post container" content="" />
+<meta name="image:sb" content="" />
+<meta name="image:icon" content="https://i.imgur.com/tk9wYre.png" />
+<meta name="image:header" content="https://i.imgur.com/yzcHtcM.png" />
+<meta name="image:header bg" content="https://i.imgur.com/eE28ovZ.png" />
+<meta name="image:link 1" content="https://i.imgur.com/aerU3v2.png" />
+<meta name="image:link 2" content="https://i.imgur.com/CNaUcwK.png" />
+<meta name="image:link 3" content="https://i.imgur.com/vE2p7T8.png" />
+<meta name="image:link 4" content="https://i.imgur.com/59jTupV.png" />
+<meta name="image:scrollup" content="https://i.imgur.com/WGDM5yx.png" />
+<meta name="image:cursor" content="https://i.imgur.com/nx9LK6f.png"/>
+<meta name="image:sticker" content="https://i.imgur.com/bWj0mCs.png"/>
+
+<meta name="color:bg" content="#fff" />
+<meta name="color:container" content="#000" />
+<meta name="color:container border" content="#ddd" />
+<meta name="color:container glow" content="#000" />
+<meta name="color:post container" content="#fff" />
+<meta name="color:post container border" content="#fff" />
+<meta name="color:post container glow" content="#fff" />
+<meta name="color:posts" content="#fff" />
+<meta name="color:post glow" content="#EDEDED" />
+<meta name="color:post border" content="#EDEDED" />
+<meta name="color:icon border" content="#000" />
+<meta name="color:title" content="#000" />
+<meta name="color:title glow outline" content="#000" />
+<meta name="color:sb" content="#fff" />
+<meta name="color:sb border" content="#000" />
+<meta name="color:sb glow" content="#fff" />
+<meta name="color:sb txt" content="#000" />
+<meta name="color:sb txt glow" content="#000" />
+<meta name="color:sb link" content="#00B8FF" />
+<meta name="color:sb link glow" content="#00B8FF" />
+<meta name="color:txt" content="#000" />
+<meta name="color:txt glow outline" content="#000" />
+<meta name="color:link" content="#00B8FF" />
+<meta name="color:link glow outline" content="#00B8FF" />
+<meta name="color:link hover" content="#000" />
+<meta name="color:link hover glow outline" content="#00B8FF" />
+<meta name="color:desc" content="#000" />
+<meta name="color:desc glow outline" content="#000" />
+<meta name="color:desc link" content="#00B8FF" />
+<meta name="color:desc link glow outline" content="#00B8FF" />
+<meta name="color:button" content="#00B8FF" />
+<meta name="color:button txt" content="#fff" />
+<meta name="color:tags" content="#bbb" />
+<meta name="color:tags glow outline" content="#000" />
+<meta name="color:footer" content="#535353" />
+<meta name="color:footer glow outline" content="#000" />
+<meta name="color:liked post" content="#FF4930" />
+<meta name="color:ask" content="#EDEDED" />
+<meta name="color:ask txt" content="#000" />
+<meta name="color:ask txt glow outline" content="#000" />
+<meta name="color:ask link" content="#535353" />
+<meta name="color:ask link glow outline" content="#fff" />
+<meta name="color:tooltip bg" content="#00B8FF" />
+<meta name="color:tooltip txt" content="#fff" />
+<meta name="color:tooltip glow outline" content="#fff" />
+<meta name="color:search" content="#DEDEDE" />
+<meta name="color:search txt" content="#000" />
+<meta name="color:select txt" content="#fff" />
+<meta name="color:select bg" content="#00B8FF" />
+<meta name="color:scroll bg" content="#F1F1F1" />
+<meta name="color:scroll thumb" content="#C1C1C1" />
+
+<meta name="select:container border" content="solid" />
+<meta name="select:container border" content="dashed" />
+<meta name="select:container border" content="dotted" />
+<meta name="select:container border" content="double" />
+<meta name="select:container border" content="inset" />
+<meta name="select:container border" content="outset" />
+<meta name="select:container border" content="groove" />
+<meta name="select:container border" content="ridge" />
+
+<meta name="select:container border size" content="0" />
+<meta name="select:container border size" content="1" />
+<meta name="select:container border size" content="2" />
+<meta name="select:container border size" content="3" />
+<meta name="select:container border size" content="4" />
+<meta name="select:container border size" content="5" />
+
+<meta name="select:post container border" content="solid" />
+<meta name="select:post container border" content="dashed" />
+<meta name="select:post container border" content="dotted" />
+<meta name="select:post container border" content="double" />
+<meta name="select:post container border" content="inset" />
+<meta name="select:post container border" content="outset" />
+<meta name="select:post container border" content="groove" />
+<meta name="select:post container border" content="ridge" />
+
+<meta name="select:post container border size" content="0" />
+<meta name="select:post container border size" content="1" />
+<meta name="select:post container border size" content="2" />
+<meta name="select:post container border size" content="3" />
+<meta name="select:post container border size" content="4" />
+<meta name="select:post container border size" content="5" />
+
+<meta name="select:post border" content="solid" />
+<meta name="select:post border" content="dashed" />
+<meta name="select:post border" content="dotted" />
+<meta name="select:post border" content="inset" />
+<meta name="select:post border" content="outset" />
+
+<meta name="select:sb border" content="solid" />
+<meta name="select:sb border" content="dashed" />
+<meta name="select:sb border" content="dotted" />
+<meta name="select:sb border" content="double" />
+<meta name="select:sb border" content="inset" />
+<meta name="select:sb border" content="outset" />
+<meta name="select:sb border" content="groove" />
+<meta name="select:sb border" content="ridge" />
+
+<meta name="select:sb border size" content="0" />
+<meta name="select:sb border size" content="1" />
+<meta name="select:sb border size" content="2" />
+<meta name="select:sb border size" content="3" />
+<meta name="select:sb border size" content="4" />
+<meta name="select:sb border size" content="5" />
+
+<meta name="select:photoset gap" content="0" />
+<meta name="select:photoset gap" content="1" />
+<meta name="select:photoset gap" content="2" />
+<meta name="select:photoset gap" content="3" />
+<meta name="select:photoset gap" content="4" />
+<meta name="select:photoset gap" content="5" />
+<meta name="select:photoset gap" content="10" />
+
+<meta name="select:info txt" content="lowercase" />
+<meta name="select:info txt" content="uppercase" />
+
+<meta name="text:round border" content="5">
+<meta name="text:round img" content="0">
+<meta name="text:icon border size" content="5">
+
+<meta name="text:font family" content="pt sans" />
+<meta name="text:font size" content="13" />
+<meta name="text:info symbol" content="&#x2605;">
+<meta name="text:dropdown txt" content="&bull;&bull;&bull;">
+<meta name="text:ask txt" content="Inbox">
+<meta name="text:archive txt" content="Archive">
+<meta name="text:note txt" content="notes">
+<meta name="text:title" content="TITLE HERE">
+<meta name="text:title font" content="pt sans" />
+<meta name="text:title size" content="30" />
+<meta name="text:description" content="description" />
+<meta name="text:search txt" content="Search">
+
+<meta name="text:link title" content="LINKS">
+<meta name="text:sb link size" content="18" />
+<meta name="text:sb img width" content="50" />
+<meta name="text:link symbol" content="&#x2605;">
+<meta name="text:link 1" content="01">
+<meta name="text:link 1 URL" content="/">
+<meta name="text:link 2" content="02">
+<meta name="text:link 2 URL" content="/">
+<meta name="text:link 3" content="03">
+<meta name="text:link 3 URL" content="/">
+<meta name="text:link 4" content="04">
+<meta name="text:link 4 URL" content="/">
+<meta name="text:extra txt" content="If you have more to say.">
+<meta name="text:redirect" content="TAG NAME">
+<meta name="text:scroll up txt" content="UP!">
+
+<meta name="if:250" content="0" />
+<meta name="if:500" content="0" />
+<meta name="if:cover bg" content="0" />
+<meta name="if:cover container bg" content="0" />
+<meta name="if:cover post container bg" content="0" />
+<meta name="if:cover sb bg" content="0" />
+<meta name="if:transparent container" content="0" />
+<meta name="if:transparent post container" content="0" />
+<meta name="if:hide header" content="0" />
+<meta name="if:header bg" content="0" />
+<meta name="if:hide title" content="0" />
+<meta name="if:hide info" content="0" />
+<meta name="if:hide desc" content="0" />
+<meta name="if:hide buttons" content="0" />
+<meta name="if:hide search" content="0" />
+<meta name="if:hide caption" content="0" />
+<meta name="if:hide extra txt" content="0" />
+<meta name="if:link img" content="0"/>
+<meta name="if:custom cursor" content="0"/>
+<meta name="if:glow" content="0" />
+<meta name="if:glow txt" content="0" />
+<meta name="if:outline txt" content="0" />
+<meta name="if:bold link" content="0" />
+<meta name="if:italic link" content="0" />
+<meta name="if:underline link" content="0" />
+<meta name="if:scroll up txt" content="0" />
+<meta name="if:redirect" content="0" />
+
+
+<style type="text/css">
+
+{block:IfCustomCursor}
+body, *, a, a:hover {cursor:url({image:cursor}), auto;}{/block:IfCustomCursor}
+{block:IfNotCustomCursor}
+a, a:hover {cursor: help;}
+{/block:IfNotCustomCursor}
+
+pre {
+    white-space: pre-line;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+::-moz-selection {
+    background: {color:select bg};
+    color: {color:select txt};}
+    
+::selection {
+    background: {color:select bg};
+    color: {color:select txt};}
+
+body {
+    margin: 0;
+    line-height: 110%;
+    color: {color:txt};
+    font-family: {text:font family};
+    font-size: {text:font size}px;
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:txt glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:txt glow outline},
+    1px -1px 0 {color:txt glow outline},
+	 -1px 1px 0 {color:txt glow outline},
+	 1px 1px 0 {color:txt glow outline};
+    {/block:ifOutlineTxt}
+    background: {color:bg} url("{image:bg}") fixed;
+    {block:IfCoverBg}
+    background-image: url("{image:bg}") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    {/block:IfCoverBg}
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    border-radius: {text:round img}px;
+}
+
+p { margin: 0;}
+h1,h2,h3 {margin: 0; padding: 0; line-height: 100%;}
+blockquote {
+    margin: 0 0 0 10px;
+    border-left: 1px solid {color:txt};
+    padding-left: 10px;
+}
+
+ul {
+    margin: 10px;
+    padding-left: 15px;
+    list-style-type: square;
+}
+
+a:link, a:active, a:visited {
+    color: {color:link};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:link glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:link glow outline},
+    1px -1px 0 {color:link glow outline},
+	 -1px 1px 0 {color:link glow outline},
+	 1px 1px 0 {color:link glow outline};
+    {/block:ifOutlineTxt}
+    {block:IfBoldLink}
+    font-weight: bold;{/block:IfBoldLink}
+    {block:IfItalicLink}
+    font-style: italic;{/block:IfItalicLink}
+    {block:IfNotUnderlineLink}
+    text-decoration: none;{/block:IfNotUnderlineLink}
+    {block:IfUnderlineLink}
+    text-decoration: underline;{/block:IfUnderlineLink}
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.info a:hover, .desc a:hover, .link a:hover, .link2 a:hover, .xtra a:hover, .tags a:hover, .foot a:hover, .feather:hover, .bubble a:hover, a:hover {
+    {block:IfBoldLink}
+    font-weight: bold;{/block:IfBoldLink}
+    color: {color:link hover};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:link hover glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:link hover glow outline},
+    1px -1px 0 {color:link hover glow outline},
+	 -1px 1px 0 {color:link hover glow outline},
+	 1px 1px 0 {color:link hover glow outline};
+    {/block:ifOutlineTxt}
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: {text:round border}px;
+    background-color: {color:scroll bg};
+    
+}
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: {color:scroll bg};
+}
+    
+::-webkit-scrollbar-thumb {
+    background-color: {color:scroll thumb};
+    border-radius: {text:round border}px;
+}
+
+
+.content {
+    {block:ifNot500}{block:ifNot250}
+    width: 840px;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}width: 592px;{/block:if250}
+    {block:if500}width: 940px;{/block:if500}
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    {block:ifGlow}
+    filter:
+    drop-shadow(0 0 5px {color:container glow})
+    drop-shadow(0 0 5px {color:container glow});
+    {/block:ifGlow}
+    background: {color:container} url("{image:container}") fixed;
+    {block:IfCoverContainerBg}
+    background-image: url("{image:container}") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    {/block:IfCoverContainerBg}
+    {block:ifTransparentContainer}
+    background: transparent;
+    {/block:ifTransparentContainer}
+    {block:ifTransparentPostContainer}
+    width: 800px;
+    {/block:ifTransparentPostContainer}
+    outline: {select:container border size}px {select:container border} {color:container border};
+    border-radius: {text:round border}px;
+}
+
+.sidebar {
+    {block:ifNot500}{block:ifNot250}
+    margin-left: 500px; width: 300px;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}margin-left: 352px; width: 200px;{/block:if250}
+    {block:if500}margin-left: 602px; width: 300px;{/block:if500}
+    margin-top: 0px;
+    position: fixed;
+    padding: 20px;
+    background: {color:sb} url("{image:sb}") fixed;
+    {block:IfCoverSbBg}
+    background-image: url("{image:sb}") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    {/block:IfCoverSbBg}
+    color: {color:sb txt};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:sb txt glow outline};
+    {/block:ifGlowTxt}
+    outline: {select:sb border size}px {select:sb border} {color:sb border};
+    border-radius: {text:round border}px;
+    {block:ifTransparentPostContainer}
+    margin-left: 460px;
+    {/block:ifTransparentPostContainer}
+    {block:ifGlow}
+    filter:
+    drop-shadow(0 0 3px {color:sb glow})
+    drop-shadow(0 0 3px {color:sb glow});
+    {/block:ifGlow}
+}
+
+.xtra {
+    margin-bottom: 10px;
+}
+
+
+.link {
+    margin-top: 5px;
+    font-size: {text:sb link size}px;
+    color: {color:sb txt};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:sb txt glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:sb txt glow outline},
+    1px -1px 0 {color:sb txt glow outline},
+	 -1px 1px 0 {color:sb txt glow outline},
+	 1px 1px 0 {color:sb txt glow outline};
+    {/block:ifOutlineTxt}
+    line-height: 100%;
+    display: flex;
+    gap: 0px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.link2 {
+    margin-top: 5px;
+    font-size: {text:sb link size}px;
+    color: {color:sb txt}; 
+}
+
+.link2 p {
+    line-height: 100%;
+    padding: 0 0 10px 0;
+}
+
+.link a, .link2 a, .xtra a {
+    color: {color:sb link};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:sb link glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:sb link glow outline},
+    1px -1px 0 {color:sb link glow outline},
+	 -1px 1px 0 {color:sb link glow outline},
+	 1px 1px 0 {color:sb link glow outline};
+    {/block:ifOutlineTxt}
+}
+
+.huh {
+    align-self: center;
+    width: {text:sb img width}px;
+}
+.huh img {
+    display: block;
+    max-width: 100%;
+    border-radius: {text:round img}px;
+    transition: 0.5s filter; 
+}
+
+.ln {
+    align-self: center;
+    padding-left: 10px;
+    flex-grow: 2;
+}
+
+.contain {
+    {block:ifNot500}{block:ifNot250}
+    width: 442px;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}width: 292px;{/block:if250}
+    {block:if500}width: 542px;{/block:if500}
+    padding: 20px;
+    background: {color:post container} url("{image:post container}") fixed;
+    {block:IfCoverPostContainerBg}
+    background-image: url("{image:post container}") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    {/block:IfCoverPostContainerBg}
+    {block:ifTransparentPostContainer}
+    background: transparent;
+    padding: 0px;
+    {/block:ifTransparentPostContainer}
+    outline: {select:post container border size}px {select:post container border} {color:post container border};
+    border-radius: {text:round border}px;
+    {block:ifGlow}
+    filter:
+    drop-shadow(0 0 3px {color:post container glow})
+    drop-shadow(0 0 3px {color:post container glow});
+    {/block:ifGlow}
+    
+}
+
+.icon {
+    width: 100px;
+    margin-top: -65px;
+    
+}
+
+.icon img {
+    display: block;
+    border-radius: {text:round img}px;
+    outline: {text:icon border size}px solid {color:icon border};
+}
+
+.icon2 {
+    width: 100px;
+   
+}
+
+.icon2 img {
+    display: block;
+    border-radius: {text:round img}px;
+    outline: {text:icon border size}px solid {color:icon border};
+}
+
+.header {
+    {block:ifNot500}{block:ifNot250}
+    width: 442px;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}width: 292px;{/block:if250}
+    {block:if500}width: 542px;{/block:if500}
+    {block:ifHeaderBg}
+    height: 125px;
+    background: {color:post container} url("{image:header bg}") scroll;
+    {/block:ifHeaderBg}
+    border-radius: {text:round img}px;
+}
+
+.header img {
+    display: block;
+    max-width: 100%;
+    border-radius: {text:round img}px;
+}
+
+.stuff {
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    line-height: 100%;
+    font-size: {text:title size}px;
+    font-family: {text:title font};
+    color: {text:title};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:title glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:title glow outline},
+    1px -1px 0 {color:title glow outline},
+	 -1px 1px 0 {color:title glow outline},
+	 1px 1px 0 {color:title glow outline};
+    {/block:ifOutlineTxt}
+    {block:IfBoldLink}
+    font-weight: bold;{/block:IfBoldLink}
+    {block:IfItalicLink}
+    font-style: italic;{/block:IfItalicLink}
+    {block:IfNotUnderlineLink}
+    text-decoration: none;{/block:IfNotUnderlineLink}
+    {block:IfUnderlineLink}
+    text-decoration: underline;{/block:IfUnderlineLink}
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+.info {
+    color: {color:desc};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:desc glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:desc glow outline},
+    1px -1px 0 {color:desc glow outline},
+	 -1px 1px 0 {color:desc glow outline},
+	 1px 1px 0 {color:desc glow outline};
+    {/block:ifOutlineTxt}
+    text-align: center;
+    text-transform: {select:info txt};
+}
+
+.desc {
+    text-align: center;
+    color: {color:desc};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:desc glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:desc glow outline},
+    1px -1px 0 {color:desc glow outline},
+	 -1px 1px 0 {color:desc glow outline},
+	 1px 1px 0 {color:desc glow outline};
+    {/block:ifOutlineTxt}
+    margin-top: 5px;
+}
+
+.pagination a, .info a, .desc a {
+    color: {color:desc link};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:desc link glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:desc link glow outline},
+    1px -1px 0 {color:desc link glow outline},
+	 -1px 1px 0 {color:desc link glow outline},
+	 1px 1px 0 {color:desc link glow outline};
+    {/block:ifOutlineTxt}
+}
+
+.butt {
+    margin-top: 10px;
+    text-align: center;
+    
+}
+
+button {
+    background-color: {color:button};
+    {block:ifGlow}
+    filter:
+    drop-shadow(0 0 3px {color:button});
+    margin-right: 5px;
+    {/block:ifGlow}
+    color: {color:button txt};
+    font-size: {text:font size}px;
+    font-family: {text:font family};
+    border: 0;
+    padding: 5px 7px;
+    border-radius: {text:round border}px;
+    {block:IfBoldLink}
+    font-weight: bold;{/block:IfBoldLink}
+    {block:IfItalicLink}
+    font-style: italic;{/block:IfItalicLink}
+    text-decoration: none;
+    {block:ifNotGlow}
+    margin-right: 3px;
+    {/block:ifNotGlow}
+}
+
+.posts {
+    {block:ifNot500}{block:ifNot250}
+    width: 400px;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}width: 250px;{/block:if250}
+    {block:if500}width: 500px;{/block:if500}
+    margin-bottom: 20px;
+    padding: 20px;
+    background: {color:posts};
+    border: 1px {select:post Border} {color:post border};
+    border-radius: {text:round border}px;
+    {block:ifGlow}
+    filter:
+    drop-shadow(0 0 5px {color:post glow});
+    {/block:ifGlow}
+}
+
+.pic img {
+    display: block;
+    border-radius: {text:round img}px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+[photoset-layout] img:hover, .pic img:hover {
+    filter: blur(2px);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+[photoset-layout] img {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+[photoset-layout] {
+ grid-gap: {select:photoset gap}px;
+}
+
+.cap {
+    margin-top: 10px;
+}
+
+.tumblr_parent {
+    margin: 10px 10px 0px 0px;
+    padding: 0px;
+    border-left: 0;
+}
+
+.tumblr_parent blockquote{
+    margin: 0 0 0 10px;
+    padding-left:10px;
+    border-left: 1px solid {color:txt};
+}
+
+.tumblr_avatar {
+    margin-right: 10px;
+    margin-bottom: 5px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    border-radius: {text:round img}px;
+}
+
+.tags {
+    margin-top: 10px;
+}
+
+.tags a {
+    margin-right: 3px;
+    color: {color:tags};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:tags glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:tags glow outline},
+    1px -1px 0 {color:tags glow outline},
+	 -1px 1px 0 {color:tags glow outline},
+	 1px 1px 0 {color:tags glow outline};
+    {/block:ifOutlineTxt}
+}
+
+.foot {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.foot a {
+    color: {color:footer};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:footer glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:footer glow outline},
+    1px -1px 0 {color:footer glow outline},
+	 -1px 1px 0 {color:footer glow outline},
+	 1px 1px 0 {color:footer glow outline};
+    {/block:ifOutlineTxt}
+}
+
+.pin .feather {
+   position: relative;
+   top: 2px;
+}
+
+.pin {
+   font-weight: bold;
+}
+
+.notecount {
+    display: inline;
+}
+
+.perma {
+   margin-top: 10px; 
+}
+
+ol.notes {
+    padding: 0px;
+    list-style-type: none;
+    border: 0;
+}
+
+ol.notes li.note {
+    border: 1px solid {color:post border};
+    border-top: 0;
+    box-shadow: 0 -1px 0 {color:post border};
+    padding: 0px;
+}
+
+ol.notes li.note img.avatar {
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 7px;
+    width: 25px;
+    height: 25px;
+    border-right: 1px solid {color:post border};
+}
+
+.pagination {
+    text-align: center;
+    font-size: 22px;
+    line-height: 110%;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    color: {color:desc};
+}
+
+.c {
+    bottom: 0; right: 0; padding: 10px; position: fixed;
+}
+
+.c .feather {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    color: {color:scroll thumb};
+}
+
+.spotify_audio_player {
+    height:85px!important;
+    width:100%!important;
+}
+.bandcamp_audio_player {
+    height:850px!important;
+    width:100%!important;
+}
+
+.soundcloud_audio_player {
+    height:85px!important;
+    width:100%!important;
+}
+
+figure.tmblr-embed.tmblr-full iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+.tmblr-iframe-compact .tmblr-iframe--unified-controls {
+-webkit-filter: opacity(0);
+        filter: opacity(0);
+        transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+ 
+.tmblr-iframe-compact .tmblr-iframe--unified-controls:hover {
+-webkit-filter: opacity(1);
+        filter: opacity(1);
+        transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+
+#s-m-t-tooltip {
+    border-radius: {text:round border}px;
+    padding: 5px 7px;
+    background: {color:tooltip bg};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:tooltip glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:tooltip glow outline},
+    1px -1px 0 {color:tooltip glow outline},
+	 -1px 1px 0 {color:tooltip glow outline},
+	 1px 1px 0 {color:tooltip glow outline};
+    {/block:ifOutlineTxt}
+    text-transform: none;
+    text-align: center;
+    transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    color: {color:tooltip txt};
+    font-family: {text:font family};
+    font-size: {select:font size}px;
+    max-width: 200px;
+    word-wrap: break-word;
+    display: block;
+    margin: -40px 0px -10px 10px;
+    z-index: 999999999999;}
+    
+.ask {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}  
+
+.bubble {
+    position: relative;
+    background: {color:ask};
+    color: {color:ask txt};
+    {block:ifGlowTxt}
+    text-shadow: 0 0 3px {color:ask txt glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:ask txt glow outline},
+    1px -1px 0 {color:ask txt glow outline},
+	 -1px 1px 0 {color:ask txt glow outline},
+	 1px 1px 0 {color:ask txt glow outline};
+    {/block:ifOutlineTxt}
+    {block:ifNot500}{block:ifNot250}
+    width: 76%;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}width: 62%;{/block:if250}
+    {block:if500}width: 81%;{/block:if500}
+    border-radius: {text:round border}px;
+    padding: 20px;
+}
+
+.bubble a {
+    color: {color:ask link};
+    {block:ifGlowTxt}
+    text-shadow: 0 0 3px {color:ask link glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:ask link glow outline},
+    1px -1px 0 {color:ask link glow outline},
+	 -1px 1px 0 {color:ask link glow outline},
+	 1px 1px 0 {color:ask link glow outline};
+    {/block:ifOutlineTxt}
+}
+
+.bubble:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    z-index: 1;
+    border-style: solid;
+    border-color: transparent {color:ask};
+    border-width: 8px 0 8px 7px;
+    top: 23px;
+    right: -7px;
+    margin-top: -11px;
+}
+
+.q { 
+    margin-top: 10px;}
+    
+.av img {
+    border-radius: {text:round img}px;
+    display: block;
+}
+
+.ans {
+     margin-top: 20px;
+}
+
+.blink {
+    border: 1px solid {color:footer};
+    border-radius: {text:round border}px;
+    padding: 15px;
+}
+
+.odd, .even {
+    padding: 7px;
+    border-radius: {text:round border}px;
+}
+
+.odd {
+    background: {color:ask};
+    color: {color:ask txt};
+    {block:ifGlowTxt}
+    text-shadow: 0 0 3px {color:ask txt glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:ask txt glow outline},
+    1px -1px 0 {color:ask txt glow outline},
+	 -1px 1px 0 {color:ask txt glow outline},
+	 1px 1px 0 {color:ask txt glow outline};
+    {/block:ifOutlineTxt}
+}
+
+.dropbtn {
+    background-color: {color:button};
+    color: {color:button txt};
+    padding: 5px 7px;
+    border: 0;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.droplist {
+    display: none;
+    position: absolute;
+    background-color: {color:posts};
+    border-radius: {text:round border}px;
+    min-width: 100px;
+    overflow: auto;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+    z-index: 1;
+}
+
+.droplist a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.show {
+    display: block;
+}
+
+.feather {
+    width: {text:font size}px;
+    height: {text:font size}px;
+    color: {color:footer};
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.controls a {
+    position:relative;
+    display:inline-block;
+}
+
+.controls .like .liked + .feather {
+    opacity:1;
+}
+
+.controls .like .liked + .feather {
+    fill: {color:liked post};
+    color: {color:liked post};
+}
+
+.controls .like .like_button {
+    position:relative;
+}
+
+.controls .like .like_button iframe {
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:2;
+    opacity:0;
+}
+
+.searchy {
+    {block:ifNot500}{block:ifNot250}
+    width: 290px;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}width: 190px;{/block:if250}
+    {block:if500}width: 290px;{/block:if500}
+    border: 0;
+    padding: 5px;
+    font-family: inherit;
+    font-size: inherit;
+    color: {color:search txt};
+    background-color: {color:search};
+    border-radius: {text:round border}px;
+}
+
+#toTop {
+    padding: 5px 3px;
+    {block:ifNotScrollUpTxt}
+    background: transparent;
+    {/block:ifNotScrollUpTxt}
+    {block:ifScrollUpTxt}
+    background: {color:button};
+    color: {color:button txt};
+    {/block:ifScrollUpTxt}
+    {block:IfBoldLink}
+    font-weight: bold;{/block:IfBoldLink}
+    {block:IfItalicLink}
+    font-style: italic;{/block:IfItalicLink}
+    text-decoration: none;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    display: none;
+}
+
+{block:ifNotCustomCursor}
+#toTop:hover {
+    cursor: help;
+}
+{/block:ifNotCustomCursor}
+
+.stick {
+    position: relative; 
+    
+}
+
+.stick img {
+    {block:ifNot500}{block:ifNot250}
+    max-width: 340px;
+    {/block:ifNot250}{/block:ifNot500}
+    {block:if250}max-width: 240px;{/block:if250}
+    {block:if500}max-width: 340px;{/block:if500}
+    position: absolute;
+    right:0;
+    bottom: 0;
+    display: block;
+    border-radius: 0px;
+}
+
+</style>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.tumblr.com/7qjmkr5/IUmmdsy41/jquery.style-my-tooltips.js"></script>
+<script>
+   (function($){
+       $(document).ready(function(){
+           $("[title]").style_my_tooltips();
+       });
+   })(jQuery);
+</script>
+
+
+<script>
+function myFunction() {
+  document.getElementById("drop").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("droplist");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+<script src="//code.jquery.com/jquery-2.2.4.min.js"></script>  
+<script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
+<script> $(function(){  $('.posts').unnest({
+    yourCaption: ".cap", 
+    wrapName: ".tumblr_parent",
+    newCaptionUsername: false, 
+    originalPostCaptionUsername: false, 
+    tumblrAvatars: true, 
+    tumblrAvatarClass: ".tumblr_avatar", 
+    usernameColon: false 
+  }); }); </script>
+
+
+</HEAD>
+
+
+<body>
+
+<div class="c">
+<a href="https://sadthemes.tumblr.com/" title="sadthm"><i data-feather="save"></i></a>
+</div>
+
+
+
+<div class="content">
+
+
+
+<div data-aos="fade-up"
+data-aos-easing="ease-in-out"
+data-aos-duration="1000">
+
+<div class="sidebar">
+
+<h1>{text:link title}</h1>
+
+{block:ifLinkImg}
+<div class="link">
+<div class="huh"><img src="{image:link 1}"></div>
+
+<div class="ln"><a href="{text:link 1 URL}">{text:link 1}</a></div>
+</div>
+
+<div class="link">
+<div class="huh"><img src="{image:link 2}"></div>
+<div class="ln"><a href="{text:link 2 URL}">{text:link 2}</a></div>
+</div>
+
+<div class="link">
+<div class="huh"><img src="{image:link 3}"></div>
+<div class="ln"><a href="{text:link 3 URL}">{text:link 3}</a></div>
+</div>
+
+<div class="link">
+<div class="huh"><img src="{image:link 4}"></div>
+<div class="ln"><a href="{text:link 4 URL}">{text:link 4}</a></div>
+</div>
+{/block:ifLinkImg}
+
+
+{block:ifNotLinkImg}
+<div class="link2">
+<p>{text:link symbol} <a href="{text:link 1 URL}">{text:link 1}</a></p>
+<p>{text:link symbol} <a href="{text:link 2 URL}">{text:link 2}</a></p>
+<p>{text:link symbol} <a href="{text:link 3 URL}">{text:link 3}</a></p>
+<p>{text:link symbol} <a href="{text:link 4 URL}">{text:link 4}</a></p>
+</div>
+{/block:ifNotLinkImg} 
+
+{block:ifNotHideExtraTxt}
+<div class="xtra">{text:extra txt}</div>
+{/block:ifNotHideExtraTxt}
+
+{block:ifNotHideSearch}
+<form action="/search" method="get">
+    <input type="text" class="searchy" value="{text:search txt}" name="q" value="{SearchQuery}"/>
+</form>
+{/block:ifNotHideSearch}
+
+</div> <!-- sb --> </div><!-- data aos -->
+
+
+
+<div class="contain">
+
+<div data-aos="fade-up"
+data-aos-easing="ease-in-out"
+data-aos-duration="1000">
+
+{block:ifNotHideHeader}
+<div class="header">
+{block:ifNotHeaderBg}
+<center>
+<img src="{image:header}">
+</center>
+{/block:ifNotHeaderBg}
+</div>
+<center><div class="icon">
+<a href="/"><img src="{image:icon}"></a>
+</div></center>
+{/block:ifNotHideHeader}
+
+
+{block:ifHideHeader}
+<center><div class="icon2">
+<a href="/"><img src="{image:icon}"></a>
+</div></center>
+{/block:ifHideHeader}
+
+
+<div class="stuff">
+
+{block:ifNotHideTitle}
+<div class="title">{text:title}</div>
+{/block:ifNotHideTitle}
+
+{block:ifNotHideInfo}
+<div class="info">
+<a href="https://www.tumblr.com/blog/view/{Name}">@{Name}</a> {text:info symbol} <a href="/">{Name}.tumblr.com</a>
+</div>
+{/block:ifNotHideInfo}
+
+{block:ifNotHideDesc}
+<div class="desc">{text:description}</div>
+{/block:ifNotHideDesc}
+
+{block:ifNotHideButtons}
+<div class="butt">
+<a href="/ask"><button>{text:ask txt}</button></a>
+<a href="https://www.tumblr.com/follow/{Name}"><button>Follow</button></a>
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">{text:dropdown txt}</button>
+  <div id="drop" class="droplist">
+    <a href="/archive">{text:archive txt}</a>
+    <a href="https://www.tumblr.com/settings/account">Block</a>
+    <a href="https://www.tumblr.com/dashboard">Home</a>
+  </div>
+</div>
+</div>
+{/block:ifNotHideButtons}
+
+
+
+</div>  <!-- stuff -->
+</div> <!-- data aos -->
+
+
+{block:Posts inlineMediaWidth="1280" inlineNestedMediaWidth="1280"}
+
+<div data-aos="fade-up"
+data-aos-easing="ease-in-out"
+data-aos-duration="1000">
+
+<div class="posts" id="{PostID}">
+
+{block:Text}
+{block:Title}<h1 style="margin-bottom: 10px">{Title}</h1></p>{/block:Title}
+{Body}
+{/block:Text}
+
+{block:Photo}
+{block:IndexPage}
+<div class="pic">
+<a href="{Permalink}">
+{block:ifNot500}{block:ifNot250}
+<img src="{PhotoURL-400}">
+{/block:ifNot250}{/block:ifNot500}
+{block:if250}<img src="{PhotoURL-250}">{/block:if250}
+{block:if500}<img src="{PhotoURL-500}">{/block:if500} 
+</a></div>
+{/block:IndexPage}
+{block:PermalinkPage}
+<div class="pic">
+{LinkOpenTag}{block:ifNot500}{block:ifNot250}<img src="{PhotoURL-400}">{/block:ifNot250}{block:ifNot500}{LinkCloseTag}
+</div>
+{/block:PermalinkPage}
+{/block:Photo}
+
+{block:Photoset}
+<div class="photoset-grid" photoset-layout="{PhotosetLayout}">{block:Photos}<div data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" data-lowres="{PhotoURL-500}" data-highres="{PhotoURL-HighRes}" onclick="lightbox(this)"><img src="{PhotoURL-HighRes}" /></div>{/block:Photos}</div>
+{/block:Photoset}
+
+{block:Audio}
+{block:AudioEmbed}
+<div style="height: 85px">
+{block:ifNot500}{block:ifNot250}
+{AudioEmbed-400}
+{/block:ifNot250}{/block:ifNot500}
+{block:if250}{AudioEmbed-250}{/block:if250}
+{block:if500}{AudioEmbed-500}{/block:if500}    
+</div>
+{/block:AudioEmbed}
+{/block:Audio}
+
+{block:Video}
+{block:ifNot500}{block:ifNot250}
+{VideoEmbed-400}
+{/block:ifNot250}{/block:ifNot500}
+{block:if250}{VideoEmbed-250}{/block:if250}
+{block:if500}{VideoEmbed-500}{/block:if500}
+
+{/block:Video}
+
+{block:Answer}
+<div class="ask">
+<div class="bubble"><b>{Asker}</b> asked:
+<div class="q">{Question}</div>
+</div>
+<div class="av"><img src="{AskerPortraitURL-40}"></div>    
+</div>
+<div class="ans">{Answer}</div>
+{/block:Answer}
+
+{block:Quote}
+<p style="text-align: justify; font-size: 170%; line-height: 100%">{Quote}</p>
+{block:Source}<p style="margin-top: 10px">&mdash; {Source}</p>{/block:Source}
+{/block:Quote}
+
+{block:Link}
+<div class="blink"><a href="{URL}" target="blank"><h2>{Name} &#187;</h2></a></div>
+{block:Description}<p style="margin-top: 10px">{Description}</p>{/block:Description}	
+{/block:Link}
+
+{block:Chat}
+
+{block:Title}<h1>{Title}</h1>{/block:Title}
+{block:Lines}
+<div class="{Alt} user_{UserNumber}">
+{block:Label}
+<span style=" text-transform: uppercase; font-weight: bold;">{Label}</span>
+{/block:Label} {Line}
+</div>
+{/block:Lines}
+
+{/block:Chat}
+
+{block:ifNotHideCaption}
+<div class="cap">{block:Caption}{Caption}{/block:Caption}</div>
+{/block:ifNotHideCaption}
+
+{block:IndexPage}
+{block:HasTags}
+<div class="tags">
+{block:Tags}
+<a href="{TagURL}">#{Tag}</a> 
+{/block:Tags}
+</div>
+{/block:HasTags}
+
+
+<div class="foot">
+<a href="{Permalink}" style="float: left;"><div class="notecount">{NoteCount}</div> {text:note txt}</a> 
+
+<div class="controls">
+<a href="#" class="like" title="like">{LikeButton}<i data-feather="heart"></i>
+</a> 
+<a href="{ReblogURL}" data-toggle="tooltip" title="reblog"><i data-feather="rotate-cw"></i></a>
+</div> </div>
+{/block:IndexPage}
+
+
+{block:PermalinkPage}
+
+{block:ifHideCaption}
+{block:Caption}<div class="cap">{Caption}</div>{/block:Caption}
+{/block:ifHideCaption}
+
+<div class="perma">
+{block:Date}<b>Posted {DayOfWeek}, {DayOfMonth}{DayOfMonthSuffix} of {Month}</b> {/block:Date}
+{block:NoteCount}<b>with <div class="notecount">{NoteCountWithLabel}</div></b>{/block:NoteCount}
+{block:PermalinkPagination} 
+<p>Go to {block:PreviousPost}<a href="{PreviousPost}">Previous Post</a>{/block:PreviousPost}{block:NextPost} - <a href="{NextPost}">Next Post</a>{/block:NextPost}</p>
+{/block:PermalinkPagination}
+</div>
+
+{block:PostNotes}
+{PostNotes-64}
+{/block:PostNotes}
+{/block:PermalinkPage}
+
+{block:ContentSource}
+<!-- {SourceURL}{block:SourceLogo}<img src="{BlackLogoURL}"
+width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+{/block:SourceLogo}
+{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
+{/block:ContentSource}
+
+<!--{block:NoRebloggedFrom}{block:RebloggedFrom}{ReblogParentName}{/block:RebloggedFrom}{/block:NoRebloggedFrom} --> 
+
+
+{block:PinnedPostLabel}<div class="pin"><i data-feather="map-pin"></i> {PinnedPostLabel}</div>{/block:PinnedPostLabel}
+
+</div> <!-- posts --> </div> <!-- data aos -->
+{/block:Posts}
+
+
+{block:IndexPage}
+<div class="pagination">
+{block:PreviousPage}<a href="{PreviousPage}">&minus;</a> {/block:PreviousPage}
+{CurrentPage}
+{block:NextPage} <a href="{NextPage}">&plus;</a></p>{/block:NextPage}
+</div>{/block:IndexPage}
+
+</div> <!-- contain -->
+
+<div class="stick"><img src="{image:sticker}"></div>
+
+</div> <!-- content -->
+
+
+
+<script>
+     var $container = $('.content');
+   $container.find('.notecount').each(function(){
+       var n = $(this).html().split(' ')[0].replace(/,/g, '');
+       if (n > 999) {
+           n = Math.floor(n / 100) / 10;
+           $(this).text(n + 'k {block:PermalinkPage}notes{/block:PermalinkPage}');
+       }
+   });
+</script>
+
+ <script type="text/javascript">
+
+$('.content').hide().fadeIn(1000);
+$('.posts').hide().fadeIn(2000);
+    </script>
+    
+    <script>
+      feather.replace()
+    </script>
+    
+    
+<div id="toTop" title="back to top">
+{block:ifNotScrollUpTxt}
+<img src="{image:scrollup}" style="display: block;" title="back to top">
+{/block:ifNotScrollUpTxt}
+{block:ifScrollUpTxt}
+{text:scroll up txt}
+{/block:ifScrollUpTxt}
+</div>
+    
+<script>
+    $(window).scroll(function() {
+  if ($(this).scrollTop()) {
+    $('#toTop').fadeIn();
+  } else {
+    $('#toTop').fadeOut();
+  }
+});
+
+$("#toTop").click(function() {
+  $("html, body").animate({
+    scrollTop: 0
+  }, 1000);
+});
+</script>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+    
+</BODY>
+
+</HTML>
+
+
