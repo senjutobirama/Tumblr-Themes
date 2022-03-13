@@ -550,7 +550,12 @@ a:link, a:active, a:visited {
     margin-left: 626px; width: 300px;
     margin-top: 0px;
     position: fixed;
+    {block:ifNotHideSearch}
     padding: 20px;
+    {/block:ifNotHideSearch}
+    {block:ifHideSearch}
+    padding: 20px 20px 10px 20px;
+    {/block:ifHideSearch}
     background: {color:sb} url("{image:sb}") fixed;
     {block:IfCoverSbBg}
     background-image: url("{image:sb}") no-repeat center center fixed;
