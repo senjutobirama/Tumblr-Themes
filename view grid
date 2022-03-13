@@ -783,10 +783,14 @@ main {
     position: relative;
     overflow: hidden;
     padding: 10px 0 10px 20px;
+    {block:PermalinkPage}padding: 10px 0 10px 38px;{block:PermalinkPage}
 }
 
 .posts {
     width: 250px;
+    {block:PermalinkPage}
+    width: 500px;
+    {/block:PermalinkPage}
     padding: 10px;
     margin: 10px 20px 10px 0px;
     background: {color:posts};
@@ -1375,7 +1379,7 @@ figure.tmblr-embed.tmblr-full iframe {
 {/block:IndexPage}
 {block:PermalinkPage}
 <div class="pic">
-{LinkOpenTag}<img src="{PhotoURL-250}">{LinkCloseTag}
+{LinkOpenTag}<img src="{PhotoURL-500}">{LinkCloseTag}
 </div>
 {/block:PermalinkPage}
 {/block:Photo}
@@ -1386,14 +1390,26 @@ figure.tmblr-embed.tmblr-full iframe {
 
 {block:Audio}
 {block:AudioEmbed}
+{block:IndexPage}
 <div style="height: 85px">
-{AudioEmbed-250}{/block:if250}    
+{AudioEmbed-250}    
 </div>
+{/block:IndexPage}
+{block:PermalinkPage}
+<div style="height: 85px">
+{AudioEmbed-500}    
+</div>
+{/block:PermalinkPage}
 {/block:AudioEmbed}
 {/block:Audio}
 
 {block:Video}
+{block:IndexPage}
 {VideoEmbed-250}
+{/block:IndexPage}
+{block:PermalinkPage}
+{VideoEmbed-500}
+{/block:PermalinkPage}
 {/block:Video}
 
 {block:Answer}
