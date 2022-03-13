@@ -607,7 +607,7 @@ a:link, a:active, a:visited {
 	 -1px 1px 0 {color:sb txt glow outline},
 	 1px 1px 0 {color:sb txt glow outline};
     {/block:ifOutlineTxt}
-    line-height: 100%;
+    line-height: 110%;
     display: flex;
     gap: 0px;
     justify-content: space-between;
@@ -616,17 +616,19 @@ a:link, a:active, a:visited {
 
 .link2 {
     margin-top: 5px;
-    font-size: {text:sb link size}px;
+    font-size: {text:sb txt size}px;
    color: {color:sb txt}; 
 }
 
 .link2 p {
     line-height: 100%;
     padding: 5px 0 5px 0;
+    font-size: {text:sb txt size}px;
 }
 
 .link a, .link2 a, .xtra a {
     color: {color:sb link};
+    font-size: {text:sb txt size}px;
     {block:ifGlowTxt}
     text-shadow:  0 0 3px {color:sb link glow outline};
     {/block:ifGlowTxt}
@@ -654,6 +656,7 @@ a:link, a:active, a:visited {
     align-self: center;
     padding-left: 10px;
     flex-grow: 2;
+    
 }
 
 .hah {
