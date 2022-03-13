@@ -540,6 +540,9 @@ a:link, a:active, a:visited {
     drop-shadow(0 0 3px {color:container glow})
     drop-shadow(0 0 3px {color:container glow});
     {/block:ifGlow}
+    {block:ifTransparentContainer}
+    background: transparent;
+    {/block:ifTransparentContainer}
     outline: {select:container border size}px {select:container border} {color:container border};
     border-radius: {text:round border}px;
     width: 968px;
@@ -752,7 +755,12 @@ a:link, a:active, a:visited {
     {block:IfUnderlineLink}
     text-decoration: underline;{/block:IfUnderlineLink}
     margin-bottom: 5px;
+    {block:ifNotHideInfo}
     margin-top: -10px;
+    {/block:ifNotHideInfo}
+    {block:ifHideInfo}
+    margin-top: 10px;
+    {/block:ifHideInfo}
 }
 
 .info {
@@ -768,6 +776,12 @@ a:link, a:active, a:visited {
     {/block:ifOutlineTxt}
     text-align: center;
     text-transform: {select:info txt};
+    {block:ifNotHideTitle}
+    margin-top: 0px;
+    {/block:ifNotHideTitle}
+    {block:ifHideTitle}
+    margin-top: -5px;
+    {/block:ifHideTitle}
 }
 
 .desc {
