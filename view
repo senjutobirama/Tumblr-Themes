@@ -1564,7 +1564,9 @@ width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
 
 </div> <!-- contain -->
 
+{block:IndexPage}
 <div class="stick"><img src="{image:sticker}"></div>
+{/block:IndexPage}
 
 </div> <!-- content -->
 
@@ -1625,5 +1627,4 @@ $("#toTop").click(function() {
 </BODY>
 
 </HTML>
-
 
