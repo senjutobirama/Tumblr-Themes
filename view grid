@@ -1598,7 +1598,9 @@ width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
 
 </div> <!-- okay aka the whole theme -->
 
+{block:IndexPage}
 <div class="stick"><img src="{image:sticker}"></div>
+{/block:IndexPage}
 
 
 
