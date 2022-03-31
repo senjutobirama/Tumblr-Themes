@@ -4,15 +4,9 @@
 
 <!--
 
-@sadthemes
+howl at the moon by @sadthemes
+message for them bugs and fixed ya heard?
 
-message for bugs/info/help.
-____________________________________________
-
-info
--
--
--
 ____________________________________________
 
 google fonts
@@ -342,16 +336,16 @@ blockquote {
 
 
 ul {
-  list-style: none; /* Remove default bullets */
+  list-style: none;
 }
 
 ul li::before {
-  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: {color:txt}; /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  content: "\2022";  
+  color: {color:txt}; 
+  font-weight: bold; 
+  display: inline-block;  
+  width: 1em; 
+  margin-left: -2em; 
 }
 
 
@@ -504,10 +498,14 @@ a:link, a:active, a:visited {
 .main {
     margin: 20px auto;
     {block:ifNot500}{block:ifNot250}
-    width: 779px;
+    width:  calc(779px - {select:sb width}px);
     {/block:ifNot250}{/block:ifNot500}
-    {block:if250}width: 629px;{/block:if250}
-    {block:if500}width: 879px;{/block:if500}
+    {block:if250}
+    width:  calc(629px - {select:sb width}px);
+    {/block:if250}
+    {block:if500}
+    width:  calc(879px - {select:sb width}px);
+    {/block:if500}
 }
 
 
