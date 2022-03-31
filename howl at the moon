@@ -9,6 +9,15 @@ message for them bugs and fixed ya heard?
 
 ____________________________________________
 
+info
+- 250, 400, 500px posts
+- rainbow borders/links omg
+- different size icons
+- 3 or 6 links.
+many options tbh
+
+____________________________________________
+
 google fonts
 https://fonts.google.com/
 select fonts you want and paste them in the correct field.
@@ -279,6 +288,9 @@ function wobbler() {
 <meta name="if:cover bg" content="0" />
 <meta name="if:transparent" content="0" />
 <meta name="if:custom cursor" content="0" />
+<meta name="if:rainbow border" content="0" />
+<meta name="if:rainbow links" content="0"/>
+<meta name="if:rainbow link hover" content="0"/>
 <meta name="if:more links" content="0" />
 <meta name="if:bold link" content="0" />
 <meta name="if:italic link" content="0" />
@@ -331,7 +343,26 @@ blockquote {
     margin: 0 0 0 13px;
     border-left: 1px solid {color:link};
     padding-left: 7px;
+ 	{block:IfRainbowBorder}
+    --angle: 0deg;
+    border-left: {select:post border size}px {select:post border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
 }
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
 
 
 
@@ -474,7 +505,28 @@ a:link, a:active, a:visited {
     -webkit-transition: 0.3s ease-in-out;
     -moz-transition: 0.3s ease-in-out;
     transition:  0.3s ease-in-out;
+{block:IfRainbowLinks}
+-webkit-animation:rainbow 1.2s infinite;
+-ms-animation:rainbow 1.2s infinite;
+-o-animation:rainbow 1.2s infinite;
+animation:rainbow 1.2s infinite;
+{/block:IfRainbowLinks}
 }
+{block:IfRainbowLinks}
+@-webkit-keyframes rainbow {
+0% {color: #ff0000;}
+10% {color: #ff8000;}
+20% {color: #ffff00;}
+30% {color: #80ff00;}
+40% {color: #00ff00;}
+50% {color: #00ff80;}
+60% {color: #00ffff;}
+70% {color: #0080ff;}
+80% {color: #0000ff;}
+90% {color: #8000ff;}
+100% {color: #ff0080;}
+}
+{/block:IfRainbowLinks}
 
 .sneaky a:hover, .footer a:hover, .asker a:hover, a:hover {
     color: {color:link hover};
@@ -493,7 +545,28 @@ a:link, a:active, a:visited {
 	 -1px 1px 0 {color:link hover glow outline},
 	 1px 1px 0 {color:link hover glow outline};
     {/block:ifOutlineTxt}
+{block:IfRainbowLinkHover}
+-webkit-animation:rainbow 1.2s infinite;
+-ms-animation:rainbow 1.2s infinite;
+-o-animation:rainbow 1.2s infinite;
+animation:rainbow 1.2s infinite;
+{/block:IfRainbowLinkHover}
 }
+{block:IfRainbowLinkHover}
+@-webkit-keyframes rainbow {
+0% {color: #ff0000;}
+10% {color: #ff8000;}
+20% {color: #ffff00;}
+30% {color: #80ff00;}
+40% {color: #00ff00;}
+50% {color: #00ff80;}
+60% {color: #00ffff;}
+70% {color: #0080ff;}
+80% {color: #0000ff;}
+90% {color: #8000ff;}
+100% {color: #ff0080;}
+}
+{/block:IfRainbowLinkHover}
 
 .main {
     margin: 20px auto;
@@ -543,7 +616,26 @@ a:link, a:active, a:visited {
     width: 100%;
     display: block;
     
+	{block:IfRainbowBorder}
+    --angle: 0deg;
+    border: {select:sb border size}px {select:sb border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
 }
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
 
 .sea img:hover {
    -webkit-filter: blur(0px);
@@ -558,7 +650,26 @@ border: {select:sb border size}px {select:sb border} {color:desc border};
 border-radius: {text:round border}px;
 margin-top: 10px;
     
+	{block:IfRainbowBorder}
+    --angle: 0deg;
+    border: {select:sb border size}px {select:sb border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
 }
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
 
 .desc {
     line-height: 110%;
@@ -697,7 +808,27 @@ form.search .query {
 	 -1px 1px 0 {color:search txt glow outline},
 	 1px 1px 0 {color:search txt glow outline};
     {/block:ifOutlineTxt}
-    z-index: 2;}
+    z-index: 2;
+ 	{block:IfRainbowBorder}
+    --angle: 0deg;
+    border: {select:post border size}px {select:post border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
 
 form.search button {
     float: left;
@@ -725,7 +856,27 @@ form.search button {
     border: {select:post border size}px {select:post border} {color:search border};
     border-radius: 0px {text:round border}px {text:round border}px 0px;
     border-left: none;
-    z-index: 2;}
+    z-index: 2;
+  	{block:IfRainbowBorder}
+    --angle: 0deg;
+    border: {select:post border size}px {select:post border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
 
 .posts {
     {block:ifNot500}{block:ifNot250}
@@ -743,7 +894,26 @@ form.search button {
     margin-bottom: 30px;
     border: {select:post border size}px {select:post border} {color:post border};
     border-radius: {text:round border}px;
+    	{block:IfRainbowBorder}
+    --angle: 0deg;
+    border: {select:post border size}px {select:post border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
 }
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
 
 .pic img {
     display: block;
@@ -881,7 +1051,26 @@ figure.tmblr-embed.tmblr-full iframe {
     display: block;
     margin: -40px 0px -10px 10px;
     z-index: 999999999999;
+	{block:IfRainbowBorder}
+    --angle: 0deg;
+    border: {select:post border size}px {select:post border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
 }
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
     
 
 
@@ -897,7 +1086,26 @@ figure.tmblr-embed.tmblr-full iframe {
     {/block:ifTransparent}
     padding: 5px;
     margin-top: 5px;
+	{block:IfRainbowBorder}
+    --angle: 0deg;
+    border: {select:footer border size}px {select:footer border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
 }
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
 
 .footer a {
     color: {color:footer txt};
@@ -1247,5 +1455,4 @@ $('body').hide().fadeIn(2000);
 </body>
 
 </HTML>
-
 
