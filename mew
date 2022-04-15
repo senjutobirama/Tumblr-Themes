@@ -1388,7 +1388,7 @@ $(document).ready(function(){
 
 
 <div class="icon">
-<center><a href="/" title="hey there idk what next theme to make"><img src="{image:icon}"></a></center>
+<center><a href="/"><img src="{image:icon}"></a></center>
 </div>
 
 {block:ifPxlDesc}
