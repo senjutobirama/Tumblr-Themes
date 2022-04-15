@@ -311,6 +311,7 @@ if(window.location.pathname == '/') location.replace('tagged/{text:redirect}');
 <meta name="if:glow txt" content="0" />
 <meta name="if:outline txt" content="0" />
 <meta name="if:hide title" content="0" />
+<meta name="if:hide search" content="0" />
 <meta name="if:hide desc" content="0" />
 <meta name="if:hide links" content="0" />
 <meta name="if:hide caption" content="0" />
@@ -1381,11 +1382,12 @@ $(document).ready(function(){
 
 
 <div class="sb">
+{block:ifNotHideSearch}
 <div class="Search"><form class="search" action="javascript:return false">
   <input type="text" class="query" placeholder="{text:search txt}">
   <button type="submit">{text:search button}</button>
 </form></div>
-
+{/block:ifNotHideSearch}
 
 <div class="icon">
 <center><a href="/"><img src="{image:icon}"></a></center>
