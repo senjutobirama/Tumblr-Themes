@@ -1,0 +1,1611 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8">
+<HTML>
+
+<!--
+
+mew by @sadthemes
+message for them bugs and fixed ya heard?
+
+____________________________________________
+
+info
+- 400, 500, 540, 600, 700 posts
+- any size sidebar don't make it too chonky
+- pixels for sidebar are optional & you don't need all 10
+- rainbow borders; doesn't work for searchbar :c
+- gradient links
+- 3 or 6 links.
+many options tbh
+
+____________________________________________
+
+google fonts
+https://fonts.google.com/
+select fonts you want and paste them in the correct field.
+
+annasthms photosets
+https://annasthms.github.io/photosets/
+
+NPF image fix @glenthemes
+git.io/JRBt7
+
+unnest captions @neothm
+https://codepen.io/neothm/pen/PzVjRy
+
+short note count @shythemes
+https://shythemes.tumblr.com/post/156021137818/hello-i-was-wondering-if-you-knew-how-to-shorten
+
+-->
+
+
+<HEAD>
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+  <!--
+        NPF images fix v3.0 by @glenthemes [2021]
+        💌 git.io/JRBt7
+--->
+<script src="//npf-images-v3.github.io/script.js"></script>
+<link rel="stylesheet" href="//npf-images-v3.github.io/recon.css">
+<style tmblr-npf>
+:root {
+    --NPF-Caption-Spacing:10px;
+    --NPF-Image-Spacing:1px;
+}
+</style>
+
+
+<link href="https://static.tumblr.com/0podkko/oDSpg7y88/photosets.css" rel="stylesheet">
+<script>
+function gatherData(images, arr) {
+  for (let i = 0; i < images.length; i++) {
+    let currentData = {
+      "width": images[i].getAttribute('data-width'),
+      "height": images[i].getAttribute('data-height'),
+      "low_res": images[i].getAttribute('data-lowres'),
+      "high_res": images[i].getAttribute('data-highres')
+    };
+    arr.push(currentData);
+  }
+}
+function getIndex(elem) {
+  let i = 0;
+  while( (elem = elem.previousElementSibling) != null ) i++;
+  return i;
+}
+function lightbox(elem) {
+  let currentPhotoset = elem.parentNode;
+  let photosetPhotos = currentPhotoset.getElementsByTagName('div');
+  let data = [];
+  gatherData(photosetPhotos, data);
+  Tumblr.Lightbox.init(data, getIndex(elem) + 1);
+}
+</script>
+
+{block:IfRedirect}
+<script>
+if(window.location.pathname == '/') location.replace('tagged/{text:redirect}');
+</script> 
+{block:IfRedirect}
+
+
+<link rel="icon" href="{image:favicon}" type="image/gif" >
+
+<TITLE>{Title}</TITLE>
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+
+<meta name="image:favicon" content="" />
+<meta name="image:bg" content="" />
+<meta name="image:outside" content="" />
+<meta name="image:icon" content="https://i.imgur.com/7aWroed.png" />
+<meta name="image:cursor" content="https://i.imgur.com/7LbphiL.png"/>
+<meta name="image:footer pxl" content="https://i.imgur.com/JxCj9xI.gif"/>
+<meta name="image:pxl 1" content=""/>
+<meta name="image:pxl 2" content=""/>
+<meta name="image:pxl 3" content=""/>
+<meta name="image:pxl 4" content=""/>
+<meta name="image:pxl 5" content=""/>
+<meta name="image:pxl 6" content=""/>
+<meta name="image:pxl 7" content=""/>
+<meta name="image:pxl 8" content=""/>
+<meta name="image:pxl 9" content=""/>
+<meta name="image:pxl 10" content=""/>
+
+
+<meta name="color:bg" content="#fff" />
+<meta name="color:outside" content="#FEF500" />
+<meta name="color:outside border" content="#000" />
+<meta name="color:posts" content="#fff" />
+<meta name="color:post border" content="#000" />
+<meta name="color:title" content="#000" />
+<meta name="color:title glow outline" content="#FEF500" />
+<meta name="color:sb" content="#fff" />
+<meta name="color:sb border" content="#000" />
+<meta name="color:sb link bg" content="#E80211" />
+<meta name="color:sb link border" content="#000" />
+<meta name="color:sb link" content="#000" />
+<meta name="color:sb link glow outline" content="#000" />
+<meta name="color:desc txt" content="#000" />
+<meta name="color:desc txt glow outline" content="#000" />
+<meta name="color:desc link" content="#FEF500" />
+<meta name="color:desc link glow outline" content="#FEF500" />
+<meta name="color:txt" content="#000" />
+<meta name="color:txt glow outline" content="#FEF500" />
+<meta name="color:link" content="#000" />
+<meta name="color:link glow outline" content="#E80211" />
+<meta name="color:link hover" content="#ED6902" />
+<meta name="color:link hover glow outline" content="#ED6902" />
+<meta name="color:gradient 1" content="#E80211" />
+<meta name="color:gradient 2" content="#ED6902" />
+<meta name="color:gradient 3" content="#FEF500" />
+<meta name="color:footer" content="#E80211" />
+<meta name="color:footer border" content="#000" />
+<meta name="color:footer txt" content="#FEF500" />
+<meta name="color:footer glow outline" content="#000" />
+<meta name="color:search" content="#FEF500" />
+<meta name="color:search txt" content="#000" />
+<meta name="color:search txt glow outline" content="#FEF500" />
+<meta name="color:search btn" content="#E80211" />
+<meta name="color:search btn txt" content="#fff" />
+<meta name="color:search btn txt glow outline" content="#000" />
+<meta name="color:search border" content="#000" />
+<meta name="color:tooltip" content="#FEF500" />
+<meta name="color:tooltip txt" content="#E80211" />
+<meta name="color:tooltip txt glow outline" content="#E80211" />
+<meta name="color:select txt" content="#000" />
+<meta name="color:select bg" content="#FEF500" />
+
+
+<meta name="select:sb border" content="solid" />
+<meta name="select:sb border" content="dashed" />
+<meta name="select:sb border" content="dotted" />
+<meta name="select:sb border" content="double" />
+<meta name="select:sb border" content="inset" />
+<meta name="select:sb border" content="outset" />
+<meta name="select:sb border" content="groove" />
+<meta name="select:sb border" content="ridge" />
+
+<meta name="select:sb link border" content="solid" />
+<meta name="select:sb link border" content="dashed" />
+<meta name="select:sb link border" content="dotted" />
+<meta name="select:sb link border" content="double" />
+<meta name="select:sb link border" content="inset" />
+<meta name="select:sb link border" content="outset" />
+<meta name="select:sb link border" content="groove" />
+<meta name="select:sb link border" content="ridge" />
+
+<meta name="select:search border" title="1" content="1" />
+<meta name="select:search border" title="0" content="0" />
+<meta name="select:search border" title="2" content="2" />
+
+<meta name="select:outside border" content="solid" />
+<meta name="select:outside border" content="dashed" />
+<meta name="select:outside border" content="dotted" />
+<meta name="select:outside border" content="double" />
+<meta name="select:outside border" content="inset" />
+<meta name="select:outside border" content="outset" />
+<meta name="select:outside border" content="groove" />
+<meta name="select:outside border" content="ridge" />
+
+<meta name="select:border" content="solid" />
+<meta name="select:border" content="dashed" />
+<meta name="select:border" content="dotted" />
+<meta name="select:border" content="double" />
+<meta name="select:border" content="inset" />
+<meta name="select:border" content="outset" />
+<meta name="select:border" content="groove" />
+<meta name="select:border" content="ridge" />
+
+<meta name="select:footer border" content="solid" />
+<meta name="select:footer border" content="dashed" />
+<meta name="select:footer border" content="dotted" />
+<meta name="select:footer border" content="double" />
+<meta name="select:footer border" content="inset" />
+<meta name="select:footer border" content="outset" />
+<meta name="select:footer border" content="groove" />
+<meta name="select:footer border" content="ridge" />
+
+
+<meta name="select:post size" title="400" content="400" />
+<meta name="select:post size" title="500" content="500" />
+<meta name="select:post size" title="540" content="540" />
+<meta name="select:post size" title="600" content="600" />
+<meta name="select:post size" title="700" content="700" />
+
+<meta name="select:post padding" title="10" content="10" />
+<meta name="select:post padding" title="15" content="15" />
+<meta name="select:post padding" title="20" content="20" />
+<meta name="select:post padding" title="0" content="0" />
+
+
+<meta name="select:round" content="0" />
+<meta name="select:round" content="3" />
+<meta name="select:round" content="4" />
+<meta name="select:round" content="5" />
+<meta name="select:round" content="7" />
+<meta name="select:round" content="10" />
+
+<meta name="select:round img" content="0" />
+<meta name="select:round img" content="3" />
+<meta name="select:round img" content="4" />
+<meta name="select:round img" content="5" />
+<meta name="select:round img" content="7" />
+<meta name="select:round img" content="10" />
+
+
+<meta name="select:photoset gap" content="0" />
+<meta name="select:photoset gap" content="1" />
+<meta name="select:photoset gap" content="2" />
+<meta name="select:photoset gap" content="3" />
+<meta name="select:photoset gap" content="4" />
+<meta name="select:photoset gap" content="5" />
+
+
+<meta name="select:post margin" content="10" />
+<meta name="select:post margin" content="15" />
+<meta name="select:post margin" content="20" />
+<meta name="select:post margin" content="25" />
+<meta name="select:post margin" content="30" />
+<meta name="select:post margin" content="50" />
+<meta name="select:post margin" content="75" />
+<meta name="select:post margin" content="100" />
+
+
+<meta name="select:link style" content="normal" />
+<meta name="select:link style" content="uppercase" />
+<meta name="select:link style" content="lowercase" />
+
+
+<meta name="select:tile align" content="center" />
+<meta name="select:tile align" content="left" />
+<meta name="select:tile align" content="right" />
+
+
+<meta name="text:font family" content="arial" />
+<meta name="text:font size" content="15" />
+<meta name="text:sb width" content="230" />
+<meta name="text:sb border size" content="1" />
+<meta name="text:sb link border size" content="1" />
+<meta name="text:outside border size" content="1" />
+<meta name="text:post border size" content="1" />
+<meta name="text:footer border size" content="1" />
+<meta name="text:footer space" content="=^..^=" />
+<meta name="text:title" content="MEW MEW MEW!" />
+<meta name="text:title font" content="arial" />
+<meta name="text:title size" content="26" />
+<meta name="text:desc" content="description" />
+<meta name="text:desc size" content="15" />
+<meta name="text:search txt" content="search tags" />
+<meta name="text:search button" content="GO" />
+<meta name="text:link 1" content="01">
+<meta name="text:link 1 URL" content="/">
+<meta name="text:link 2" content="02">
+<meta name="text:link 2 URL" content="/">
+<meta name="text:link 3" content="03">
+<meta name="text:link 3 URL" content="/">
+<meta name="text:link 4" content="04">
+<meta name="text:link 4 URL" content="/">
+<meta name="text:link 5" content="05">
+<meta name="text:link 5 URL" content="/">
+<meta name="text:link 6" content="06">
+<meta name="text:link 6 URL" content="/">
+<meta name="text:redirect" content="tag here" />
+
+
+<meta name="if:cover bg" content="0" />
+<meta name="if:animated sb" content="0" />
+<meta name="if:custom cursor" content="0" />
+<meta name="if:rainbow border" content="0"/>
+<meta name="if:gradient link" content="0"/>
+<meta name="if:pxl desc" content="0" />
+<meta name="if:more links" content="0" />
+<meta name="if:bold link" content="0" />
+<meta name="if:italic link" content="0" />
+<meta name="if:underline link" content="0" />
+<meta name="if:xp scrollbar" content="0" /> 
+<meta name="if:dark scrollbar" content="0" />
+<meta name="if:glow txt" content="0" />
+<meta name="if:outline txt" content="0" />
+<meta name="if:hide title" content="0" />
+<meta name="if:hide desc" content="0" />
+<meta name="if:hide links" content="0" />
+<meta name="if:hide caption" content="0" />
+<meta name="if:hide tags" content="0" />
+<meta name="if:footer pxl space" content="0" />
+<meta name="if:redirect" content="0" />
+
+
+<style type="text/css">
+
+{block:IfCustomCursor}
+body, *, a, a:hover {cursor:url({image:cursor}), auto;}{/block:IfCustomCursor}
+{block:IfNotCustomCursor}
+a, a:hover {cursor: help;}
+{/block:IfNotCustomCursor}
+
+::-moz-selection {
+    background: {color:select bg};
+    color: {color:select txt};}
+    
+::selection {
+    background: {color:select bg};
+    color: {color:select txt};}
+
+pre, .q {
+    white-space: pre-line;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+
+p {margin: 0;}
+ul {list-style: square;}
+h1,h2,h3 {margin: 0; padding: 0; line-height: 100%;}
+
+blockquote {
+    margin: 0 0 0 10px;
+    padding-left: 5px;
+    border-left: 1px solid {color:Txt};
+    {block:IfRainbowBorder}
+    --angle: 0deg;
+    border-left: 1px solid;
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
+
+img {
+    max-width: 100%;
+    border-radius: {select:round img}px;
+}
+
+
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    color: {color:txt};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 2px {color:txt glow outline}, 0 0 3px {color:txt glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:txt glow outline},
+    1px -1px 0 {color:txt glow outline},
+	 -1px 1px 0 {color:txt glow outline},
+	 1px 1px 0 {color:txt glow outline};
+    {/block:ifOutlineTxt}
+    font-size: {text:font size}px;
+    font-family: {text:font family};
+    line-height: 110%;
+    background: {color:bg} url("{image:bg}") fixed;
+    {block:IfCoverBg}
+    background-image: url("{image:bg}") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    {/block:IfCoverBg}
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+{block:IfNotXPScrollbar}{block:IfNotDarkScrollbar}
+::-webkit-scrollbar {
+width:15px; height:15px;}   /* made by @ps1 */
+::-webkit-scrollbar-track { 
+background-image: url(https://i.imgur.com/n1kAWKU.png);}
+::-webkit-scrollbar-thumb {
+background-image: url(https://i.imgur.com/KePIOiE.png);
+border-top: 1px solid #D4D0C8; border-bottom: 1px solid #808080;}
+::-webkit-scrollbar-button:vertical:decrement {
+background-image: url(https://i.imgur.com/ZF6PC55.png);
+width: 15px; height: 15px;}
+::-webkit-scrollbar-button:vertical:increment {
+background-image: url(https://i.imgur.com/sMOMkQ7.png);
+width: 15px; height: 15px;}
+{/block:IfNotDarkScrollbar}{/block:IfNotXPScrollbar}
+ 
+{block:IfDarkScrollbar}
+::-webkit-scrollbar {
+width:15px; height:15px;}   /* made by @ps1 */
+::-webkit-scrollbar-track {
+background-image: url(https://i.imgur.com/1wwyNgR.png);}
+::-webkit-scrollbar-thumb {
+background-image: url(https://i.imgur.com/3twDfJb.png);
+border-top: 1px solid #111; border-bottom: 1px solid #000;}
+::-webkit-scrollbar-button:vertical:decrement {
+background-image: url(https://i.imgur.com/pSpgQbq.png);
+width: 15px; height: 15px;}
+::-webkit-scrollbar-button:vertical:increment {
+background-image: url(https://i.imgur.com/IzbYg9x.png);
+width: 15px; height: 15px;}
+{/block:IfDarkScrollbar}
+ 
+{block:IfXPScrollbar}
+::-webkit-scrollbar {
+width:16px; height:16px;}   /* made by @ps1 */
+::-webkit-scrollbar-track { 
+background-color: #F7F5EE;}
+::-webkit-scrollbar-thumb {
+background-image: url(https://i.imgur.com/CKou08s.png);
+border-top: 1px solid #BBCDF5; border-bottom: 1px solid #7C9FD3;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-button:vertical:decrement {
+background-image: url(https://i.imgur.com/ObVjKL6.png);
+width: 16px; height: 17px;}
+::-webkit-scrollbar-button:vertical:increment {
+background-image: url(https://i.imgur.com/1879VtO.png);
+width: 16px; height: 17px;}
+{/block:IfXPScrollbar}
+
+::-moz-selection {
+    background: {color:select bg};
+    color: {color:select txt};}
+    
+::selection {
+    background: {color:select bg};
+    color: {color:select txt};}
+
+a:link, a:active, a:visited {
+    {block:ifGradientLink}
+    background: transparent;
+    background: -webkit-linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 2} 50%, {color:gradient 3} 100%);
+    background: -moz-linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 3} 50%, {color:gradient 3} 100%);
+background: linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 2} 50%, {color:gradient 3} 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+    {/block:ifGradientLink}
+    text-transform: {select:link style};
+    color: {color:link};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 2px {color:link glow outline}, 0 0 3px {color:link glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:link glow outline},
+    1px -1px 0 {color:link glow outline},
+	 -1px 1px 0 {color:link glow outline},
+	 1px 1px 0 {color:link glow outline};
+    {/block:ifOutlineTxt}
+    {block:IfBoldLink}
+    font-weight: bold;{/block:IfBoldLink}
+    {block:IfItalicLink}
+    font-style: italic;{/block:IfItalicLink}
+    {block:IfNotUnderlineLink}
+    text-decoration: none;{/block:IfNotUnderlineLink}
+    {block:IfUnderlineLink}
+    text-decoration: underline;{/block:IfUnderlineLink}
+    -o-transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+.contain a:hover, .sb a:hover, a:hover {
+    letter-spacing: -1px;
+    color: {color:link hover};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 2px {color:link hover glow outline}, 0 0 3px {color:link hover glow outline};
+    {/block:ifGlowTxt}
+    {block:IfBoldLink}
+    font-weight: bold;{/block:IfBoldLink}
+    color: {color:link hover};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:link hover glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:link hover glow outline},
+    1px -1px 0 {color:link hover glow outline},
+	 -1px 1px 0 {color:link hover glow outline},
+	 1px 1px 0 {color:link hover glow outline};
+    {/block:ifOutlineTxt}
+}
+
+.main {
+    margin: 20px auto;
+    width: calc({select:post size}px + {text:sb width}px + {select:post margin}px + 45px);
+}
+
+.sb {
+    background: {color:sb};
+    width: {text:sb width}px;
+    border-radius: {select:round}px;
+    {block:ifAnimatedSb}
+    position: absolute;
+    {/block:ifAnimatedSb}
+    {block:ifNotAnimatedSb}
+    position: fixed;
+    {/block:ifNotAnimatedSb}
+    padding: 10px;
+    border: {text:sb border size}px {select:sb border} {color:sb border};
+    {block:IfRainbowBorder}
+    --angle: 0deg;
+    border: {text:sb border size}px {select:sb border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
+
+
+.title {
+    margin-bottom: 10px;
+    font-family: {text:title font};
+    color: {color:title};
+    font-size: {text:title size}px;
+    width:  calc({select:sb width}px + {select:icon padding}px + {select:icon padding}px + {select:sb border size}px);
+    line-height: 110%;
+    text-align: {select:tile align};
+}
+
+.title:hover {
+    animation: effect linear 1s;
+}
+ 
+@keyframes effect {
+0% {
+transform: scale(1, 1);
+}
+25% {
+transform: scale(1.3, 0.6);
+}
+50% {
+transform: scale(1.1, 0.9);
+}
+100% {
+transform: scale(1, 1);
+}
+}
+
+.icon img {
+    max-width: 100%;
+    display: block;
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+}
+
+.icon img:hover {
+   -webkit-filter: blur(1px);
+}
+
+.pix {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center; 
+}
+
+.pix img {
+    display: inline-block;
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+}
+
+.pix img:hover {
+   -webkit-filter: blur(1px);
+}
+
+.desc {
+    line-height: 110%;
+    color: {color:desc txt};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 2px {color:desc txt glow outline}, 0 0 3px {color:desc txt glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:desc txt glow outline},
+    1px -1px 0 {color:desc txt glow outline},
+	 -1px 1px 0 {color:desc txt glow outline},
+	 1px 1px 0 {color:desc txt glow outline};
+    {/block:ifOutlineTxt}
+    text-align: center;
+    font-size: {text:desc size}px;
+    margin-top: 3px;
+}
+
+.desc a {
+    {block:ifGradientLink}
+    background: transparent;
+    background: -webkit-linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 2} 50%, {color:gradient 3} 100%);
+    background: -moz-linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 3} 50%, {color:gradient 3} 100%);
+    background: linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 2} 50%, {color:gradient 3} 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    {/block:ifGradientLink}
+    color: {color:desc link};
+    font-size: {text:desc size}px;
+    {block:ifGlowTxt}
+    text-shadow:  0 0 2px {color:desc link glow outline}, 0 0 3px {color:desc link glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:desc link glow outline},
+    1px -1px 0 {color:desc link glow outline},
+	 -1px 1px 0 {color:desc link glow outline},
+	 1px 1px 0 {color:desc link glow outline};
+    {/block:ifOutlineTxt}
+}
+
+.link {
+    background: {color:sb link bg};
+    margin-top: 3px;
+    border: {text:sb link border size}px {select:sb link border} {color:sb link border};
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border-radius: {select:round}px;
+    {block:IfRainbowBorder}
+    --angle: 0deg;
+    border: {text:sb link border size}px {select:sb link border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
+
+.link > div {
+    padding: 3px;
+    background: {color:sb link bg};
+    border-radius: {select:round}px;
+}
+
+.link a {
+    {block:ifGradientLink}
+    background: transparent;
+    background: -webkit-linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 2} 50%, {color:gradient 3} 100%);
+    background: -moz-linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 3} 50%, {color:gradient 3} 100%);
+    background: linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 2} 50%, {color:gradient 3} 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+    {/block:ifGradientLink}
+    color: {color:sb link};
+    font-size: {text:desc size}px;
+    {block:ifGlowTxt}
+    text-shadow:  0 0 2px {color:sb link glow outline}, 0 0 3px {color:sb link glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:sb link glow outline},
+    1px -1px 0 {color:sb link glow outline},
+	 -1px 1px 0 {color:sb link glow outline},
+	 1px 1px 0 {color:sb link glow outline};
+    {/block:ifOutlineTxt}
+}
+
+.contain {
+    margin-left:  calc({text:sb width}px + {text:sb border size}px + 25px + {select:post margin}px);
+    width: calc({select:post size}px + 20px);
+}
+
+.outside {
+    background: {color:outside} url("{image:outside}");
+    padding: {select:post padding}px;
+    border: {text:outside border size}px {select:outside border} {color:outside border};
+    margin-bottom: {select:post margin}px;
+    border-radius: {select:round}px;
+{block:IfRainbowBorder}
+    --angle: 0deg;
+    border: {text:outside border size}px {select:outside border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
+
+::-webkit-input-placeholder {color: {color:search txt};}
+:-moz-placeholder {color: inherit; opacity:1;}
+::-moz-placeholder {color: inherit; opacity:1;}
+:-ms-input-placeholder {color: inherit;}
+
+input:focus::-webkit-input-placeholder {color: transparent;}
+input:focus:-moz-placeholder {color: transparent;}
+input:focus::-moz-placeholder {color: transparent;}
+input:focus:-ms-input-placeholder { color: transparent;}
+
+form.search .query {
+    margin-left: 2px;
+    margin-bottom: 10px;
+    outline: {select:search border}px {select:sb link border} {color:search border};
+    padding: 5px 5px 3px 5px;
+    font-size: {text:desc size}px;
+    line-height: {text:desc size}px;
+    vertical-align: middle;
+    font-family: inherit;
+    border: 0;
+    border-radius: {select:round}px 0px 0px {select:round}px;
+    float: left;
+    width: calc({text:sb width}px - 52px);
+    height: 25px;
+    background: {color:search};
+    color: {color:search txt};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 2px {color:search txt glow outline}, 0 0 3px {color:search txt glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:search txt glow outline},
+    1px -1px 0 {color:search txt glow outline},
+	 -1px 1px 0 {color:search txt glow outline},
+	 1px 1px 0 {color:search txt glow outline};
+    {/block:ifOutlineTxt}
+    z-index: 2;
+}
+
+form.search button {
+    float: left;
+   outline: {select:search border}px {select:sb link border} {color:search border};
+    width: 38px;
+    padding: 5px;
+    height: 33px;
+    background: {color:search btn};
+    color: {color:search btn txt};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 2px {color:search btn txt glow outline}, 0 0 3px {color:search btn txt glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:search btn txt glow outline},
+    1px -1px 0 {color:search btn txt glow outline},
+	 -1px 1px 0 {color:search btn txt glow outline},
+	 1px 1px 0 {color:search btn txt glow outline};
+    {/block:ifOutlineTxt}
+    font-size: {text:desc size}px;
+    vertical-align: middle;
+    line-height: {text:desc size}px;
+    font-family: inherit;
+    border-radius: 0px {select:round}px {select:round}px 0px;
+    border: 0;
+    z-index: 2;
+}
+
+.posts {
+    border: {text:post border size}px {select:border} {color:post border};
+    padding: 10px;
+    border-radius: {select:round}px;
+    background: {color:posts};
+{block:IfRainbowBorder}
+    --angle: 0deg;
+    border: {text:post border size}px {select:border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
+
+.pic img {
+    display: block;
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+}
+
+.pic img:hover, [photoset-layout] img:hover {
+   -webkit-filter: blur(1px);
+}
+
+[photoset-layout] {
+ grid-gap: {select:photoset gap}px;
+}
+
+[photoset-layout] img {
+   -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease; 
+}
+
+.cap {
+    margin-top: 5px;
+}
+
+.tumblr_parent {
+    margin: 0 ;
+    padding: 0;
+    border: 0;
+}
+
+.tumblr_parent blockquote{
+    margin-left: 10px;
+    padding-left: 5px;
+    border-left: 1px solid {color:txt};
+    {block:IfRainbowBorder}
+    --angle: 0deg;
+    border: 1px solid;
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}
+
+.perma {
+    margin-top: 10px; 
+}
+
+ol.notes {
+    padding: 0px;
+    list-style-type: none;
+}
+
+ol.notes li.note {
+    border-top: 0;
+    padding: 0px;
+}
+
+ol.notes li.note img.avatar {
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 7px;
+    width: 25px;
+    height: 25px;
+    border-left: 0; border-top: 0;
+}
+
+.pagi {
+    margin-bottom: 30px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.pagi a {
+    color: {color:sb link};
+    {block:ifGradientLink}
+    background: transparent;
+    background: -webkit-linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 2} 50%, {color:gradient 3} 100%);
+    background: -moz-linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 3} 50%, {color:gradient 3} 100%);
+    background: linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 2} 50%, {color:gradient 3} 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+    {/block:ifGradientLink}
+    background: {color:sb link bg};
+    padding: 5px;
+    border-radius: {select:round}px;
+}
+
+.c {
+    bottom: 0; left: 0; padding: 10px; position: fixed;
+}
+
+.c a {
+    color: {color:posts};
+    text-decoration: none; font-style: normal;
+}
+
+.spotify_audio_player {
+    height:85px!important;
+    width:100%!important;
+}
+.bandcamp_audio_player {
+    height:850px!important;
+    width:100%!important;
+}
+
+.soundcloud_audio_player {
+    height:85px!important;
+    width:100%!important;
+}
+
+figure.tmblr-embed.tmblr-full iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+.vid {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+
+.vid iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.tmblr-iframe-compact .tmblr-iframe--unified-controls {
+-webkit-filter: opacity(0);
+        filter: opacity(0);
+        transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+ 
+.tmblr-iframe-compact .tmblr-iframe--unified-controls:hover {
+-webkit-filter: opacity(1);
+        filter: opacity(1);
+        transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+
+#s-m-t-tooltip {
+    border-radius: {select:round}px;
+    padding: 5px 7px;
+    background: {color:tooltip};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:tooltip txt glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:tooltip txt glow outline},
+    1px -1px 0 {color:tooltip txt glow outline},
+	 -1px 1px 0 {color:tooltip txt glow outline},
+	 1px 1px 0 {color:tooltip txt glow outline};
+    {/block:ifOutlineTxt}
+    text-transform: none;
+    text-align: center;
+    transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    color: {color:tooltip txt};
+    font-family: {text:font family};
+    font-size: {select:font size}px;
+    max-width: 200px;
+    word-wrap: break-word;
+    display: block;
+    margin: -40px 0px -10px 10px;
+    z-index: 999999999999;
+}
+ 
+.pfoot {
+    border-radius: {select:round}px;
+    margin-top: 5px;
+    padding: 5px;
+    background: {color:footer};
+    color: {color:footer txt};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 2px {color:footer glow outline}, 0 0 3px {color:footer glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:footer glow outline},
+    1px -1px 0 {color:footer glow outline},
+	 -1px 1px 0 {color:footer glow outline},
+	 1px 1px 0 {color:footer glow outline};
+    {/block:ifOutlineTxt}
+    border: {text:footer border size}px {select:footer border} {color:footer border};
+    {block:IfRainbowBorder}
+    --angle: 0deg;
+    border: {text:footer border size}px {select:footer border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}   
+
+.footer img {
+    display: block;
+}
+
+.footer {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: {color:footer};
+    padding: 5px;
+    border: {text:footer border size}px {select:footer border} {color:footer border};
+    border-radius: {select:round}px;
+    {block:IfRainbowBorder}
+    --angle: 0deg;
+    border: {text:footer border size}px {select:footer border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}   
+
+.footer a, .tags a, .pfoot a {
+    color: {color:footer txt};
+    {block:ifGradientLink}
+    background: transparent;
+    background: -webkit-linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 2} 50%, {color:gradient 3} 100%);
+    background: -moz-linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 3} 50%, {color:gradient 3} 100%);
+    background: linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 2} 50%, {color:gradient 3} 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+    {/block:ifGradientLink}
+    {block:ifGlowTxt}
+    text-shadow:  0 0 2px {color:footer glow outline}, 0 0 3px {color:footer glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:footer glow outline},
+    1px -1px 0 {color:footer glow outline},
+	 -1px 1px 0 {color:footer glow outline},
+	 1px 1px 0 {color:footer glow outline};
+    {/block:ifOutlineTxt}
+}
+
+.notecount {
+    display: inline;
+}
+
+.tags {
+    border-radius: {select:round}px;
+    text-align: left;
+    margin-top: 5px;
+    background: {color:footer};
+    padding: 5px;
+    border: {text:footer border size}px {select:footer border} {color:footer border};
+{block:IfRainbowBorder}
+    --angle: 0deg;
+    border: {text:footer border size}px {select:footer border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}   
+
+
+.ai {
+     float: left;
+     width: 64px;
+     margin-right: 7px;
+}
+
+.ai img {
+    display: block;
+    border-radius: {select:round img}px;
+    border: {text:footer border size}px {select:footer border} {color:footer border};
+    {block:IfRainbowBorder}
+    --angle: 0deg;
+    border: {text:footer border size}px {select:footer border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}   
+
+.q {
+    border-radius: {select:round}px;
+    padding: 5px;
+    text-align: left;
+    background: {color:footer};
+    color: {color:footer txt};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 2px {color:footer glow outline}, 0 0 3px {color:footer glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:footer glow outline},
+    1px -1px 0 {color:footer glow outline},
+	 -1px 1px 0 {color:footer glow outline},
+	 1px 1px 0 {color:footer glow outline};
+    {/block:ifOutlineTxt}
+    border: {text:footer border size}px {select:footer border} {color:footer border};
+{block:IfRainbowBorder}
+    --angle: 0deg;
+    border: {text:footer border size}px {select:footer border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}   
+
+.a {
+    margin-top: 5px;
+    text-align: left;
+}
+
+.like-b {
+    position: relative;
+    display: inline-block;
+    height: 1em;
+    line-height: 1em;
+    overflow: hidden;
+    margin-bottom: 2px;
+    vertical-align: middle;
+    cursor: help;
+}
+
+.like-b .like_button iframe {
+   position:absolute;
+   top:0;
+   left:0;
+   bottom:0;
+   right:0;
+   z-index:2;
+   opacity:0;
+}
+
+.like-b .liked + .b {
+  color:inherit;
+}
+
+.like-b .liked + .b:after {
+   content:'!';
+}
+
+.album img {
+    width: 150px;
+    border-radius: 50%;
+    animation: rotation 2.5s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.player {
+    width:32px;
+    height:30px;
+    border-radius: 50%;
+    overflow:hidden;
+    position:absolute;
+    z-index: 1000;
+    margin-top:60px;
+    margin-left: 58px;
+    background: #fff;
+    padding: 3px 0 0 0;
+    filter: contrast(2);
+}
+
+.track {
+    margin-left: 160px;
+    height: 150px;
+    position: absolute;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: calc({select:post size}px - 185px);
+}
+
+ .track span {
+    background: {color:footer};
+    color: {color:footer txt};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 2px {color:footer glow outline}, 0 0 3px {color:footer glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:footer glow outline},
+    1px -1px 0 {color:footer glow outline},
+	 -1px 1px 0 {color:footer glow outline},
+	 1px 1px 0 {color:footer glow outline};
+    {/block:ifOutlineTxt}
+    border: {text:footer border size}px {select:footer border} {color:footer border};
+    padding: 7px;
+    text-align: center;
+    border-radius: {select:round}px;
+ {block:IfRainbowBorder}
+    --angle: 0deg;
+    border: {text:footer border size}px {select:footer border};
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 7s rotate linear infinite;
+    {block:IfRainbowBorder}
+}
+ 
+{block:IfRainbowBorder}
+@keyframes rotate {
+  to {
+    --angle: 360deg;}
+}
+ 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+{/block:IfRainbowBorder}   
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.tumblr.com/7qjmkr5/IUmmdsy41/jquery.style-my-tooltips.js"></script>
+<script>
+   (function($){
+       $(document).ready(function(){
+           $("[title]").style_my_tooltips();
+       });
+   })(jQuery);
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+   $('.search').submit(function(event){
+       var value = $('input:first').val();
+       location.replace('http://{Name}.tumblr.com/tagged/' + value);
+   });
+});
+</script>  
+
+
+<!-- neothm unnest captions -->
+<script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
+<script> $(function(){  $('.posts').unnest({
+    yourCaption: ".cap", 
+    wrapName: ".tumblr_parent", 
+     newCaptionUsername: false,
+     tumblrAvatars: false,
+     usernameColon: false
+  }); }); </script>
+<!-- /neothm unnest captions -->
+
+</HEAD>
+
+<body>
+
+<div class="main">
+
+{block:ifNotHideTitle}
+<div class="title">
+<span>{text:title}</span>
+</div>
+{/block:ifNotHideTitle}
+
+
+<div class="sb">
+<div class="Search"><form class="search" action="javascript:return false">
+  <input type="text" class="query" placeholder="{text:search txt}">
+  <button type="submit">{text:search button}</button>
+</form></div>
+
+
+<div class="icon">
+<center><a href="/" title="hey there idk what next theme to make"><img src="{image:icon}"></a></center>
+</div>
+
+{block:ifPxlDesc}
+<div class="pix">
+<img src="{image:pxl 1}"><img src="{image:pxl 2}"><img src="{image:pxl 3}"><img src="{image:pxl 4}"><img src="{image:pxl 5}"><img src="{image:pxl 6}"><img src="{image:pxl 7}"><img src="{image:pxl 8}"><img src="{image:pxl 9}"><img src="{image:pxl 10}"></div>
+{/block:ifPxlDesc}
+
+{block:ifNotHideDesc}
+<div class="desc">
+{text:desc}
+</div>
+{/block:ifNotHideDesc}
+  
+{block:ifNotHideLinks}    
+<div class="link">
+<div><a href="{text:link 1 URL}">{text:link 1}</a></div>
+<div><a href="{text:link 2 URL}">{text:link 2}</a></div>
+<div><a href="{text:link 3 URL}">{text:link 3}</a></div>
+{block:ifMoreLinks}
+<div><a href="{text:link 4 URL}">{text:link 4}</a></div>
+<div><a href="{text:link 5 URL}">{text:link 5}</a></div>
+<div><a href="{text:link 6 URL}">{text:link 6}</a></div>
+{/block:ifMoreLinks}
+</div>
+{/block:ifNotHideLinks}
+
+</div> <!-- sb -->
+
+
+<div class="contain">
+{block:posts inlineMediaWidth="1280" inlineNestedMediaWidth="1280"}
+<div class="outside">
+<div class="posts">
+
+{block:Text}
+{block:Title}<h2>{Title}</h2>{/block:Title}
+{Body}
+{/block:Text}
+
+{block:Photo}
+{block:IndexPage}
+<div class="pic">
+<a href="{Permalink}">
+<img src="{PhotoURL-HighRes}">
+</a></div>
+{/block:IndexPage}
+{block:PermalinkPage}
+<div class="pic">
+{LinkOpenTag}<img src="{PhotoURL-HighRes}">{LinkCloseTag}
+</div>
+{/block:PermalinkPage}
+{/block:Photo}
+
+{block:Photoset}
+<div class="photoset-grid" photoset-layout="{PhotosetLayout}">{block:Photos}<div data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" data-lowres="{PhotoURL-500}" data-highres="{PhotoURL-HighRes}" onclick="lightbox(this)"><img src="{PhotoURL-HighRes}" /></div>{/block:Photos}</div>
+{/block:Photoset}
+
+{block:Audio}
+{block:AudioPlayer}
+<div class="track">
+<span>
+{block:TrackName}
+<strong>{TrackName}</strong>
+{/block:TrackName}
+{block:Artist}
+<br>{Artist}
+{/block:Artist}
+</span>
+</div>
+<div class="player">{AudioPlayer}</div>
+{/block:AudioPlayer}
+{block:AlbumArt}<div class="album"><img src="{AlbumArtURL}"></div>{/block:AlbumArt}
+{block:AudioEmbed}{AudioEmbed-250}{/block:AudioEmbed}
+{/block:Audio}
+
+{block:Video}
+<div class="vid">{VideoEmbed-700}</div>
+{/block:Video}
+
+{block:Answer}
+<div class="ai"><img src="{AskerPortraitURL-64}"></div>
+<div class="q">{Asker}!{Question}</div>    
+<div class="a">{Answer}</div>
+{/block:Answer}
+
+{block:Quote}
+<p>&#8220;{Quote}&#8221;</p>
+{block:Source}<p>&mdash; {Source}</p>{/block:Source}
+{/block:Quote}
+
+{block:Link}
+<a href="{URL}" target="blank">{Name}</a>
+{block:Description}{Description}{/block:Description}	
+{/block:Link}
+
+{block:Chat}
+{block:Title}{Title}{/block:Title}
+{block:Lines}
+<div class="{Alt} user_{UserNumber}">
+{block:Label}{Label}{/block:Label} {Line}
+</div>
+{/block:Lines}
+{/block:Chat}
+
+{block:ifNotHideCaption}
+<div class="cap">{block:Caption}{Caption}{/block:Caption}</div>
+{/block:ifNotHideCaption}
+
+{block:IndexPage}
+<div class="footer">
+<div>
+{block:NoteCount} <a href="{Permalink}"><div class="notecount">{NoteCount}</div>%</a>{/block:NoteCount}</div>
+
+<div>
+{block:ifNotFooterPxlSpace}<a href="{Permalink}" style="text-decoration:none; font-weight: normal; font-style:normal;">{text:footer space}</a>{/block:ifNotFooterPxlSpace}
+{block:ifFooterPxlSpace}<img src="{image:footer pxl}">{/block:ifFooterPxlSpace}</div>
+
+<div>
+<a class="like-b" href="#" title="like post">{LikeButton}<span class="b">♡</span></a>/<a href="{ReblogURL}" target="_blank" title="reblog?">↺</a> 
+</div>
+</div>
+
+{block:ifNotHideTags}
+{block:HasTags}
+<div class="tags">{block:Tags}
+<a href="{TagURL}">#{Tag}</a>
+{/block:Tags}</div>{/block:HasTags}
+{/block:ifNotHideTags}
+{/block:IndexPage}
+
+
+{block:PermalinkPage}
+{block:ifHideCaption}
+{block:Caption}<div class="caps">{Caption}</div>{/block:Caption}
+{/block:ifHideCaption}
+
+<div class="pfoot">
+{block:Date}{ShortMonth} {DayOfMonth}{/block:Date}
+
+{block:NoteCount}<span style="float: right;"><div class="notecount">{NoteCount}</div>%</a></span>{/block:NoteCount}
+
+{block:PermalinkPagination} 
+<p style="text-align: center;">{block:PreviousPost}<a href="{PreviousPost}">Previous Post</a>{/block:PreviousPost}{block:NextPost} - <a href="{NextPost}">Next Post</a>{/block:NextPost}</p>
+{/block:PermalinkPagination}
+</div>
+
+{block:PostNotes}
+{PostNotes-64}
+{/block:PostNotes}
+{/block:PermalinkPage}
+
+{block:ContentSource}
+<!-- {SourceURL}{block:SourceLogo}<img src="{BlackLogoURL}"
+width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+{/block:SourceLogo}
+{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
+{/block:ContentSource}
+
+<!--{block:NoRebloggedFrom}{block:RebloggedFrom}{ReblogParentName}{/block:RebloggedFrom}{/block:NoRebloggedFrom} --> 
+
+</div> <!-- posts -->
+</div> <!-- out -->
+
+{/block:Posts}
+
+
+{block:IndexPage}
+{block:Pagination}
+<div class="pagi">
+{block:PreviousPage}<a href="{PreviousPage}">previous</a>{/block:PreviousPage}
+{block:NextPage}<a href="{NextPage}">next</a>{/block:NextPage}
+</div>
+{/block:Pagination}
+{/block:IndexPage}
+
+</div><!-- contain -->
+</div><!-- main -->
+
+<div class="c">
+<a href="https://sadthemes.tumblr.com/" title="sadthm">#</a>
+</div>
+
+<script>
+     var $container = $('.posts');
+   $container.find('.notecount').each(function(){
+       var n = $(this).html().split(' ')[0].replace(/,/g, '');
+       if (n > 999) {
+           n = Math.floor(n / 100) / 10;
+           $(this).text(n + 'k');
+       }
+   });
+</script>
+
+ <script type="text/javascript">
+
+$('body').hide().fadeIn(2000);
+    </script>
+
+{block:ifAnimatedSb}    
+<script>$(function () {
+        var offset = $(".sb").offset();
+        var topPadding = 15;
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > offset.top) {
+                $(".sb").stop().animate({
+                   marginTop: $(window).scrollTop() - offset.top + topPadding
+                });
+            } else {
+                $(".sb").stop().animate({
+                    marginTop: 0
+                });
+            };
+        });
+    });</script>
+{/block:ifAnimatedSb}
+
+
+</body>
+
+</HTML>
