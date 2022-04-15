@@ -10,7 +10,7 @@ message for them bugs and fixed ya heard?
 ____________________________________________
 
 info
-- 400, 500, 540, 600, 700 posts
+- 300, 400, 500, 540, 600, 700 posts
 - any size sidebar don't make it too chonky
 - pixels for sidebar are optional & you don't need all 10
 - rainbow borders; doesn't work for searchbar :c
@@ -215,11 +215,22 @@ if(window.location.pathname == '/') location.replace('tagged/{text:redirect}');
 <meta name="select:post size" title="540" content="540" />
 <meta name="select:post size" title="600" content="600" />
 <meta name="select:post size" title="700" content="700" />
+<meta name="select:post size" title="300" content="300" />
 
 <meta name="select:post padding" title="10" content="10" />
 <meta name="select:post padding" title="15" content="15" />
 <meta name="select:post padding" title="20" content="20" />
 <meta name="select:post padding" title="0" content="0" />
+<meta name="select:post padding" title="5" content="5" />
+
+<meta name="select:post margin" content="10" />
+<meta name="select:post margin" content="15" />
+<meta name="select:post margin" content="20" />
+<meta name="select:post margin" content="25" />
+<meta name="select:post margin" content="30" />
+<meta name="select:post margin" content="50" />
+<meta name="select:post margin" content="75" />
+<meta name="select:post margin" content="100" />
 
 
 <meta name="select:round" content="0" />
@@ -243,16 +254,6 @@ if(window.location.pathname == '/') location.replace('tagged/{text:redirect}');
 <meta name="select:photoset gap" content="3" />
 <meta name="select:photoset gap" content="4" />
 <meta name="select:photoset gap" content="5" />
-
-
-<meta name="select:post margin" content="10" />
-<meta name="select:post margin" content="15" />
-<meta name="select:post margin" content="20" />
-<meta name="select:post margin" content="25" />
-<meta name="select:post margin" content="30" />
-<meta name="select:post margin" content="50" />
-<meta name="select:post margin" content="75" />
-<meta name="select:post margin" content="100" />
 
 
 <meta name="select:link style" content="normal" />
@@ -1071,12 +1072,13 @@ figure.tmblr-embed.tmblr-full iframe {
 }
 
 .footer {
+    color: {color:footer txt};
     margin-top: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: {color:footer};
-    padding: 5px;
+    padding: 3px;
     border: {text:footer border size}px {select:footer border} {color:footer border};
     border-radius: {select:round}px;
     {block:IfRainbowBorder}
