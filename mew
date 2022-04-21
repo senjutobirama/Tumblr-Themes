@@ -920,21 +920,27 @@ ol.notes li.note img.avatar {
     margin-bottom: 30px;
     margin-top: 15px;
     text-align: left;
+    {block:ifGradientLink}
+    color: {color:link};
+    
+    {/block:ifGradientLink}
+    {block:ifNotGradientLink}
+    color: {color:sb link};
+   
+    {/block:ifNotGradientLink}
 }
 
 .pagi a {
-    color: {color:sb link};
-    {block:ifGradientLink}
-    background: transparent;
-    background: -webkit-linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 2} 50%, {color:gradient 3} 100%);
-    background: -moz-linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 3} 50%, {color:gradient 3} 100%);
-    background: linear-gradient(to right, {color:gradient 1} 0%, {color:gradient 2} 50%, {color:gradient 3} 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-    {/block:ifGradientLink}
-    background: {color:sb link bg};
-    padding: 5px;
     border-radius: {select:round}px;
+    {block:ifGradientLink}
+    color: {color:link};
+    padding: 0px;
+    {/block:ifGradientLink}
+    {block:ifNotGradientLink}
+    color: {color:sb link};
+    padding: 5px;
+    background: {color:sb link bg};
+    {/block:ifNotGradientLink}
 }
 
 .c {
