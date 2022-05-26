@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<HTML>
+
+<!--
+
+EW! by @sadthemes
+____________________________________________
+
+info
+- change desc size so your text doesn't get to cut off or long (it does look cool when its long).
+- keep your footer txt short.
+- optional icon border for those that don't want nuthin'
+- icon diff sizes too.
+- circle icon, & heart icon (best with square images).
+- heart icon will not have a drop shadow due to web-mask :|
+- change margin for post space.
+- your audio player bg is the same color as footer link bg.
+____________________________________________
+
+google font
+https://fonts.google.com/
+select fonts you want and paste them in the correct field.
+
+annasthms photosets
+https://annasthms.github.io/photosets/
+
+NPF image fix @glenthemes
+git.io/JRBt7
+
+unnest captions @neothm
+https://codepen.io/neothm/pen/PzVjRy
+
+short notes
+https://shythemes.tumblr.com/post/156021137818/hello-i-was-wondering-if-you-knew-how-to-shorten
+
+video fit
+https://shythemes.tumblr.com/post/134536748863/tutorial-resizing-videos
+
+change audio color
+https://shudesigns.tumblr.com/post/158812662057/tutorial-change-the-color-of-tumblrs-new-audio
+
+-->
+
+<head>
+
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!--
+        NPF images fix v3.0 by @glenthemes [2021]
+        💌 git.io/JRBt7
+--->
+<script src="//npf-images-v3.github.io/script.js"></script>
+<link rel="stylesheet" href="//npf-images-v3.github.io/recon.css">
+<style tmblr-npf>
+:root {
+    --NPF-Caption-Spacing:1em;
+    --NPF-Image-Spacing:4px;
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+
+{block:IfRedirect}
+<script>
+if(window.location.pathname == '/') location.replace('tagged/{text:redirect}');
+</script> 
+{block:IfRedirect}
+
+
+<link href="https://static.tumblr.com/0podkko/oDSpg7y88/photosets.css" rel="stylesheet">
+
+<script>
+function gatherData(images, arr) {
+  for (let i = 0; i < images.length; i++) {
+    let currentData = {
+      "width": images[i].getAttribute('data-width'),
+      "height": images[i].getAttribute('data-height'),
+      "low_res": images[i].getAttribute('data-lowres'),
+      "high_res": images[i].getAttribute('data-highres')
+    };
+    arr.push(currentData);
+  }
+}
+function getIndex(elem) {
+  let i = 0;
+  while( (elem = elem.previousElementSibling) != null ) i++;
+  return i;
+}
+function lightbox(elem) {
+  let currentPhotoset = elem.parentNode;
+  let photosetPhotos = currentPhotoset.getElementsByTagName('div');
+  let data = [];
+  gatherData(photosetPhotos, data);
+  Tumblr.Lightbox.init(data, getIndex(elem) + 1);
+}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+
+
+<title>{Title}</title>
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+<link rel="icon" href="{image:favicon}" type="image/gif" >
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+<meta name="image:favicon" content="" />
+<meta name="image:bg" content="" />
+<meta name="image:icon" content="https://i.imgur.com/tk9wYre.png" />
+<meta name="image:icon bg" content="https://i.imgur.com/JjC5s3b.png" />
+<meta name="image:info bg" content="" />
+<meta name="image:post bg" content="" />
+<meta name="image:footer pxl" content="https://i.imgur.com/E4EEHG5.gif" />
+<meta name="image:scrollup pxl" content="https://i.imgur.com/54eShRL.gif" />
+<meta name="image:sticker" content="" />
+<meta name="image:sticker 2" content="" />
+<meta name="image:cursor" content="https://i.imgur.com/7LbphiL.png"/>
+
+<meta name="color:bg" content="#fff" />
+<meta name="color:posts" content="#fff" />
+<meta name="color:post border" content="#000" />
+<meta name="color:title" content="#ddd" />
+<meta name="color:title hover" content="#aaa" />
+<meta name="color:title border" content="#000" />
+<meta name="color:icon border" content="#888" />
+<meta name="color:icon bg" content="#ddd" />
+<meta name="color:info" content="#ff0000" />
+<meta name="color:info border" content="#000" />
+<meta name="color:desc" content="#fff" />
+<meta name="color:desc border" content="#000" />
+<meta name="color:desc txt" content="#000" />
+<meta name="color:desc txt glow outline" content="#ff0000" />
+<meta name="color:desc link" content="#FFF" />
+<meta name="color:desc link glow outline" content="#ff0000" />
+<meta name="color:desc link bg" content="#000" />
+<meta name="color:txt" content="#000" />
+<meta name="color:txt glow outline" content="#000" />
+<meta name="color:link" content="#ff0000" />
+<meta name="color:link glow outline" content="#ff0000" />
+<meta name="color:link hover" content="#000" />
+<meta name="color:link hover glow outline" content="#ff0000" />
+<meta name="color:footer" content="#ddd" />
+<meta name="color:footer txt" content="#000" />
+<meta name="color:footer txt glow outline" content="#000" />
+<meta name="color:footer link" content="#fff" />
+<meta name="color:footer link glow outline" content="#fff" />
+<meta name="color:footer link bg" content="#000" />
+<meta name="color:footer border" content="#000" />
+<meta name="color:tooltip" content="#fff" />
+<meta name="color:tooltip txt" content="#000" />
+<meta name="color:tooltip txt glow outline" content="#000" />
+<meta name="color:tooltip border" content="#000" />
+<meta name="color:select txt" content="#000" />
+<meta name="color:select bg" content="#ddd" />
+<meta name="color:scrollbar" content="#aaa" />
+<meta name="color:shadow" content="#0000ff" />
+
+<meta name="select:icon width" content="100" />
+<meta name="select:icon width" content="150" />
+<meta name="select:icon width" content="200" />
+<meta name="select:icon width" content="250" />
+<meta name="select:icon width" content="300" />
+
+<meta name="select:icon border" content="solid" />
+<meta name="select:icon border" content="dashed" />
+<meta name="select:icon border" content="dotted" />
+<meta name="select:icon border" content="double" />
+<meta name="select:icon border" content="inset" />
+<meta name="select:icon border" content="outset" />
+<meta name="select:icon border" content="groove" />
+<meta name="select:icon border" content="ridge" />
+
+<meta name="select:icon border size" content="0" />
+<meta name="select:icon border size" content="1" />
+<meta name="select:icon border size" content="2" />
+<meta name="select:icon border size" content="3" />
+<meta name="select:icon border size" content="4" />
+<meta name="select:icon border size" content="5" />
+<meta name="select:icon border size" content="6" />
+<meta name="select:icon border size" content="7" />
+<meta name="select:icon border size" content="8" />
+<meta name="select:icon border size" content="9" />
+<meta name="select:icon border size" content="10" />
+
+
+<meta name="select:desc width" content="100" />
+<meta name="select:desc width" content="150" />
+<meta name="select:desc width" content="200" />
+<meta name="select:desc width" content="250" />
+<meta name="select:desc width" content="300" />
+<meta name="select:desc width" content="350" />
+<meta name="select:desc width" content="400" />
+<meta name="select:desc width" content="450" />
+<meta name="select:desc width" content="500" />
+
+<meta name="select:desc border" content="solid" />
+<meta name="select:desc border" content="dashed" />
+<meta name="select:desc border" content="dotted" />
+<meta name="select:desc border" content="double" />
+<meta name="select:desc border" content="inset" />
+<meta name="select:desc border" content="outset" />
+<meta name="select:desc border" content="groove" />
+<meta name="select:desc border" content="ridge" />
+
+<meta name="select:desc border size" content="0" />
+<meta name="select:desc border size" content="1" />
+<meta name="select:desc border size" content="2" />
+<meta name="select:desc border size" content="3" />
+<meta name="select:desc border size" content="4" />
+<meta name="select:desc border size" content="5" />
+<meta name="select:desc border size" content="6" />
+<meta name="select:desc border size" content="7" />
+<meta name="select:desc border size" content="8" />
+<meta name="select:desc border size" content="9" />
+<meta name="select:desc border size" content="10" />
+
+<meta name="select:post size" content="400" />
+<meta name="select:post size" content="500" />
+
+<meta name="select:post padding" title="20" content="20" />
+<meta name="select:post padding" title="10" content="10" />
+<meta name="select:post padding" title="5" content="5" />
+
+<meta name="select:post margin" content="30" />
+<meta name="select:post margin" content="40" />
+<meta name="select:post margin" content="50" />
+<meta name="select:post margin" content="60" />
+<meta name="select:post margin" content="75" />
+<meta name="select:post margin" content="100" />
+
+<meta name="select:post border" content="solid" />
+<meta name="select:post border" content="dashed" />
+<meta name="select:post border" content="dotted" />
+<meta name="select:post border" content="double" />
+<meta name="select:post border" content="inset" />
+<meta name="select:post border" content="outset" />
+<meta name="select:post border" content="groove" />
+<meta name="select:post border" content="ridge" />
+
+<meta name="select:post border size" content="0" />
+<meta name="select:post border size" content="1" />
+<meta name="select:post border size" content="2" />
+<meta name="select:post border size" content="3" />
+<meta name="select:post border size" content="4" />
+<meta name="select:post border size" content="5" />
+
+<meta name="select:footer border" content="solid" />
+<meta name="select:footer border" content="dashed" />
+<meta name="select:footer border" content="dotted" />
+<meta name="select:footer border" content="double" />
+<meta name="select:footer border" content="inset" />
+<meta name="select:footer border" content="outset" />
+<meta name="select:footer border" content="groove" />
+<meta name="select:footer border" content="ridge" />
+
+<meta name="select:footer border size" content="0" />
+<meta name="select:footer border size" content="1" />
+<meta name="select:footer border size" content="2" />
+<meta name="select:footer border size" content="3" />
+<meta name="select:footer border size" content="4" />
+<meta name="select:footer border size" content="5" />
+<meta name="select:footer border size" content="6" />
+<meta name="select:footer border size" content="7" />
+<meta name="select:footer border size" content="8" />
+<meta name="select:footer border size" content="9" />
+<meta name="select:footer border size" content="10" />
+
+<meta name="select:photoset gap" content="0" />
+<meta name="select:photoset gap" content="1" />
+<meta name="select:photoset gap" content="2" />
+<meta name="select:photoset gap" content="3" />
+<meta name="select:photoset gap" content="4" />
+<meta name="select:photoset gap" content="5" />
+<meta name="select:photoset gap" content="10" />
+
+<meta name="select:link style" content="none" />
+<meta name="select:link style" content="uppercase" />
+<meta name="select:link style" content="lowercase" />
+
+<meta name="select:underline link style" content="solid" />
+<meta name="select:underline link style" content="double" />
+<meta name="select:underline link style" content="dotted" />
+<meta name="select:underline link style" content="dashed" />
+<meta name="select:underline link style" content="wavy" />
+
+<meta name="text:font family" content="arial" />
+<meta name="text:font size" content="18" />
+<meta name="text:title" content="EW!">
+<meta name="text:title size" content="80">
+<meta name="text:title font" content="times">
+<meta name="text:desc" content="HI!">
+<meta name="text:desc size" content="13">
+<meta name="text:link 1" content="01">
+<meta name="text:link 1 title" content="one">
+<meta name="text:link 1 URL" content="/">
+<meta name="text:link 2" content="02">
+<meta name="text:link 2 title" content="two">
+<meta name="text:link 2 URL" content="/">
+<meta name="text:footer txt" content="┗(ᐖ )┓">
+
+
+<meta name="text:scrollup txt" content="&#129121;" />
+<meta name="text:redirect" content="">
+
+<meta name="if:cover bg" content="0" />
+<meta name="if:title float" content="0" />
+<meta name="if:heart icon" content="0" />
+<meta name="if:circle icon" content="0" />
+<meta name="if:icon bg" content="0" />
+<meta name="if:icon shadow" content="0" />
+<meta name="if:shadow" content="0" />
+<meta name="if:rainbow icon shadow" content="0" />
+<meta name="if:rainbow shadow" content="0" />
+<meta name="if:footer pxl" content="0" />
+<meta name="if:xp scrollbar" content="0" /> 
+<meta name="if:dark scrollbar" content="0" />
+<meta name="if:glow txt" content="0" />
+<meta name="if:outline txt" content="0" />
+<meta name="if:rainbow link hover" content="0" />
+<meta name="if:underline link" content="0" />
+<meta name="if:bold link" content="0" />
+<meta name="if:italic link" content="0" />
+<meta name="if:hide title" content="0" />
+<meta name="if:hide links" content="0" />
+<meta name="if:hide caption" content="0" />
+<meta name="if:hide tags" content="0" />
+<meta name="if:scrollup pxl" content="0" />
+<meta name="if:custom cursor" content="0" />
+<meta name="if:redirect" content="0" />
+
+
+<style type="text/css">
+
+{block:IfCustomCursor}
+body, *, a, a:hover {cursor:url({image:cursor}), auto;}{/block:IfCustomCursor}
+{block:IfNotCustomCursor}
+a, a:hover {cursor: help;}
+{/block:IfNotCustomCursor}
+
+::-moz-selection {
+    background: {color:select bg};
+    color: {color:select txt};}
+    
+::selection {
+    background: {color:select bg};
+    color: {color:select txt};}
+    
+    
+body {
+    margin: 0;
+    line-height: 110%;
+    color: {color:txt};
+    font-family: {text:font family};
+    font-size: {text:font size}px;
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:txt glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:txt glow outline},
+    1px -1px 0 {color:txt glow outline},
+	 -1px 1px 0 {color:txt glow outline},
+	 1px 1px 0 {color:txt glow outline};
+    {/block:ifOutlineTxt}
+    background: {color:bg} url("{image:bg}") fixed;
+    {block:IfCoverBg}
+    background-image: url("{image:bg}") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    {/block:IfCoverBg}
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+}
+
+p { margin: 5px 0;}
+h1,h2,h3 {margin: 0; padding: 0; line-height: 100%;}
+blockquote {
+    margin: 0 0 0 10px;
+    border-left: 1px solid {color:txt};
+    padding-left: 10px;
+}
+
+ul {
+    margin: 10px;
+    padding-left: 15px;
+    list-style-type: square;
+}
+
+a:link, a:active, a:visited {
+    color: {color:link};
+    text-transform: {select:link style};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:link glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:link glow outline},
+    1px -1px 0 {color:link glow outline},
+	 -1px 1px 0 {color:link glow outline},
+	 1px 1px 0 {color:link glow outline};
+    {/block:ifOutlineTxt}
+    {block:IfBoldLink}
+    font-weight: bold;{/block:IfBoldLink}
+    {block:IfItalicLink}
+    font-style: italic;{/block:IfItalicLink}
+    {block:IfNotUnderlineLink}
+    text-decoration: none;{/block:IfNotUnderlineLink}
+    {block:IfUnderlineLink}
+    text-decoration-style: {select:underline link style};{/block:IfUnderlineLink}
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.posts a:hover, .info a:hover, a:hover {
+  
+  
+    {block:IfBoldLink}
+    font-weight: bold;{/block:IfBoldLink}
+    color: {color:link hover};
+    
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:link hover glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:link hover glow outline},
+    1px -1px 0 {color:link hover glow outline},
+	 -1px 1px 0 {color:link hover glow outline},
+	 1px 1px 0 {color:link hover glow outline};
+    {/block:ifOutlineTxt}
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    {block:ifRainbowLinkHover}
+  -webkit-animation: rainbow 3s linear infinite;
+  {/block:ifRainbowLinkHover}
+}
+
+{block:ifRainbowLinkHover}
+@-webkit-keyframes rainbow {
+  from {
+    text-shadow: 0.04em 0.04em #ff0000, 0.08em 0.08em #ff7f00,
+      0.12em 0.12em #ffff00, 0.16em 0.16em #00ff00, 0.2em 0.2em #0000ff,
+      0.24em 0.24em #4b0082, 0.28em 0.28em #8f00ff;
+  }
+  15% {
+    text-shadow: 0.04em 0.04em #8f00ff, 0.08em 0.08em #ff0000,
+      0.12em 0.12em #ff7f00, 0.16em 0.16em #ffff00, 0.2em 0.2em #00ff00,
+      0.24em 0.24em #0000ff, 0.28em 0.28em #4b0082;
+  }
+  30% {
+    text-shadow: 0.04em 0.04em #4b0082, 0.08em 0.08em #8f00ff,
+      0.12em 0.12em #ff0000, 0.16em 0.16em #ff7f00, 0.2em 0.2em #ffff00,
+      0.24em 0.24em #00ff00, 0.28em 0.28em #0000ff;
+  }
+  45% {
+    text-shadow: 0.04em 0.04em #0000ff, 0.08em 0.08em #4b0082,
+      0.12em 0.12em #8f00ff, 0.16em 0.16em #ff0000, 0.2em 0.2em #ff7f00,
+      0.24em 0.24em #ffff00, 0.28em 0.28em #00ff00;
+  }
+  60% {
+    text-shadow: 0.04em 0.04em #00ff00, 0.08em 0.08em #0000ff,
+      0.12em 0.12em #4b0082, 0.16em 0.16em #8f00ff, 0.2em 0.2em #ff0000,
+      0.24em 0.24em #ff7f00, 0.28em 0.28em #ffff00;
+  }
+  75% {
+    text-shadow: 0.04em 0.04em #ffff00, 0.08em 0.08em #00ff00,
+      0.12em 0.12em #0000ff, 0.16em 0.16em #4b0082, 0.2em 0.2em #8f00ff,
+      0.24em 0.24em #ff0000, 0.28em 0.28em #ff7f00;
+  }
+  90% {
+    text-shadow: 0.04em 0.04em #ff7f00, 0.08em 0.08em #ffff00,
+      0.12em 0.12em #00ff00, 0.16em 0.16em #0000ff, 0.2em 0.2em #4b0082,
+      0.24em 0.24em #8f00ff, 0.28em 0.28em #ff0000;
+  }
+  to {
+    text-shadow: 0.04em 0.04em #ff0000, 0.08em 0.08em #ff7f00,
+      0.12em 0.12em #ffff00, 0.16em 0.16em #00ff00, 0.2em 0.2em #0000ff,
+      0.24em 0.24em #4b0082, 0.28em 0.28em #8f00ff;
+  }
+}
+{/block:ifRainbowLinkHover}
+
+{block:IfNotXPScrollbar}{block:IfNotDarkScrollbar}
+::-webkit-scrollbar {
+width:15px; height:15px;}   /* made by @ps1 */
+::-webkit-scrollbar-track { 
+background-color: {color:scrollbar};
+background-image: url(https://i.imgur.com/YhnLlUv.png);}
+::-webkit-scrollbar-thumb {
+background-image: url(https://i.imgur.com/1u7HzBB.png);
+background-color: {color:scrollbar};
+border-top: 1px solid rgba(0, 0, 0, 0.5); border-bottom: 1px solid rgba(0, 0, 0, 0.5);}
+::-webkit-scrollbar-button:vertical:decrement {
+background-image: url(https://i.imgur.com/OBSA9wU.png);
+background-color: {color:scrollbar};
+width: 15px; height: 15px;}
+::-webkit-scrollbar-button:vertical:increment {
+background-image: url(https://i.imgur.com/L45TjoI.png);
+background-color: {color:scrollbar};
+width: 15px; height: 15px;}
+{/block:IfNotDarkScrollbar}{/block:IfNotXPScrollbar}
+ 
+{block:IfDarkScrollbar}
+::-webkit-scrollbar {
+width:15px; height:15px;}   /* made by @ps1 */
+::-webkit-scrollbar-track {
+background-image: url(https://i.imgur.com/ZSibGRj.png);
+background-color: {color:scrollbar};
+}
+::-webkit-scrollbar-thumb {
+background-image: url(https://i.imgur.com/dM6mu7C.png);
+background-color: {color:scrollbar};
+border-top: 1px solid rgba(128,128,128, 0.5); border-bottom: 1px solid rgba(128,128,128, 0.5);}
+::-webkit-scrollbar-button:vertical:decrement {
+background-image: url(https://i.imgur.com/2P3NTuD.png);
+background-color: {color:scrollbar};
+width: 15px; height: 15px;}
+::-webkit-scrollbar-button:vertical:increment {
+background-image: url(https://i.imgur.com/UoyMO2m.png);
+background-color: {color:scrollbar};
+width: 15px; height: 15px;}
+{/block:IfDarkScrollbar}
+ 
+{block:IfXPScrollbar}
+::-webkit-scrollbar {
+width:16px; height:16px;}   /* made by @ps1 */
+::-webkit-scrollbar-track { 
+background-color: #F7F5EE;}
+::-webkit-scrollbar-thumb {
+background-image: url(https://i.imgur.com/CKou08s.png);
+border-top: 1px solid #BBCDF5; border-bottom: 1px solid #7C9FD3;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-button:vertical:decrement {
+background-image: url(https://i.imgur.com/ObVjKL6.png);
+width: 16px; height: 17px;}
+::-webkit-scrollbar-button:vertical:increment {
+background-image: url(https://i.imgur.com/1879VtO.png);
+width: 16px; height: 17px;}
+{/block:IfXPScrollbar}
+
+
+
+
+
+.contain {
+    width: 540px;
+    margin: 30px auto;
+}
+
+
+
+.title {
+    margin-top: 40px;
+    text-align: center;
+    {block:ifTitleFloat}
+    transform: translateY(-10%);
+  animation: floater 1.8s infinite;
+  transition: ease 0.5s;
+  {/block:ifTitleFloat}
+}
+
+{block:ifTitleFloat}
+@keyframes floater {
+  0%{transform: translateY(-10%);transition: ease 0.5s;}
+  50%{transform: translateY(10%);transition: ease 0.5s;}
+}
+{/block:ifTitleFloat}
+
+
+
+
+.icon {
+    
+    {block:ifNotIconBg}
+    margin-bottom: 20px;
+    width: {select:icon width}px;
+    margin-top: -10px;
+    {/block:ifNotIconBg}
+    {block:ifIconBg}
+    width: calc({select:icon width}px + 20px);
+    margin-top: 0px;
+    margin-bottom: 30px;
+    {/block:ifIconBg}
+}
+.icon img {
+    margin-left: -{select:icon border size}px;
+    {block:ifIconBg}
+     background: {color:icon bg} url("{image:icon bg}");
+     margin-left: calc(-20px - {select:icon border size}px);
+     padding: 20px;
+     {/block:ifIconBg}
+     
+    z-index: -1;
+    {block:ifIconShadow}
+    filter: drop-shadow(15px 15px 3px {color:shadow});
+    margin-bottom: 40px;
+    {/block:ifIconShadow}
+    {block:ifRainbowIconShadow}
+    margin-bottom: 40px;
+    filter:
+    drop-shadow(3px 3px 0px #FF0000)
+    drop-shadow(3px 3px 0px #FF7F00)
+    drop-shadow(3px 3px 0px #FFFF00)
+    drop-shadow(3px 3px 0px #00FF00)
+    drop-shadow(3px 3px 0px #0000FF)
+    drop-shadow(3px 3px 0px #2E2B5F)
+    drop-shadow(3px 3px 0px #8B00FF);
+    {/block:ifRainbowIconShadow}
+    border: {select:icon border size}px {select:icon border} {color:icon border};
+    max-width: 100%;
+    {block:ifCircleIcon}
+    border-radius: 50%;
+    {/block:ifCircleIcon}
+    display: block;
+    {block:ifHeartIcon}
+
+    -webkit-mask-image: url(https://i.imgur.com/r1sHic3.png);
+-webkit-mask-size: cover;
+{/block:ifHeartIcon}
+position: relative;
+    top: 0;
+    -webkit-transition: top ease 0.5s;
+    -moz-transition: top ease 0.5s;
+    -o-transition: top ease 0.5s;
+    -ms-transition: top ease 0.5s;
+    transition: top ease 0.5s;
+}
+
+
+
+
+.info {
+    max-width: {select:desc width}px;
+    {block:ifNotHideLinks}
+    outline: {select:desc border size}px {select:desc border} {color:info border};
+    {/block:ifNotHideLinks}
+    {block:ifShadow}
+    filter: drop-shadow(10px 10px 4px {color:shadow});
+    margin-bottom: 40px;
+    {/block:ifShadow}
+    {block:ifRainbowShadow}
+    filter:
+    drop-shadow(3px 3px 0px #FF0000)
+    drop-shadow(3px 3px 0px #FF7F00)
+    drop-shadow(3px 3px 0px #FFFF00)
+    drop-shadow(3px 3px 0px #00FF00)
+    drop-shadow(3px 3px 0px #0000FF)
+    drop-shadow(3px 3px 0px #2E2B5F)
+    drop-shadow(3px 3px 0px #8B00FF);
+    margin-bottom: 50px;
+    {/block:ifRainbowShadow}
+    {block:ifNotShadow}{block:ifNotRainbowShadow}
+    margin-bottom: 30px;
+    {/block:ifNotRainbowShadow}{/block:ifNotShadow}
+    display: grid;
+    gap: 0px;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: center;
+    background: {color:info} url("{image:info bg}");
+    font-size: {text:desc size}px;
+    line-height: 110%; 
+    }
+
+.info a {
+    color: {color:desc link};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:desc link glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:desc link glow outline},
+    1px -1px 0 {color:desc link glow outline},
+	 -1px 1px 0 {color:desc link glow outline},
+	 1px 1px 0 {color:desc link glow outline};
+    {/block:ifOutlineTxt}
+    
+}
+
+.one {
+    justify-self: center;
+    padding: 10px;
+    background: {color:desc link bg};
+    border: {select:desc border size}px {select:desc border} {color:desc border};
+    border-right: 0; border-left: 0;
+}
+
+.two {
+    justify-self: center;
+    padding: 10px;
+    background: {color:desc link bg};
+    border: {select:desc border size}px {select:desc border} {color:desc border};
+    border-left: 0; border-right: 0;
+}
+
+
+.desc {
+    
+    background: {color:desc};
+    padding: 10px;
+    text-align: {select:desc align};
+    color: {color:desc txt};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:desc txt glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:desc txt glow outline},
+    1px -1px 0 {color:desc txt glow outline},
+	 -1px 1px 0 {color:desc txt glow outline},
+	 1px 1px 0 {color:desc txt glow outline};
+    {/block:ifOutlineTxt}
+    border: {select:desc border size}px {select:desc border} {color:desc border};
+    {block:ifNotHideLinks}
+    border-top: 0; border-bottom: 0;
+    {/block:ifNotHideLinks}
+    max-height: 80px;
+    overflow: auto;
+    overflow-x: hidden;
+    
+}
+
+
+.stuff {
+    width: calc({select:post size}px + 40px);
+}
+
+.posts {
+    margin-bottom: {select:post margin}px;
+    text-align: left;
+    width: {select:post size}px;
+    
+}
+
+.pic {
+    border: {select:post border size}px {select:post border} {color:post border};
+    background: {color:posts} url("{image:post bg}");
+    padding: {select:post padding}px;
+    {block:ifShadow}
+    filter: drop-shadow(10px 10px 4px {color:shadow});
+    {/block:ifShadow}
+    {block:ifRainbowShadow}
+    filter:
+    drop-shadow(3px 3px 0px #FF0000)
+    drop-shadow(3px 3px 0px #FF7F00)
+    drop-shadow(3px 3px 0px #FFFF00)
+    drop-shadow(3px 3px 0px #00FF00)
+    drop-shadow(3px 3px 0px #0000FF)
+    drop-shadow(3px 3px 0px #2E2B5F)
+    drop-shadow(3px 3px 0px #8B00FF);
+    {/block:ifRainbowShadow}
+}
+
+.pic img {
+    display: block;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out; 
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+[photoset-layout] img:hover, .pic img:hover {
+    filter: blur(2px);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+[photoset-layout] img {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+[photoset-layout] {
+ grid-gap: {select:photoset gap}px;
+border: {select:post border size}px {select:post border} {color:post border};
+    background: {color:posts} url("{image:post bg}");
+    padding: {select:post padding}px;
+    {block:ifShadow}
+    filter: drop-shadow(10px 10px 4px {color:shadow});
+    {/block:ifShadow}
+    {block:ifRainbowShadow}
+    filter:
+    drop-shadow(3px 3px 0px #FF0000)
+    drop-shadow(3px 3px 0px #FF7F00)
+    drop-shadow(3px 3px 0px #FFFF00)
+    drop-shadow(3px 3px 0px #00FF00)
+    drop-shadow(3px 3px 0px #0000FF)
+    drop-shadow(3px 3px 0px #2E2B5F)
+    drop-shadow(3px 3px 0px #8B00FF);
+    {/block:ifRainbowShadow}
+}
+
+
+.tumblr_parent {
+  margin: 0;
+  padding: 0px;
+  border-left: 0;
+}
+.tumblr_parent blockquote{
+  margin-left:20px;
+  padding-left:20px;
+  border-left: 1px solid {color:txt};
+}
+
+.tumblr_avatar {
+  margin-right: 10px;
+  margin-bottom: 5px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.cap {
+    {block:ifNotShadow}{block:ifNotRainbowShadow}
+    margin-top: 20px;
+    {/block:ifNotRainbowShadow}{/block:ifNotShadow}
+    border: {select:post border size}px {select:post border} {color:post border};
+    background: {color:posts} url("{image:post bg}");
+    padding: {select:post padding}px;
+    {block:ifShadow}
+    margin-top: 30px;
+    filter: drop-shadow(10px 10px 4px {color:shadow});
+    {/block:ifShadow}
+    {block:ifRainbowShadow}
+    margin-top: 40px;
+    filter:
+    drop-shadow(3px 3px 0px #FF0000)
+    drop-shadow(3px 3px 0px #FF7F00)
+    drop-shadow(3px 3px 0px #FFFF00)
+    drop-shadow(3px 3px 0px #00FF00)
+    drop-shadow(3px 3px 0px #0000FF)
+    drop-shadow(3px 3px 0px #2E2B5F)
+    drop-shadow(3px 3px 0px #8B00FF);
+    {/block:ifRainbowShadow}
+}
+
+.box {
+    border: {select:post border size}px {select:post border} {color:post border};
+    background: {color:posts} url("{image:post bg}");
+    padding: {select:post padding}px;
+    {block:ifShadow}
+    filter: drop-shadow(10px 10px 4px {color:shadow});
+    {/block:ifShadow}
+    {block:ifRainbowShadow}
+    filter:
+    drop-shadow(3px 3px 0px #FF0000)
+    drop-shadow(3px 3px 0px #FF7F00)
+    drop-shadow(3px 3px 0px #FFFF00)
+    drop-shadow(3px 3px 0px #00FF00)
+    drop-shadow(3px 3px 0px #0000FF)
+    drop-shadow(3px 3px 0px #2E2B5F)
+    drop-shadow(3px 3px 0px #8B00FF);
+    {/block:ifRainbowShadow}
+}
+
+.boxy {
+    border: {select:post border size}px {select:post border} {color:post border};
+    background-color: {color:footer link bg};
+    {block:ifShadow}
+    filter: drop-shadow(10px 10px 4px {color:shadow});
+    {/block:ifShadow}
+    {block:ifRainbowShadow}
+    filter:
+    drop-shadow(3px 3px 0px #FF0000)
+    drop-shadow(3px 3px 0px #FF7F00)
+    drop-shadow(3px 3px 0px #FFFF00)
+    drop-shadow(3px 3px 0px #00FF00)
+    drop-shadow(3px 3px 0px #0000FF)
+    drop-shadow(3px 3px 0px #2E2B5F)
+    drop-shadow(3px 3px 0px #8B00FF);
+    {/block:ifRainbowShadow}
+}
+
+.ask {
+    background-color: {color:footer link bg};
+    padding: 10px;
+    border: {select:post border size}px {select:post border} {color:post border};
+    color: {color:footer link};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:footer link glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:footer link glow outline},
+    1px -1px 0 {color:footer link glow outline},
+	 -1px 1px 0 {color:footer link glow outline},
+	 1px 1px 0 {color:footer link glow outline};
+    {/block:ifOutlineTxt}
+}
+
+.ask a {
+    color: {color:footer link};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:footer link glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:footer link glow outline},
+    1px -1px 0 {color:footer link glow outline},
+	 -1px 1px 0 {color:footer link glow outline},
+	 1px 1px 0 {color:footer link glow outline};
+    {/block:ifOutlineTxt}
+}
+
+.answer {
+    padding: 10px;
+    border: {select:post border size}px {select:post border} {color:post border};
+    border-top: 0;
+    background: {color:footer};
+    color: {color:footer txt};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:footer txt glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:footer txt glow outline},
+    1px -1px 0 {color:footer txt glow outline},
+	 -1px 1px 0 {color:footer txt glow outline},
+	 1px 1px 0 {color:footer txt glow outline};
+    {/block:ifOutlineTxt}
+}
+
+.foot {
+    {block:ifShadow}
+    filter: drop-shadow(10px 10px 4px {color:shadow});
+    margin-top: 30px;
+    {/block:ifShadow}
+    {block:ifRainbowShadow}
+    margin-top: 40px;
+    filter:
+    drop-shadow(3px 3px 0px #FF0000)
+    drop-shadow(3px 3px 0px #FF7F00)
+    drop-shadow(3px 3px 0px #FFFF00)
+    drop-shadow(3px 3px 0px #00FF00)
+    drop-shadow(3px 3px 0px #0000FF)
+    drop-shadow(3px 3px 0px #2E2B5F)
+    drop-shadow(3px 3px 0px #8B00FF);
+    {/block:ifRainbowShadow}
+    {block:ifNotShadow}{block:ifNotRainbowShadow}
+    margin-top: 20px;
+    {/block:ifNotRainbowShadow}{/block:ifNotShadow}
+    display: flex;
+    justify-content: center;
+}
+
+.kao {
+    display: flex;
+  align-items: center;
+    padding: 10px; 
+    background-color: {color:footer};
+    border: {select:footer border size}px {select:footer border} {color:footer border};
+    border-right: 0;
+    border-left: 0;
+}
+
+.kao a {
+   color: {color:footer txt};
+   {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:footer txt glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:footer txt glow outline},
+    1px -1px 0 {color:footer txt glow outline},
+	 -1px 1px 0 {color:footer txt glow outline},
+	 1px 1px 0 {color:footer txt glow outline};
+    {/block:ifOutlineTxt}
+   text-decoration: none;
+   font-style: normal;
+   font-weight: normal;
+}
+
+.kao img {
+    display: block;
+    max-width: 100%;
+}
+
+.time {
+   display: flex;
+  align-items: center;
+    padding: 10px; 
+    background-color: {color:footer link bg};
+    margin: 0;
+     border: {select:footer border size}px {select:footer border} {color:footer border};
+}
+
+
+.notez {
+   display: flex;
+  align-items: center;
+    padding: 10px; 
+    background-color: {color:footer link bg};
+    margin: 0;
+     border: {select:footer border size}px {select:footer border} {color:footer border};
+     
+}
+
+.q {
+    text-align: left;
+    margin-bottom: 10px;
+    color: {color:footer txt};
+}
+
+.notez a, .time a, .q a, .pushp a, .perma a {
+    color: {color:footer link};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:footer link glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:footer link glow outline},
+    1px -1px 0 {color:footer link glow outline},
+	 -1px 1px 0 {color:footer link glow outline},
+	 1px 1px 0 {color:footer link glow outline};
+    {/block:ifOutlineTxt}
+}
+
+
+
+.tags {
+    line-height: 200%;
+    max-height:0px;
+    text-align: center;
+    opacity:0;
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+}  
+
+.posts:hover .tags{
+    {block:ifNotShadow}{block:ifNotRainbowShadow}
+    margin-top: 10px;
+    {/block:ifNotRainbowShadow}{/block:ifNotShadow}
+    {block:ifShadow}
+     margin-top: 20px;
+    {/block:ifShadow}
+    {block:ifRainbowShadow}
+    margin-top: 30px;
+    {/block:ifRainbowShadow}
+    max-height: 200px;
+    padding: 10px;
+    opacity:1;
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+}
+
+.tags a {
+    color: {color:footer txt};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:footer txt glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:footer txt glow outline},
+    1px -1px 0 {color:footer txt glow outline},
+	 -1px 1px 0 {color:footer txt glow outline},
+	 1px 1px 0 {color:footer txt glow outline};
+    {/block:ifOutlineTxt}
+    background-color: {color:footer};
+    border: {select:footer border size}px {select:footer border} {color:footer border};
+    padding: 3px 5px;
+    {block:ifShadow}
+    filter: drop-shadow(10px 10px 4px {color:shadow});
+    margin-right: 10px;
+    {/block:ifShadow}
+    {block:ifRainbowShadow}
+    margin-right: 20px;
+    filter:
+    drop-shadow(3px 3px 0px #FF0000)
+    drop-shadow(3px 3px 0px #FF7F00)
+    drop-shadow(3px 3px 0px #FFFF00)
+    drop-shadow(3px 3px 0px #00FF00)
+    drop-shadow(3px 3px 0px #0000FF)
+    drop-shadow(3px 3px 0px #2E2B5F)
+    drop-shadow(3px 3px 0px #8B00FF);
+    {/block:ifRainbowShadow}
+}
+
+
+
+.tags a:hover {
+    background: {color:footer link bg};
+    color: {color:footer link};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:footer link glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:footer link glow outline},
+    1px -1px 0 {color:footer link glow outline},
+	 -1px 1px 0 {color:footer link glow outline},
+	 1px 1px 0 {color:footer link glow outline};
+    {/block:ifOutlineTxt}
+}
+ 
+
+
+.notecount {
+    display: inline;
+}
+
+.pagi {
+    
+     {block:ifShadow}
+    filter: drop-shadow(10px 10px 4px {color:shadow});
+    {/block:ifShadow}
+    {block:ifRainbowShadow}
+    filter:
+    drop-shadow(3px 3px 0px #FF0000)
+    drop-shadow(3px 3px 0px #FF7F00)
+    drop-shadow(3px 3px 0px #FFFF00)
+    drop-shadow(3px 3px 0px #00FF00)
+    drop-shadow(3px 3px 0px #0000FF)
+    drop-shadow(3px 3px 0px #2E2B5F)
+    drop-shadow(3px 3px 0px #8B00FF);
+    {/block:ifRainbowShadow}
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    align-items: flex-end;
+}
+
+.pagi > div {
+    background: {color:posts} url("{image:post bg}");
+    border: {select:post border size}px {select:post border} {color:post border};
+    padding: 10px;
+}
+
+.pagi a {
+    text-decoration: none;
+    color: {color:link};
+}
+
+
+.spotify_audio_player {
+    height:85px!important;
+    width:100%!important;
+    
+    
+}
+.bandcamp_audio_player {
+    height:850px!important;
+    width:100%!important;
+    
+}
+
+.soundcloud_audio_player {
+    height:85px!important;
+    width:100%!important;
+   
+}
+
+figure.tmblr-embed.tmblr-full iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+.tmblr-iframe-compact .tmblr-iframe--unified-controls {
+-webkit-filter: opacity(0);
+        filter: opacity(0);
+        transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+ 
+.tmblr-iframe-compact .tmblr-iframe--unified-controls:hover {
+-webkit-filter: opacity(1);
+        filter: opacity(1);
+        transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+
+.c {
+    position: fixed;
+    left: 0px; bottom: 5px;
+    z-index: 2;
+    font-size: 16px;
+    line-height: 100%;
+}
+
+.c a {
+  {block:ifGlowTxt}
+    text-shadow:  0 0 0px transparent;
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: 0px 0px 0 transparent,
+    1px -1px 0 transparent,
+	 -1px 1px 0 transparent,
+	 1px 1px 0 transparent;
+    {/block:ifOutlineTxt}  
+    text-decoration: none;
+}
+
+.top {
+    display: inline;
+}
+.top a {
+    color:{color:link};
+}
+
+.top a:hover {
+    color: {color:link hover};
+    cursor: help;
+}
+.top img {
+    display: inline-block;
+    max-height: 50px;
+}
+
+#s-m-t-tooltip {
+    
+    border: 2px {select:desc border} {color:tooltip border};
+    padding: 3px 5px;
+    background: {color:tooltip};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:tooltip txt glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:tooltip txt glow outline},
+    1px -1px 0 {color:tooltip txt glow outline},
+	 -1px 1px 0 {color:tooltip txt glow outline},
+	 1px 1px 0 {color:tooltip txt glow outline};
+    {/block:ifOutlineTxt}
+    text-transform: none;
+    text-align: center;
+    transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    color: {color:tooltip txt};
+    font-family: {text:font family};
+    font-size: {select:font size}px;
+    max-width: 200px;
+    word-wrap: break-word;
+    display: block;
+    margin: -40px 0px -10px 10px;
+    z-index: 999999999999;
+}
+
+.stroke {
+    font-size: {text:title size}px;
+    font-family: {text:title font};
+    line-height: 90%;
+    font-weight: bold;
+    text-transform: none;
+  -webkit-text-stroke-width: 2px;
+  -moz-text-stroke-width: 2px;
+  -webkit-text-stroke-color: {color:title border};
+  -moz-text-stroke-color: {color:title border};
+  color: transparent;
+}
+
+
+
+.shadow {
+  text-shadow: 4px 2px {color:title};
+  transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+}
+
+.shadow:hover {
+    cursor: help;
+    text-shadow: -4px -2px {color:title hover};
+    transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+}
+
+
+.sticker {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.sticker2 {
+position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.sticker img, .sticker2 img {
+    display: block;
+    max-width: 500px;
+    
+
+}
+
+
+
+.pushp, .perma {
+    padding: {select:post padding}px;
+    background-color: {color:footer link bg};
+    {block:ifNotShadow}{block:ifNotRainbowShadow}
+    margin-top: 20px;
+    {/block:ifNotRainbowShadow}{/block:ifNotShadow}
+     {block:ifShadow}
+    margin-top: 30px;
+    filter: drop-shadow(10px 10px 4px {color:shadow});
+    {/block:ifShadow}
+    {block:ifRainbowShadow}
+    margin-top: 40px;
+    filter:
+    drop-shadow(3px 3px 0px #FF0000)
+    drop-shadow(3px 3px 0px #FF7F00)
+    drop-shadow(3px 3px 0px #FFFF00)
+    drop-shadow(3px 3px 0px #00FF00)
+    drop-shadow(3px 3px 0px #0000FF)
+    drop-shadow(3px 3px 0px #2E2B5F)
+    drop-shadow(3px 3px 0px #8B00FF);
+    {/block:ifRainbowShadow}
+     border: {select:footer border size}px {select:footer border} {color:footer border};
+     color: {color:footer link};
+    {block:ifGlowTxt}
+    text-shadow:  0 0 3px {color:footer link glow outline};
+    {/block:ifGlowTxt}
+    {block:ifOutlineTxt}
+    text-shadow: -1px -1px 0 {color:footer link glow outline},
+    1px -1px 0 {color:footer link glow outline},
+	 -1px 1px 0 {color:footer link glow outline},
+	 1px 1px 0 {color:footer link glow outline};
+    {/block:ifOutlineTxt}
+}
+
+.perma {
+    padding: 3px {select:post padding}px;
+    overflow: auto;
+    max-height: 150px;
+}
+
+ol.notes {
+    padding: 0;
+    list-style-type: none;
+}
+
+ol.notes li.note {
+    font-size: {text:font size}px;
+    padding-bottom: 3px;
+}
+
+ol.notes li.note img.avatar {
+    display: inline-block;
+    width: {text:font size}px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.tumblr.com/7qjmkr5/IUmmdsy41/jquery.style-my-tooltips.js"></script>
+<script>
+   (function($){
+       $(document).ready(function(){
+           $("[title]").style_my_tooltips();
+       });
+   })(jQuery);
+</script>
+
+<script>
+$(document).ready(function() {
+  // audio player
+  var $audio = $('iframe.tumblr_audio_player');
+  $audio.load(function() {
+    $(this).contents().find('head').append('<style type="text/css">' +
+      '.audio-player { background: {color:footer link bg}; color: {color:footer link} !important;}' +
+      '.audio-player .audio-info .track-artist { color: {color:footer link} !important;}' +
+    '</style>');
+  });
+});
+</script>
+
+<script src ="//static.tumblr.com/fwgzvyf/Oj1o08f6h/shythemes.vr.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+        function scrollTopAnimated() {
+            $("html, body").animate(
+                { scrollTop: "0" }, 1000);
+        }
+    </script>
+
+<script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
+<script> $(function(){  $('.posts').unnest({
+    yourCaption: ".cap", 
+    wrapName: ".tumblr_parent", 
+    newCaptionUsername: false, 
+    originalPostCaptionUsername: false, 
+    tumblrAvatars: true, 
+    tumblrAvatarClass: ".tumblr_avatar", 
+    usernameColon: false 
+  }); }); </script>
+
+</head>
+
+<body>
+
+
+
+
+<div class="c"><a href="https://sadthemes.tumblr.com/" title="sadthm">🍥</a></div>
+
+
+
+
+<div class="contain">
+
+<div class="sticker"><img src="{image:sticker}"></div>
+
+<center>
+
+{block:ifNotHideTitle}
+<div class="title stroke shadow">
+{text:title}
+</div>
+{/block:ifNotHideTitle}
+
+
+<div class="icon">
+<a href="/"><img src="{image:icon}"></a>
+</div>
+
+
+<div class="info">
+{block:ifNotHideLinks}
+<div class="one"><a href="{text:link 1 URL}" title="{text:link 1 title}">{text:link 1}</a></div>
+{/block:ifNotHideLinks}
+
+<div class="desc">{text:desc}</div>
+
+{block:ifNotHideLinks}
+<div class="two">
+<a href="{text:link 2 URL}" title="{text:link 2 title}">{text:link 2}</a></div>
+{/block:ifNotHideLinks}
+
+</div><!-- info -->
+
+<div class="stuff">
+{block:Posts inlineMediaWidth="1280" inlineNestedMediaWidth="1280"}
+<div class="posts" post-type="{PostType}">
+    
+    
+
+{block:Text}
+<div class="box">
+{block:Title}<a href="{Permalink}"><h2>{Title}</h2></a>{/block:Title}
+{Body}
+</div>
+{/block:Text}
+
+{block:Quote}
+<div class="box">
+{Quote}
+{block:Source}{Source}{/block:Source}
+</div>
+{/block:Quote}
+
+{block:Link}
+<div class="box">
+<a href="{URL}">{Name}</a>
+{block:Description}{Description}{/block:Description}
+</div>
+{/block:Link}
+
+{block:Chat}
+<div class="box">
+{block:Title}{Title}{/block:Title}
+{block:Lines}
+<div class="{Alt} user_{UserNumber}">
+{block:Label}{Label}{/block:Label}: {Line}
+</div>
+{/block:Lines}
+</div>
+{/block:Chat}
+
+{block:Answer}
+<div class="box">
+<div class="ask">
+{Asker}{Question}
+</div>
+<div class="answer">{Answer}</div>
+</div>
+{/block:Answer}
+
+{block:Photo}
+{block:IndexPage}
+<div class="pic">
+<a href="{Permalink}"><img src="{PhotoURL-HighRes}"></a>  
+</div>
+{/block:IndexPage}
+{block:PermalinkPage}
+<div class="pic">
+{LinkOpenTag}<img src="{PhotoURL-HighRes}">{LinkCloseTag}
+</div>
+{/block:PermalinkPage}
+{/block:Photo}
+
+{block:Photoset}
+<div class="photoset-grid" photoset-layout="{PhotosetLayout}">{block:Photos}<div data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" data-lowres="{PhotoURL-500}" data-highres="{PhotoURL-HighRes}" onclick="lightbox(this)"><img src="{PhotoURL-HighRes}" /></div>{/block:Photos}</div>
+{/block:Photoset}
+
+{block:Video}
+<div class="box">
+<div class="video">{Video-500}</div>
+</div>
+{/block:Video}
+
+{block:Audio}
+<div class="boxy">
+{block:AudioEmbed}
+
+<div style="height: 85px;"><center>{AudioEmbed-400}</center></div>
+{/block:AudioEmbed}
+</div>
+{/block:Audio}
+
+{block:ifNotHideCaption}
+{block:Caption}<div class="cap">{Caption}</div>{/block:Caption}
+{/block:ifNotHideCaption}
+
+
+
+
+
+{block:ContentSource}
+<!-- {SourceURL}{block:SourceLogo}<img src="{BlackLogoURL}"
+width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+{/block:SourceLogo}
+{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
+{/block:ContentSource}
+
+<!--{block:NoRebloggedFrom}{block:RebloggedFrom}{ReblogParentName}{/block:RebloggedFrom}{/block:NoRebloggedFrom} --> 
+
+
+{block:PermalinkPage}
+
+{block:ifHideCaption}
+{block:Caption}<div class="cap">{Caption}</div>{/block:Caption}
+{/block:ifHideCaption}
+
+<div class="pushp">
+{block:Date}<a href="{Permalink}">{TimeAgo}</a>{/block:Date}
+{block:NoteCount}<a href="{Permalink}" style="float: right"><div class="notecount">{NoteCount}</div> notes</a>{/block:NoteCount}
+
+{block:HasTags}
+<p>{block:Tags}
+<a href="{TagURL}">#{Tag}</a>
+{/block:Tags}</p>{/block:HasTags}
+
+
+{block:PermalinkPagination} 
+<p style="border-top: 2px solid {color:footer link}; text-align: right; padding-top: 10px; margin-top: 20px">{block:PreviousPost}<a href="{PreviousPost}">previous post</a>{/block:PreviousPost}{block:NextPost} - <a href="{NextPost}">next post</a>{/block:NextPost}</p>
+{/block:PermalinkPagination}
+</div>
+
+
+{block:PostNotes}
+<div class="perma">
+{PostNotes-64}
+</div>
+{/block:PostNotes}
+
+{/block:PermalinkPage}
+
+
+{block:IndexPage}
+<center>
+<div class="foot">
+<div class="time"><a href="{Permalink}">{12Hour}:{Minutes}</a></div>
+
+<div class="kao">
+{block:ifNotFooterPxl}
+<a href="{ReblogURL}" title="reblog?">{text:footer txt}</a>
+{/block:ifNotFooterPxl}
+{block:ifFooterPxl}
+<a href="{ReblogURL}" title="reblog?"><img src="{image:footer pxl}"></a>
+{/block:ifFooterPxl}
+</div>
+
+<div class="notez"><a href="{Permalink}"><div class="notecount">{NoteCount}</div></a></div>
+</div><!-- foot -->
+
+{block:ifNotHideTags}
+{block:HasTags}
+<div class="tags">
+{block:Tags}
+<a href="{TagURL}">#{Tag}</a>
+{/block:Tags}
+</div>{/block:HasTags}
+{/block:ifNotHideTags}
+</center>
+{/block:IndexPage}
+
+
+
+
+
+
+
+
+</div><!-- posts -->
+{/block:Posts}
+</div><!-- stuff -->
+
+
+
+
+
+{block:IndexPage}
+{block:Pagination}
+<div class="pagi">
+
+{block:PreviousPage}<div style="border-right: 0;"><a href="{PreviousPage}">&#129120;</a></div>{/block:PreviousPage}
+
+{block:IndexPage}
+ <div class="top">
+  <a onclick="scrollTopAnimated()" title="back to top">
+{block:ifNotScrollupPxl}{text:scrollup txt}{/block:ifNotScrollupPxl}
+{block:ifScrollupPxl}<img src="{image:scrollup pxl}">{/block:ifScrollupPxl}</a> 
+</div>
+{/block:IndexPage}
+
+
+{block:NextPage}<div style="border-left: 0;"><a href="{NextPage}">&#129122;</a></div>{/block:NextPage}
+</div>
+{/block:Pagination}
+{/block:IndexPage}
+
+
+
+
+
+
+</center>
+
+<div class="sticker2"><img src="{image:sticker 2}"></div>
+
+</div><!--contain-->
+
+
+<script>
+      var $container = $('.posts');
+   $container.find('.notecount').each(function(){
+       var n = $(this).html().split(' ')[0].replace(/,/g, '');
+       if (n > 999) {
+           n = Math.floor(n / 100) / 10;
+           $(this).text(n + 'k');
+       }
+   });
+</script>
+
+
+</body>
+</html>
