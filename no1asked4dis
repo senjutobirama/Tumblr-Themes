@@ -65,13 +65,14 @@ https://shythemes.tumblr.com/post/156021137818/hello-i-was-wondering-if-you-knew
 
 
 
+
 {block:IfFloatingTxt}
 <script type="text/javascript">
 // <![CDATA[
 var colour="{color:floating txt}"; // what colour are the blobs
 var speed=65; // speed of animation, lower is faster
 var blobs=15; // how many blobs are in the jar
-var charc=String.fromCharCode(9825); // you must use HTML entity
+var charc=String.fromCharCode(8982); // you must use HTML entity
  
 /***************************\
 *   Blobs in a Jar Effect   *
@@ -358,6 +359,7 @@ function wobbler() {
 <meta name="color:scrollbar" content="#B30000" />
 <meta name="color:title" content="#B30000" />
 <meta name="color:title outline" content="#000" />
+<meta name="color:title glow" content="#000" />
 <meta name="color:desc" content="#000" />
 <meta name="color:desc glow outline" content="#B30000" />
 <meta name="color:desc link" content="#B30000" />
@@ -376,6 +378,7 @@ function wobbler() {
 <meta name="color:link hover" content="#000" />
 <meta name="color:link hover glow outline" content="#B30000" />
 <meta name="color:footer" content="#B30000" />
+<meta name="color:footer gradient" content="#fff" />
 <meta name="color:footer txt" content="#fff" />
 <meta name="color:footer txt hover glow outline" content="#fff" />
 <meta name="color:footer gradient 1" content="#B30000" />
@@ -446,6 +449,9 @@ function wobbler() {
 <meta name="select:credit" content="💗" />
 <meta name="select:credit" content="🍭" />
 <meta name="select:credit" content="🌈" />
+<meta name="select:credit" content="💾" />
+<meta name="select:credit" content="⛓️️" />
+<meta name="select:credit" content="🖤" />
 
 
 <meta name="text:font family" content="arial" />
@@ -482,6 +488,7 @@ function wobbler() {
 <meta name="if:glow txt" content="0" />
 <meta name="if:outline txt" content="0" />
 <meta name="if:gradient link" content="0" />
+<meta name="if:footer gradient" content="0" />
 <meta name="if:dark scrollbar" content="0" />
 <meta name="if:xp scrollbar" content="0" /> 
 <meta name="if:hide title" content="0" />
@@ -741,11 +748,11 @@ a:link, a:active, a:visited {
     font-size: {text:title size}px;
     font-family: {text:title font};
     text-align: {select:title align};
+    text-decoration: none;
     color: {color:title};
     letter-spacing: 1px;
     -webkit-text-stroke: 1px {color:title outline};
-    text-shadow: 3px 3px 0 {color:title outline}, -1px -1px 0 {color:title outline}, 1px -1px 0 {color:title outline},
-    -1px 1px 0 {color:title outline}, 1px 1px 0 {color:title outline};
+    text-shadow:  0 0 5px {color:title glow}, 0 0 5px {color:title glow};
     transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     -webkit-transition: all 0.3s ease-out;
@@ -757,8 +764,6 @@ a:link, a:active, a:visited {
     color: {color:title outline};
     letter-spacing: 1px;
     -webkit-text-stroke: 1px {color:title};
-    text-shadow: 3px 3px 0 {color:title}, -1px -1px 0 {color:title}, 1px -1px 0 {color:title},
-    -1px 1px 0 {color:title}, 1px 1px 0 {color:title};
     z-index: 2;
     width: 845px;
     position: relative;
@@ -1207,6 +1212,9 @@ table, td, th {
 
 th, tfoot {
     background: {color:footer};
+    {block:ifFooterGradient}
+    background-image: linear-gradient({color:footer}, {color:footer gradient});
+    {/block:ifFooterGradient}
     border-radius: calc({select:round border}px - 2px);
 }
 
@@ -1214,11 +1222,21 @@ table {
   border-radius: {select:round border}px;
   width: 100%;
   border: 2px solid {color:footer};
+  {block:ifFooterGradient}
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient({color:footer}, {color:footer gradient}) 1;
+  {/block:ifFooterGradient}
 }
 
 th, td {
   padding: 3px 5px;
   border: 2px solid {color:footer};
+  {block:ifFooterGradient}
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient({color:footer}, {color:footer gradient}) 1;
+  {/block:ifFooterGradient}
   border-radius: calc({select:round border}px - 2px);
 }
 
@@ -1650,4 +1668,3 @@ $('img').hide().fadeIn(2000);
 </body>
 
 </HTML>
-
