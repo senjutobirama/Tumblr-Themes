@@ -12,6 +12,9 @@ message for bugs/info/help.
 ____________________________________________
 
 info
+
+- to hide the description, just remove the text in the desc text options.
+
 - rendered images only! aka transparent images. the larger the better! if they're small, you'll have a plain open space on the right side. 
 
 - don't have a render tall enough? fill that in with the "top stuff" option! you get an extra 5 pixels to use, and a search bar :D
@@ -481,6 +484,7 @@ function wobbler() {
 <meta name="if:gradient link" content="0" />
 <meta name="if:dark scrollbar" content="0" />
 <meta name="if:xp scrollbar" content="0" /> 
+<meta name="if:hide title" content="0" />
 <meta name="if:hide caption" content="0" />
 <meta name="if:hide tags" content="0" />
 <meta name="if:scrollup pxl" content="0" />
@@ -1028,6 +1032,10 @@ input:focus:-ms-input-placeholder { color: transparent;}
     margin-left: 0px;
     width: 430px;
     height: 375px;
+    {block:ifHideTitle}
+    height: 420px;
+    margin-top: 10px;
+    {/block:ifHideTitle}
     overflow: auto;
     overflow-x: hidden;
     padding: 0px;
@@ -1357,12 +1365,14 @@ ol.notes li.note img.avatar {
 <img src="{image:pxl 1}"><img src="{image:pxl 2}"><img src="{image:pxl 3}"><img src="{image:pxl 4}"><img src="{image:pxl 5}">
 </div>
 
+{block:ifNotHideTitle}
 <div class="title">
 {block:ifWobblyTitle}<div id="wobble">{text:title}</div>{/block:ifWobblyTitle}
 {block:ifNotWobblyTitle}
 <a href="/">{text:title}</a>
 {/block:ifNotWobblyTitle}     
 </div>
+{/block:ifNotHideTitle}
 
 {block:ifTopStuff}
 <div class="extra">
@@ -1640,5 +1650,4 @@ $('img').hide().fadeIn(2000);
 </body>
 
 </HTML>
-
 
