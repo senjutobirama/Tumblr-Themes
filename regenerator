@@ -1131,6 +1131,7 @@ ol.notes li.note img.avatar {
     margin-bottom: 50px;
     display: grid;
     align-content: center;
+    align-items: center;
     justify-content: space-between;
     grid-template-columns: auto auto auto;
     justify-items: center;
