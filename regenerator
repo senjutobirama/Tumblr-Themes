@@ -999,6 +999,11 @@ img:hover, .pic img:hover, [photoset-layout] img:hover {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: {color:desc glow outline};
     {/block:ifOutlineTxt}
+    {block:ifGradientLink}
+    background: linear-gradient(45deg, {color:desc}, {color:desc});
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    {/block:ifGradientLink}
 }
 
 .spotify_audio_player {
