@@ -54,6 +54,10 @@ https://shythemes.tumblr.com/post/156021137818/hello-i-was-wondering-if-you-knew
 
 <head>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
+
 {block:IfFloatingTxt}
 <script type="text/javascript">
 // <![CDATA[
@@ -464,8 +468,6 @@ if(window.location.pathname == '/') location.replace('tagged/{text:redirect}');
 <meta name="text:link 4" content="Link 4">
 <meta name="text:link 4 URL" content="/">
 
-<meta name="if:footer pxl right" content="0" />
-<meta name="if:footer pxl center" content="0" />
 <meta name="if:cover bg" content="0" />
 <meta name="if:transparent" content="0" />
 <meta name="if:custom  cursor" content="0" />
@@ -485,9 +487,12 @@ if(window.location.pathname == '/') location.replace('tagged/{text:redirect}');
 <meta name="if:hide links" content="0" />
 <meta name="if:hide caption" content="0" />
 <meta name="if:hide tags" content="0" />
-<meta name="if:redirect" content="0" />
+<meta name="if:footer pxl" content="0" />
+<meta name="if:footer pxl right" content="0" />
+<meta name="if:footer pxl center" content="0" />
 <meta name="if:scrollup pxl" content="0" />
 <meta name="if:floating txt" content="0" />
+<meta name="if:redirect" content="0" />
 
 <style type="text/css">
 
