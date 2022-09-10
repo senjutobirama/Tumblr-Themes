@@ -351,7 +351,16 @@ a, a:hover {cursor: help;}
     background: {color:select bg};
     color: {color:select txt};}
     
-    
+body {
+  opacity: 1;
+  transition: 3s opacity;
+}
+
+body.fade-out {
+  opacity: 0;
+  transition: none;
+}
+
 body {
     margin: 0;
     line-height: 110%;
@@ -1424,8 +1433,12 @@ $(document).ready(function() {
 
 <body>
 
-
-
+<script>
+  document.body.classList.add('fade-out');
+  window.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.remove('fade-out');
+});
+</script>
 
 <div class="c"><a href="https://sadthemes.tumblr.com/" title="sadthm">🍥</a></div>
 
