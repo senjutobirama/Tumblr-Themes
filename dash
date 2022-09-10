@@ -311,7 +311,15 @@ pre {
     hyphens: auto;
 }
 
+body {
+  opacity: 1;
+  transition: 3s opacity;
+}
 
+body.fade-out {
+  opacity: 0;
+  transition: none;
+}
 
 body {
     
@@ -1335,6 +1343,13 @@ input[type=text]:focus {
 
 <body>
 
+<script>
+  document.body.classList.add('fade-out');
+  window.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.remove('fade-out');
+});
+</script>
+
 {block:ifNotTumblrBasicControls}
 <div class="header">
 <a href="https://tumblr.com/follow/{Name}" target="_blank">
@@ -1722,15 +1737,6 @@ navigate_next
 
 </div> <!-- content -->
 
-
-
-
- <script type="text/javascript">
- $('.sb').hide().fadeIn(1000);
- $('.dash').hide().fadeIn(1000);
-$('.posts').hide().fadeIn(3000);
-    </script>
-
 <script>
       var $container = $('.posts');
    $container.find('.notecount').each(function(){
@@ -1756,4 +1762,3 @@ expand_less
 </BODY>
 
 </HTML>
-
