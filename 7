@@ -211,6 +211,16 @@ pre {
 }
 
 body {
+  opacity: 1;
+  transition: 3s opacity;
+}
+
+body.fade-out {
+  opacity: 0;
+  transition: none;
+}
+
+body {
     margin: 0;
     font-size: {select:font size}px;
     color: {color:txt};
@@ -229,8 +239,6 @@ body {
      -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-    opacity: 0;
-    transition: opacity 2s;
 }
 
 .window-body, .title-bar-text, button {
@@ -601,7 +609,14 @@ position: relative; display:inline-block;}
   
 </HEAD>
 
-<body onload="document.body.style.opacity='1'">
+<body>
+
+<script>
+  document.body.classList.add('fade-out');
+  window.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.remove('fade-out');
+});
+</script>
 
 <div class="c">
 <button><a href="https://sadthemes.tumblr.com/" style="color: #000; font-style: normal;" data-toggle="tooltip" title="sadthemes">theme</a></button>
@@ -815,7 +830,7 @@ width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
 
 {block:PreviousPage}<button><a href="{PreviousPage}" style="color: #000; font-style: normal;">previous</a></button>{/block:PreviousPage} {block:NextPage}<button><a href="{NextPage}" style="color: #000; font-style: normal;">next</a></button></p>{/block:NextPage}{/block:IndexPage}</div>
 
-</div> <!-- psot window -->
+</div> <!-- post window -->
 </div> <!-- contain -->
 </div><!-- drag -->
 </div> <!-- content -->
