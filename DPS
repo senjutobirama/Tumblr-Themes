@@ -325,6 +325,15 @@ body, *, a, a:hover {cursor:url({image:cursor}), auto;}{/block:IfCustomCursor}
 a, a:hover {cursor: help;}
 {/block:IfNotCustomCursor}
 
+body {
+  opacity: 1;
+  transition: 3s opacity;
+}
+
+body.fade-out {
+  opacity: 0;
+  transition: none;
+}
 
 body {
     margin: 0;
@@ -346,8 +355,6 @@ body {
      -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-    opacity: 0;
-    transition: opacity 2s;
 }
 
 img {
@@ -1076,7 +1083,14 @@ $(document).ready(function() {
 
 </HEAD>
 
-<body onload="document.body.style.opacity='1'">
+<body>
+
+<script>
+  document.body.classList.add('fade-out');
+  window.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.remove('fade-out');
+});
+</script>
 
 <div class="c">
 <a href="https://sadthemes.tumblr.com/" style="font-style: normal;" data-toggle="tooltip" title="sadthemes">#</a>
@@ -1291,5 +1305,4 @@ width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
 </BODY>
 
 </HTML>
-
 
