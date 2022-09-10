@@ -320,6 +320,15 @@ width: 16px; height: 17px;}
   background: {color:posts};
 }
 
+body {
+  opacity: 1;
+  transition: 3s opacity;
+}
+
+body.fade-out {
+  opacity: 0;
+  transition: none;
+}
 
 body {
     line-height: 100%;
@@ -351,8 +360,6 @@ body {
      -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-    opacity: 0;
-    transition: opacity 2s;
 }
 
 a:link, a:active, a:visited {
@@ -959,7 +966,14 @@ function lightbox(elem) {
 
 </HEAD>
 
-<body onload="document.body.style.opacity='1'">
+<body>
+
+<script>
+  document.body.classList.add('fade-out');
+  window.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.remove('fade-out');
+});
+</script>
 
 <div class="content">
 
@@ -1213,5 +1227,4 @@ function lightbox(elem) {
 </body>
 
 </html>
-
 
