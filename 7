@@ -37,6 +37,8 @@ https://codepen.io/neothm/pen/PzVjRy
 <HEAD>
 
 <script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>  
+
+
   <!--
         NPF images fix v3.0 by @glenthemes [2021]
         💌 git.io/JRBt7
@@ -112,7 +114,6 @@ if(window.location.pathname == '/') location.replace('{text:redirect}');
 
 
 
-<meta name="select:post size" content="300" />
 <meta name="select:post size" content="400" />
 <meta name="select:post size" content="500" />
 <meta name="select:post size" content="540" />
@@ -516,13 +517,6 @@ ol.notes li.note img.avatar {
     -moz-transition: all 0.3s ease-out;
 }
 
-.posts iframe {
-    max-width:100%;
-    display: block;
-    padding: 0;
-    margin: 0;
-}
-
 .trackback {
     position: absolute;
     left: 30px;
@@ -581,7 +575,9 @@ position: relative; display:inline-block;}
 
 
 
-  <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>  
+  <script src="//code.jquery.com/jquery-2.2.4.min.js"></script> 
+  
+  
 <script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
 <script> $(function(){  $('.posts').unnest({
     yourCaption: ".cap", 
@@ -605,7 +601,9 @@ position: relative; display:inline-block;}
     $( ".desc" ).draggable();
   } );
   </script>
-  
+ 
+ 
+
   
 </HEAD>
 
@@ -619,7 +617,7 @@ position: relative; display:inline-block;}
 </script>
 
 <div class="c">
-<button><a href="https://sadthemes.tumblr.com/" style="color: #000; font-style: normal;" data-toggle="tooltip" title="sadthemes">theme</a></button>
+<button><a href="https://sadthemes.tumblr.com/" style="color: #000; font-style: normal;" data-toggle="tooltip" title="sadthm">theme</a></button>
 </div>
 
 <div class="content">
@@ -749,6 +747,10 @@ position: relative; display:inline-block;}
 </div></div>
 
 {/block:AudioPlayer}
+
+{block:Video}
+<div class="vid">{Video-400}</div>
+{/block:Video}
 
 {block:Answer}
 <div class="asker"><img src="{AskerPortraitURL-30}"></div> {Asker}
