@@ -9,6 +9,7 @@ message for bugs/info/help.
 ____________________________________________
 
 info
+- 400px posts only. don't ask to change the size.
 - default 2-color gradient background for the container.
 - select container bg option to use an image bg.
 - container bg in color section for use of transparent background images.
