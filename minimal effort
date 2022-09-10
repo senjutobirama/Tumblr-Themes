@@ -16,6 +16,7 @@ info
   - i have a lot here: https://sadthemes.tumblr.com/smolpxl
 - hide icon border for transparent sidebar icon.
 - icon max-width 300px. icon will auto center.
+- if you do not want a sidebar title, remove the text.
 - description looks best short.
 - 3 to 6 sidebar links.
 - toggle "floating txt" in options, to change html entity you must go in to the actual script (slightly under all this info) to change it. default is a heart "9825"
