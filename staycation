@@ -950,28 +950,22 @@ ul li::before {
 }
 
 
-.tmblr-iframe--loaded{
-    position: fixed !important;
-    top: 0px !important;
-    width: 420px !important;
-    left: calc(100% - 420px) !important;
-    -moz-transform: scale(0.6) !important;
-    -webkit-transform: scale(0.6) !important;
-    transform: scale(0.6) !important;
-    -moz-transform-origin: top right !important;
-    -webkit-transform-origin: top right !important;
-    transform-origin: top right !important;
-    opacity: 0.6;
+.tmblr-iframe-compact .tmblr-iframe--unified-controls {
+-webkit-filter: opacity(0);
+        filter: opacity(0);
+        transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
 }
-    .tmblr-iframe--loaded:hover{
-        opacity: 1 !important;
-    }
-.tmblr-iframe-pushdown,
-.tmblr-iframe-themed{
-    padding-top: 0px !important;
-    padding: 0px !important;
-    animation: none !important;
-    -webkit-animation: none !important;
+ 
+.tmblr-iframe-compact .tmblr-iframe--unified-controls:hover {
+-webkit-filter: opacity(1);
+        filter: opacity(1);
+        transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
 }
 
 
