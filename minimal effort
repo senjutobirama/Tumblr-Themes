@@ -811,13 +811,7 @@ li.note.reblog a, a:link, a:active, a:visited {
 }
 
 .npf_row {
-    margin: 0 !important;
-    display: inline !important;
-}
-
-.npf_row figure {
-    padding: 0 !important;
-    margin-bottom: 1px !important;
+     margin: 0 !important;
 }
 
 .vid {
