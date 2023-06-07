@@ -539,7 +539,7 @@ ul.tags li {
 }
 
 .even {
-    ustify-self: left;
+    justify-self: left;
     border-radius: .4em 2em .5em 3em/3em .5em 2em .5em;
     background: {color:sb link 1};
     color: {color:sb link txt};
@@ -567,8 +567,8 @@ ul.tags li {
    
 }
 .tumblr_parent blockquote{
-    margin-left:20px;
-    padding-left:20px;
+    margin-left: 20px;
+    padding-left: 20px;
     border-left: 1px solid {color:link};
 }
 
@@ -745,13 +745,13 @@ ol.notes li.note {
     padding: 10px;
 }
           
-li.note.like::before{
+li.note.like::before {
     margin-right: 10px;
     content: "\2661";
     font-size: 20px;
 } 
 
-li.note.reblog::before{
+li.note.reblog::before {
     margin-right: 10px;
     content: "\21C4";
     font-size: 20px;
@@ -970,8 +970,6 @@ iframe[src*='open.spotify.com'][src*='track'], figure[data-npf*='open.spotify.co
 </style>
 
 
-
-
 <body>
 
 <main>
@@ -983,7 +981,6 @@ iframe[src*='open.spotify.com'][src*='track'], figure[data-npf*='open.spotify.co
 <img src="{image:icon}">
 </div>
 </a>
-
 
 
 <div class="desc">
@@ -1058,9 +1055,7 @@ iframe[src*='open.spotify.com'][src*='track'], figure[data-npf*='open.spotify.co
 <a class="like-b" href="#">{LikeButton}<span class="b">Like</span></a>
 </span>
 
-</div>
-
-<!-- INFO -->
+</div> <!-- INFO -->
 
 
 <!-- TEXT -->
@@ -1228,7 +1223,6 @@ iframe[src*='open.spotify.com'][src*='track'], figure[data-npf*='open.spotify.co
 <div class="cap">
 {Caption}
 </div>
-
 {/block:Caption}
 
 {/block:ifNotHideCaption}
