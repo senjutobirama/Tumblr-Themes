@@ -661,7 +661,7 @@ transition: all .3s ease;
     {block:ifShadow}
     filter: drop-shadow(0px 2px 4px {color:post shadow});
     {/block:ifShadow}
-    order-radius: {text:div radius}px;
+    border-radius: {text:div radius}px;
     text-align: center;
     width: {select:post size}px;
     padding: 20px;
