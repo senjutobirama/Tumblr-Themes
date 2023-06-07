@@ -15,6 +15,7 @@ Paper by @sadthemes
 - Message for any bugs/fixes.
 - All elements are draggable!
 - Icon width is minimum 200px.
+- Keep page title short since it's vertical!
 - Optional div shadows, round div/images.
 - Hide options too, don't hide both time & notes (looks funky).
 - Credits at the bottom of code!
