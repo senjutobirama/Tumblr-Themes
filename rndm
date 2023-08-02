@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+
+rndm by @sadthemes
+- this is my first npf-esque theme. it's weird to edit. i'm sorry.
+- i wanted this theme to be simple AF.
+
+info
+- default white/black text, links, divs.
+- dark mode for backgrounds that make text hard to see.
+- while customizing, the sidebar shows at the top-left when editing. it will be normal live.
+- sidebar is draggable idk why but if you let it go, it drifts (v cool).
+- sidebar follows while scrolling.
+- different sidebar sizes, but 400px posts.
+- transparent icon option is if you don't want a border/background with your sidebar icon.
+- image lightboxes!!!
+
+-->
+
+
+<head>
+
+<!-- add google fonts here -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<!-- end google fonts -->
+
+ <meta charset="UTF-8">
+<title>{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+
+<link rel="icon" href="{image:FavIcon}" type="image/gif" >
+
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+<meta name="image:favicon" content=""/>   
+<meta name="image:icon" content="https://i.imgur.com/UVFyn1R.png"/>
+<meta name="image:floating" content="" />
+
+
+<meta name="color:txt" content="#000" />
+<meta name="color:link" content="#000" />
+<meta name="color:tooltip" content="#000" />
+<meta name="color:tooltip txt" content="#fff" />
+
+<meta name="color:border" content="#000" />
+<meta name="select:border" content="solid" />
+<meta name="select:border" content="dashed" />
+<meta name="select:border" content="dotted" />
+<meta name="select:border" content="double" />
+<meta name="select:border" content="groove" />
+<meta name="select:border" content="ridge" />
+<meta name="select:border" content="inset" />
+<meta name="select:border" content="outset" />
+
+<meta name="select:border size" content="0" />
+<meta name="select:border size" content="1" />
+<meta name="select:border size" content="2" />
+<meta name="select:border size" content="3" />
+<meta name="select:border size" content="4" />
+<meta name="select:border size" content="5" />
+<meta name="select:border size" content="6" />
+<meta name="select:border size" content="7" />
+<meta name="select:border size" content="8" />
+<meta name="select:border size" content="9" />
+<meta name="select:border size" content="10" />
+
+<meta name="select:padding" content="10" title="10"/>
+<meta name="select:padding" content="5" title="5"/>
+<meta name="select:padding" content="15" title="15"/>
+<meta name="select:padding" content="20" title="20"/>
+
+<meta name="select:post margin" content="25" />
+<meta name="select:post margin" content="50" />
+<meta name="select:post margin" content="75" />
+<meta name="select:post margin" content="100" />
+
+<meta name="select:sb width" content="150" title="150" />
+<meta name="select:sb width" content="100" title="100" />
+<meta name="select:sb width" content="200" title="200" />
+<meta name="select:sb width" content="250" title="250" />
+<meta name="select:sb width" content="300" title="300" />
+
+<meta name="select:desc align" content="left" />
+<meta name="select:desc align" content="center" />
+<meta name="select:desc align" content="right" />
+<meta name="select:desc align" content="justify" />
+
+<meta name="select:title align" content="left" />
+<meta name="select:title align" content="center" />
+<meta name="select:title align" content="right" />
+<meta name="select:title align" content="justify" />
+
+<meta name="select:footer align" content="left" />
+<meta name="select:footer align" content="center" />
+<meta name="select:footer align" content="right" />
+<meta name="select:footer align" content="justify" />
+
+<meta name="text:img radius" content="0">
+<meta name="text:div radius" content="0">
+<meta name="text:font fam" content="verdana">
+<meta name="text:font size" content="15">
+<meta name="text:title" content="under construction" />
+<meta name="text:title font" content="verdana" />
+<meta name="text:title size" content="20">
+<meta name="text:desc" content="sample description." />
+<meta name="text:link 1 url" content="/">
+<meta name="text:link 1" content="one">
+<meta name="text:link 2 url" content="/">
+<meta name="text:link 2" content="two">
+<meta name="text:link 3 url" content="/">
+<meta name="text:link 3" content="three">
+<meta name="if:transparent icon" content="0" />
+<meta name="if:underline link" content="0" />
+<meta name="if:bold link" content="0" />
+<meta name="if:italic link" content="0" />
+<meta name="if:hide tags" content="0" />
+
+<!-- CSS RESET -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+
+<!-- PHOTOSET.CSS -->
+<link href="https://static.tumblr.com/0podkko/oDSpg7y88/photosets.css" rel="stylesheet">
+
+<!-- ANIMATE.CSS-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<!-- JQUERY PLUGINS -->  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<!-- RANDOMBG -->
+<script src="https://raw.githack.com/fparreira/jquery-randomBG/master/jquery.randombg.js"></script>
+
+<!-- PEP -->
+<script src="https://raw.githack.com/briangonzalez/jquery.pep.js/master/src/jquery.pep.js"></script>
+
+<!-- SIDEFOLLOW -->
+<script src="https://raw.githack.com/inJonathan/sidefollow/master/example/sidefollow.js"></script>
+
+<!-- POPIMG -->
+<script src="https://raw.githack.com/demo-platform/pop-img/gh-pages/index.js"></script>
+
+<!-- TIPPY -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+
+<!-- IONICONS -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</head>
+
+
+
+<style type="text/css">  
+
+body {
+-webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: {text:font fam};
+    font-size: {text:font size}px;
+    color: {color:txt};
+    overflow-x: hidden;
+}
+
+ion-icon {
+  font-size: 16px;
+  --ionicon-stroke-width: 16px;
+}
+
+a:link, a:active, a:visited {
+    cursor: help;
+    display: inline-block;
+    color: {color:link};
+    {block:IfBoldLink}
+    font-weight: bold;{/block:IfBoldLink}
+    {block:IfItalicLink}
+    font-style: italic;{/block:IfItalicLink}
+    {block:IfNotUnderlineLink}
+    text-decoration: none;{/block:IfNotUnderlineLink}
+    {block:IfUnderlineLink}
+    text-decoration: underline;{/block:IfUnderlineLink}
+    position: relative;
+    transition: all 0.4s;
+}
+
+a:hover {
+    letter-spacing: -1px;
+    animation-duration: 1.2s;
+    transition: all 0.4s;
+}
+
+img {
+    max-width: 100%;
+    border-radius: {text:img radius}px;
+}
+
+blockquote {
+    margin: 0 0 0 10px;
+    border-left: 1px {select:border};
+    padding-left: 10px;
+}
+
+.main {
+    width: calc({select:sb width}px + 540px);
+    margin: 50px auto;
+}
+
+.sb {
+    position: fixed;
+    width: {select:sb width}px;
+    animation: bounceInDown;
+    animation-duration: 1.2s;
+    
+    z-index: 99;
+    cursor: move;
+}
+
+.sb img {
+    display: block;
+    border-radius: {text:img radius}px;
+}
+
+.icon {
+    border-radius: {text:img radius}px;
+    {block:IfNotTransparentIcon}
+    background: #fff;
+    border: {select:border size}px {select:border} #000;
+    {/block:IfNotTransparentIcon}
+}
+
+.desc, .linky {
+    padding: 5px;
+    background: #fff;
+    margin-top: {select:padding}px;
+    border: {select:border size}px {select:border} #000;
+    border-radius: {text:div radius}px;
+}
+
+.desc {
+    text-align: {select:desc align};
+}
+
+.linky {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.tit {
+    font-family: {text:title font};
+    font-size: {text:title size}px;
+    text-align: {select:title align};
+    padding: {select:padding}px;
+    color: #000;
+    width: 400px;
+    background: #fff;
+    border-radius: {text:div radius}px;
+    border: {select:border size}px {select:border} #000;
+    margin-bottom: {select:post margin}px;
+    animation: bounceInUp;
+    animation-duration: 1.2s;
+    transition: all 0.4s;
+}
+
+.pc {
+    width: 400px;
+    margin-left: calc({select:sb width}px + 100px);
+}
+
+.posts {
+    width: 400px;
+    background: #fff;
+    padding: {select:padding}px;
+    margin-bottom: {select:post margin}px;
+    animation: bounceInUp;
+    animation-duration: 1.2s;
+    border: {select:border size}px {select:border} #000;
+    border-radius: {text:div radius}px;
+    transition: all 0.4s;
+}
+
+.pic img {
+    display: block;
+}
+
+.icu a {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+[photoset-layout] {
+    gap: 1px;
+}
+
+.aud {
+    width: 100%!important;
+    height: 85px!important;
+}
+
+iframe[src*='open.spotify.com'][src*='track'], figure[data-npf*='open.spotify.com'][data-npf*='track']{
+    height:80px!important;
+}
+
+.fit {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.lab {
+    background: {color:txt};
+    color: #fff;
+    padding: 5px;
+    border-radius: {text:div radius}px;
+}
+
+h1.q {
+    border-left: 3px solid {color:link};
+    padding-left: 10px;
+}
+
+.asker {
+   border-radius: {text:div radius}px;
+    margin-bottom: 10px;
+}
+
+.aq {
+    margin-bottom: 10px;
+    border-radius: {text:div radius}px;
+    padding: 10px;
+	position: relative;
+}
+
+.asker img {
+    vertical-align: middle;
+    border-radius: {text:img radius}px;
+}
+
+.asker span {
+    background: {color:txt};
+    color: #fff;
+    border-radius: {text:div radius}px;
+    line-height: 120%;
+    padding: 5px 7px;  
+}
+
+.footer {
+    padding: 10px;
+    margin-top: 10px;
+    text-align: {select:footer align};
+    border-radius: {text:div radius}px;
+}
+
+.tags {
+    margin-top: 5px;
+    text-align: {select:footer align};
+}
+
+.pp {
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: {text:div radius}px;
+}
+
+.perma {
+    margin-top: 5px;
+}
+
+ol.notes li.note {
+    padding-bottom: 5px;
+}
+
+ol.notes img  {
+    margin-right: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.pagi {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: {select:padding}px;
+    border: {select:border size}px {select:border} #000;
+}
+
+.tippy-box[data-theme~='tp'] {
+  background: {color:tooltip};
+  color: {color:tooltip txt};
+  font-size: inherit;
+  font-family: inherit;
+  border-radius: 0;
+  animation: slideInDown; 
+  animation-duration: 0.5s; 
+
+}
+
+#top {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    z-index: 999;
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 15px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: {text:div radius}px;
+}
+
+.tmblr-iframe-compact .tmblr-iframe--unified-controls {
+    -webkit-filter: opacity(0);
+    filter: opacity(0);
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+ 
+.tmblr-iframe-compact .tmblr-iframe--unified-controls:hover {
+    -webkit-filter: opacity(1);
+    filter: opacity(1);
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+tumblr_controls, .tmblr-iframe {
+     visibility:hidden;
+     padding-top: 0 !important;
+}
+
+tumblr_controls, .iframe-controls--desktop {
+     visibility:visible;
+}
+
+.bgd {
+    background: #000 !important;
+    color: #fff !important;
+    border: {select:border size}px {select:border} #fff;
+    transition: all 0.4s;
+}
+
+.bgd a {
+    color: #fff;
+}
+
+.dark {
+    width: 32px;
+    height: 32px;
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+    background-color: #000;
+    color: #fff;
+    border: 0;
+    border-radius: {text:div radius}px;
+}
+
+</style>
+
+
+
+<body>
+
+<button class="dark" title="DARK MODE" onclick="$('.posts, .desc, .linky, .tit, .pp, .pagi, .icon').toggleClass('bgd')">
+    <ion-icon name="moon"></ion-icon>
+</button> 
+
+<div class="main">
+
+<div class="sb">
+<div class="icon"><img src="{image:icon}"></div>
+    
+<div class="desc">
+{text:desc}
+</div>
+
+<div class="linky">
+<a href="{text:link 1 url}">{text:link 1}</a>
+
+<a href="{text:link 2 url}">{text:link 2}</a>
+
+<a href="{text:link 3 url}">{text:link 3}</a>
+</div>
+
+</div>
+
+<div class="pc">
+
+<div class="tit"><a href="/">{text:title}</a></div>
+
+{block:Posts inlineMediaWidth="400" inlineNestedMediaWidth="400"}
+<div class="posts">
+
+{block:Text}
+{block:Title}{Title}{/block:Title}
+{Body}
+{/block:Text}
+
+<!-- ANSWER -->
+
+{block:Answer}
+<div class="aq">{Question}</div>
+
+<div class="asker">
+  <img src="{AskerPortraitURL-40}">
+
+  <span>{Asker}</span>
+</div>
+
+{block:Answerer}
+<div class="aq">{Answer}</div>
+<div class="asker" align="right">
+  <span>{Answerer}</span>
+  <img src="{AnswererPortraitURL-40}">
+</div>{/block:Answerer}
+
+    <div class="replies">
+        {Replies}
+</div>
+{/block:Answer}
+
+<!-- END ANSWER -->
+
+{block:Photo}
+<div class="pic"><img src="{PhotoURL-HighRes}"></div>
+{/block:Photo}	
+
+{block:Photoset}
+<div class="photoset-grid" photoset-layout="{PhotosetLayout}">{block:Photos}<div><img src="{PhotoURL-HighRes}" /></div>{/block:Photos}</div>
+{/block:Photoset}	
+
+{block:Audio}
+<div class="aud">{AudioEmbed-400}</div>
+{/block:Audio}	
+
+{block:Video}
+{VideoEmbed-400}
+{/block:Video}	
+
+{block:Quote}
+<h1 class="q">"{Quote}"</h1>
+{block:Source}
+<p style="margin-top: 10px; margin-left: 30px;">&mdash; {Source}</p>{/block:Source}
+{/block:Quote}	
+
+<!-- LINK -->  
+{block:Link}
+<a href="{URL}">{Name} &#129122;</a>
+
+{block:Description}
+{Description}
+{/block:Description}
+
+
+{/block:Link}
+<!-- END LINK -->  	
+
+<!-- CHAT -->
+{block:Chat}
+{block:Title}
+<h1>{Title}</h1>
+{/block:Title}
+{block:Lines}
+
+{block:Label}
+
+<div class="lab">{Label}</div>
+
+{/block:Label} {Line}
+
+{/block:Lines}
+{/block:Chat}
+<!--END CHAT --> 
+
+
+<!-- CAPTION -->
+{block:Caption}
+{Caption}
+{/block:Caption}
+<!-- END CAPTION -->
+
+{block:IndexPage}
+<div class="footer">
+    <a href="{Permalink}">{TimeAgo}</a> {block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}
+</div>
+{/block:IndexPage}
+
+<!-- TAGS -->
+
+{block:ifNotHideTags}
+{block:HasTags}
+<div class="tags">
+{block:Tags}
+<a href="{TagURL}">#{Tag}</a>
+{/block:Tags}
+</div>
+{/block:HasTags}
+{/block:ifNotHideTags}
+
+<!-- END TAGS -->
+
+
+<!-- POST NOTES --> 
+
+{block:PermalinkPage}
+
+{block:RebloggedFrom}
+<a href="{ReblogParentURL}" title="{ReblogParentName}">Via</a> 
+<a href="{ReblogRootURL}" title="{ReblogRootName}">Source</a>
+{/block:RebloggedFrom}
+
+
+{block:PermalinkPagination} 
+
+<div class="pp">
+{block:PreviousPost}
+<a href="{PreviousPost}">Previous Post</a> 
+{/block:PreviousPost}
+     
+{block:NextPost}
+/ <a href="{NextPost}">Next Post</a>
+{/block:NextPost}
+</div>
+{/block:PermalinkPagination}
+
+
+{block:NoteCount}
+{block:PostNotes}
+<div class="perma">
+{PostNotes}
+</div>
+{/block:PostNotes}
+{/block:NoteCount}
+
+{/block:PermalinkPage}
+
+<!-- END POST NOTES -->
+
+</div>
+<!-- END POSTS -->
+{/block:Posts}
+
+{block:IndexPage}
+{block:Pagination}
+
+<div class="pagi">
+
+{block:PreviousPage}
+<div><a href="{PreviousPage}">&#129120;</a></div>
+{/block:PreviousPage}
+
+{block:NextPage}
+<div><a href="{NextPage}">&#129122;</a></div>
+{/block:NextPage}
+
+</div> 
+{/block:Pagination} 
+{/block:IndexPage}
+
+</div>
+<!-- END PC -->
+
+</div>
+<!-- END MAIN -->
+
+<a id="top" title="TO TOP" href="#">
+    <ion-icon name="arrow-up-outline"></ion-icon>
+</a>
+
+<div class="icu">
+<a href="https://sadthemes.tumblr.com/" title="sadthm">
+<ion-icon name="leaf"></ion-icon>
+</a>
+</div>
+
+<script>
+tippy("[title]", {
+  theme: "tp",
+
+  arrow: false,
+  delay: 100,
+  followCursor: true,
+  maxWidth: 300,
+  placement: "top",
+  offset: [0, 20],
+
+  content(reference) {
+    const title = reference.getAttribute("title");
+    reference.removeAttribute("title");
+    return title;
+  }
+});
+
+</script>
+
+<script>
+$(window).scroll(function () {
+  var height = $(window).scrollTop();
+  if (height > 100) {
+    $("#top").fadeIn();
+  } else {
+    $("#top").fadeOut();
+  }
+});
+
+$("#top").each(function () {
+  $(this).click(function () {
+    $("html,body").animate({ scrollTop: 0 }, "slow");
+    return false;
+  });
+});
+
+</script>
+
+<script>
+$("body, .aq, .footer, .pp, .asker span").randombg();
+
+$(".sb").pep({
+  constrainTo: "window",
+  cssEaseDuration: 1000
+});
+
+$(".sb").sideFollow({
+  time: 600
+});
+
+$(function () {
+  $(".posts img").popImg();
+});
+
+$(document).ready(function () {
+  $("ion-icon").each(function () {
+    $(this).css("color", randomColor());
+  });
+});
+
+</script>
+
+</body>
+</html>
+
